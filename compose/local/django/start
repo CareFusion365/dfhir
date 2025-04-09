@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# Run migrations
+python manage.py migrate
+
+# Function to load fixtures only if the table is empty
+load_fixture_if_empty() {
+    local fixture_name=$1
+    local model_name=$2
+
+    # Check if any data exists in the specified model table
+    if ! python manage.py shell -c "from django.db import connection; cursor = connection.cursor(); cursor.execute('SELECT COUNT(*) FROM $model_name'); print(cursor.fetchone()[0])" | grep -q "0"; then
+        echo "Data already exists for $model_name, skipping fixture loading."
+    else
+        echo "Loading fixture: $fixture_name"
+        python manage.py loaddata "$fixture_name"
+    fi
+}
+
+
+
+# Load fixtures only if the respective model's table is empty
+for fixture in $(find nebula/fixtures -type f -name "*.json"); do
+    model_name=$(basename "$fixture" .json)
+    echo "Checking if data exists for $model_name"
+    load_fixture_if_empty "$fixture" "$model_name"
+done
+
+
+# Start the Django server
+exec python manage.py runserver 0.0.0.0:8000
