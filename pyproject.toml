@@ -2,8 +2,7 @@
 name = "dfhir"
 version = "0.1.0a2"
 authors = [
-  "Elijah Ahianyo <elijahahianyo@gmail.com>",
-  "Ezra Yendau <ezrayendau2000@gmail.com>",
+  "Carefusion <carefusion365@gmail.com>",
 ]
 description = "Django fhir server."
 readme = "README.md"
