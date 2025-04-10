@@ -1,6 +1,5 @@
 """Patient models."""
 
-from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -124,9 +123,6 @@ class PatientLink(TimeStampedModel):
 class Patient(TimeStampedModel):
     """Patient model."""
 
-    user = models.ForeignKey(
-        get_user_model(), on_delete=models.SET_NULL, related_name="patient", null=True
-    )
     identifier = models.ManyToManyField(
         Identifier, related_name="patient_identifier", blank=True
     )
@@ -174,14 +170,6 @@ class Patient(TimeStampedModel):
     address = models.ManyToManyField(
         Address, related_name="patient_address", blank=True
     )
-
-    def update_user(self, user_id: int):
-        """Update user."""
-        user_model = get_user_model()
-        user = user_model.objects.get(id=user_id)
-        if user:
-            self.user = user
-            self.save()
 
 
 class PatientReference(BaseReference):

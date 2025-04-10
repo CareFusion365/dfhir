@@ -26,12 +26,6 @@ class Organization(TimeStampedModel):
     alias = ArrayField(models.CharField(max_length=255), null=True)
     website = models.URLField(null=True)
     email = models.EmailField(null=True)
-    admin = models.ForeignKey(
-        "admins.admin",
-        on_delete=models.DO_NOTHING,
-        related_name="organization_admin",
-        null=True,
-    )
     status = models.CharField(
         max_length=50,
         choices=OrganizationStatus.choices,

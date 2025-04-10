@@ -33,7 +33,7 @@ class SpecimenReference(BaseReference):
     )
 
 
-class SepcimenFeature(TimeStampedModel):
+class SpecimenFeature(TimeStampedModel):
     """Specimen feature model."""
 
     type = models.ForeignKey(
@@ -331,7 +331,7 @@ class Specimen(TimeStampedModel):
         CodeableConcept, related_name="specimen_role", blank=True
     )
     feature = models.ManyToManyField(
-        SepcimenFeature, related_name="specimen_feature", blank=True
+        SpecimenFeature, related_name="specimen_feature", blank=True
     )
     collections = models.ForeignKey(
         SpecimenCollection,

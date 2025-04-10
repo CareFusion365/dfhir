@@ -2,7 +2,6 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from dfhir.admins.serializers import AdminWithoutOrganizationSerializer
 from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -18,7 +17,6 @@ from dfhir.organizations.models import Organization, OrganizationCodeableReferen
 class OrganizationSerializer(BaseWritableNestedModelSerializer):
     """Organization serializer."""
 
-    admin = AdminWithoutOrganizationSerializer(many=False, required=False)
     identifier = IdentifierSerializer(many=True, required=False)
     contact = ExtendedContactDetailSerializer(many=True, required=False)
     qualification = QualificationSerializer(many=True, required=False)

@@ -2,7 +2,7 @@
 
 from django_filters import rest_framework as filters
 
-from dfhir.practitioners.models import PractitionerExt
+from dfhir.practitioners.models import Practitioner
 
 
 class PractitionerFilter(filters.FilterSet):
@@ -13,5 +13,5 @@ class PractitionerFilter(filters.FilterSet):
     class Meta:
         """Meta class."""
 
-        model = PractitionerExt
+        model = Practitioner
         fields = ["gender", "active"]

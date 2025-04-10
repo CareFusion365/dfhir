@@ -8,49 +8,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from dfhir.users.models import Invite
-from dfhir.users.serializers import UserSerializer
 
 from .models import Patient
 from .serializers import PatientSerializer
-
-
-class PatientUserCreateView(APIView):
-    """Create a patient user."""
-
-    permission_classes = [AllowAny]
-
-    @extend_schema(request=PatientSerializer, responses={201: UserSerializer})
-    def post(self, request):
-        """Create a patient user."""
-        request_data = request.data
-        request_data["role"] = [{"display": "patient"}]
-
-        if "token" not in request_data:
-            raise ValidationError(detail="Token not present")
-
-        token = request_data.pop("token")
-        serializer = UserSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        if token:
-            try:
-                invitation = Invite.objects.get(
-                    key=token, patient__isnull=False, practitioner__isnull=True
-                )
-            except Invite.DoesNotExist as err:
-                raise ValidationError(
-                    {"error": "Invitation token does not exist"}
-                ) from err
-            invitation.validate_and_accept_invite()
-            patient = invitation.patient
-            serializer.save()
-            patient.update_user(serializer.data["id"])
-        else:
-            # TODO: Should we allow creation without a token?
-            serializer.save()
-
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class PatientListView(APIView):

@@ -11,6 +11,5 @@ urlpatterns = [
     path("practitioners/<int:pk>/", views.PractitionerDetailView.as_view()),
     path("practitionerrole/", views.PractitionerRoleListView.as_view()),
     path("practitionerrole/<int:pk>/", views.PractitionerRoleDetailView.as_view()),
-    path("practitioners/accept-invite/", views.PractitionerUserCreateView.as_view()),
     path("practitionerrole/code/", views.PractitionerRoleCodeListView.as_view()),
 ]

@@ -1,8 +1,5 @@
 """Practitioner models."""
-
-from django.contrib.auth import get_user_model
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 from dfhir.base import choices as base_choices
 from dfhir.base.models import (
@@ -84,26 +81,6 @@ class Practitioner(TimeStampedModel):
     communication = models.ManyToManyField(
         Communication, related_name="practitioner_communication", blank=True
     )
-
-
-class PractitionerExt(Practitioner):
-    """Practitioner model with user field."""
-
-    user = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.SET_NULL,
-        related_name="practitioner",
-        null=True,
-    )
-    email = models.EmailField(_("email address"), unique=True, null=True)
-
-    def update_user(self, user_id: int):
-        """Update user."""
-        user_model = get_user_model()
-        user = user_model.objects.get(id=user_id)
-        if user:
-            self.user = user
-            self.save()
 
 
 # Practitioner Role

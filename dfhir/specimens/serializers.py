@@ -1,7 +1,6 @@
 """specimen serializers."""
 
 from drf_writable_nested import WritableNestedModelSerializer
-from fhir.resources.specimen import SpecimenFeature
 
 from dfhir.base.serializers import (
     AnnotationSerializer,
@@ -21,6 +20,7 @@ from dfhir.specimens.models import (
     SpecimenCollection,
     SpecimenCollectorReference,
     SpecimenContainer,
+    SpecimenFeature,
     SpecimenProcessing,
     SpecimenProcessingPerformerReference,
     SpecimenReference,
