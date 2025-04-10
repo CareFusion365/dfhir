@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dfhir"
-version = "0.1.0a2"
+version = "0.1.0a3"
 authors = [
   "Carefusion <carefusion365@gmail.com>",
 ]
