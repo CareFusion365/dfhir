@@ -3,15 +3,15 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.healthcareservices.models import HealthCareServiceCodeableReference
-from nebula.practitioners.models import Practitioner
-from nebula.schedules.models import Schedule
+from dfhir.healthcareservices.models import HealthCareServiceCodeableReference
+from dfhir.practitioners.models import Practitioner
+from dfhir.schedules.models import Schedule
 
 from .choices import AppointmentType, SlotStatus
 

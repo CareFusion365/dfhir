@@ -8,5 +8,5 @@ class DevicesConfig(AppConfig):
     """Devices app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.devices"
+    name = "dfhir.devices"
     verbose_name = _("Devices")

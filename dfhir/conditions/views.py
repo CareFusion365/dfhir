@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.conditions.models import Condition
-from nebula.conditions.serializers import ConditionSerializer
+from dfhir.conditions.models import Condition
+from dfhir.conditions.serializers import ConditionSerializer
 
 
 class ConditionListView(APIView):

@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AgeSerializer,
     AnnotationSerializer,
     BaseReferenceModelSerializer,
@@ -13,7 +13,7 @@ from nebula.base.serializers import (
     PeriodSerializer,
     RangeSerializer,
 )
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 from .models import (
     Condition,
@@ -135,7 +135,7 @@ class ConditionSerializer(BaseWritableNestedModelSerializer):
     # this method is used to resolve circular import issues with the EncounterReferenceSerializer
     def get_fields(self):
         """Get fields."""
-        from nebula.encounters.serializers import EncounterReferenceSerializer
+        from dfhir.encounters.serializers import EncounterReferenceSerializer
 
         fields = super().get_fields()
         fields["encounter"] = EncounterReferenceSerializer(required=False, many=False)

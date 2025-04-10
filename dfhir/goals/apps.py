@@ -8,5 +8,5 @@ class GoalsConfig(AppConfig):
     """Goals app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.goals"
+    name = "dfhir.goals"
     verbose_name = _("Goals")

@@ -10,10 +10,10 @@ class ScheduleConfig(AppConfig):
     """Schedule app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.schedules"
+    name = "dfhir.schedules"
     verbose_name = _("Schedules")
 
     def ready(self):
         """Import signals."""
         with contextlib.suppress(ImportError):
-            import nebula.schedules.signals  # noqa: F401
+            import dfhir.schedules.signals  # noqa: F401

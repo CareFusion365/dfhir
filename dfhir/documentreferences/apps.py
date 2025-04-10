@@ -8,5 +8,5 @@ class DocumentreferencesConfig(AppConfig):
     """Document references app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.documentreferences"
+    name = "dfhir.documentreferences"
     verbose_name = _("Document References")

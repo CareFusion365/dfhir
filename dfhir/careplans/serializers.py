@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -12,9 +12,9 @@ from nebula.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from nebula.careteams.serializers import CareTeamReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.careteams.serializers import CareTeamReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 from .models import (
     CarePlan,

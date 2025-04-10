@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework_recursive.fields import RecursiveField
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -20,9 +20,9 @@ from nebula.base.serializers import (
     SimpleQuantitySerializer,
     TimingSerializer,
 )
-from nebula.encounters.serializers import EncounterEpisodeOfCareReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
+from dfhir.encounters.serializers import EncounterEpisodeOfCareReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
 
 from .models import (
     Contract,

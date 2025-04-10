@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -17,8 +17,8 @@ from nebula.base.serializers import (
     RatioSerializer,
     SimpleQuantitySerializer,
 )
-from nebula.documentreferences.serializers import DocumentReferenceReferenceSerializer
-from nebula.medicationknowledges.models import (
+from dfhir.documentreferences.serializers import DocumentReferenceReferenceSerializer
+from dfhir.medicationknowledges.models import (
     MedicationKnowledge,
     MedicationKnowledgeCost,
     MedicationKnowledgeDefinitional,
@@ -40,8 +40,8 @@ from nebula.medicationknowledges.models import (
     MedicationKnowledgeStorageGuideline,
     MedicationKnowledgeStorageGuidelineEnvironmentalSetting,
 )
-from nebula.medications.serializers import MedicationReferenceSerializer
-from nebula.substances.serializers import SubstanceCodeableReferenceSerializer
+from dfhir.medications.serializers import MedicationReferenceSerializer
+from dfhir.substances.serializers import SubstanceCodeableReferenceSerializer
 
 
 class MedicationKnowledgeReferenceSerializer(BaseReferenceModelSerializer):

@@ -1,13 +1,13 @@
 """Flag serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
 
 from .models import (
     Flag,

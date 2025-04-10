@@ -3,14 +3,14 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     OrganizationReference,
     TimeStampedModel,
 )
-from nebula.chargeitems.choices import ChargeItemStatusChoice
+from dfhir.chargeitems.choices import ChargeItemStatusChoice
 
 
 class CharItemReference(BaseReference):

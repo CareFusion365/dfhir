@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -13,8 +13,8 @@ from nebula.base.serializers import (
     RangeSerializer,
     RatioSerializer,
 )
-from nebula.base.serializers import QuantitySerializer as DurationSerializer
-from nebula.inventoryitems.models import (
+from dfhir.base.serializers import QuantitySerializer as DurationSerializer
+from dfhir.inventoryitems.models import (
     InventoryItem,
     InventoryItemAssociation,
     InventoryItemAssociationTypeReference,
@@ -26,8 +26,8 @@ from nebula.inventoryitems.models import (
     InventoryItemReference,
     InventoryItemResponsibleOrganization,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.patients.serializers import PatientOrganizationReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.patients.serializers import PatientOrganizationReferenceSerializer
 
 
 class InventoryItemAssociationTypeReferenceSerializer(BaseReferenceModelSerializer):

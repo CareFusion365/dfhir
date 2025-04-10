@@ -8,5 +8,5 @@ class InventoryreportsConfig(AppConfig):
     """Inventory reports config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.inventoryreports"
+    name = "dfhir.inventoryreports"
     verbose_name = _("Inventory Reports")

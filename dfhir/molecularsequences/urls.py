@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.molecularsequences import views
+from dfhir.molecularsequences import views
 
 app_name = "molecularsequences"
 

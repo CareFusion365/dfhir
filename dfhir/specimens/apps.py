@@ -8,5 +8,5 @@ class SpecimensConfig(AppConfig):
     """specimens app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.specimens"
+    name = "dfhir.specimens"
     verbose_name = _("Specimens")

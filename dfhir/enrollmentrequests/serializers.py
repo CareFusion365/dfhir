@@ -2,12 +2,12 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     IdentifierSerializer,
     OrganizationReferenceSerializer,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 from .models import (
     EnrollmentRequest,

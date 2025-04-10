@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.medicationadministrations.models import MedicationAdministration
-from nebula.medicationadministrations.serializers import (
+from dfhir.medicationadministrations.models import MedicationAdministration
+from dfhir.medicationadministrations.serializers import (
     MedicationAdministrationSerializer,
 )
 

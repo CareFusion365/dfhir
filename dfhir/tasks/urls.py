@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.tasks import views
+from dfhir.tasks import views
 
 app_name = "tasks"
 

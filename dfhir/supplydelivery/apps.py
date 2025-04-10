@@ -8,5 +8,5 @@ class SupplydeliveryConfig(AppConfig):
     """supply delivery app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.supplydelivery"
+    name = "dfhir.supplydelivery"
     verbose_name = _("Supply Delivery")

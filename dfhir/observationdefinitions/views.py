@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.observationdefinitions.models import ObservationDefinition
-from nebula.observationdefinitions.serializers import ObservationDefinitionSerializer
+from dfhir.observationdefinitions.models import ObservationDefinition
+from dfhir.observationdefinitions.serializers import ObservationDefinitionSerializer
 
 
 class ObservationDefinitionListView(APIView):

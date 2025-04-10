@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.nutritionorders.models import NutritionOrder
-from nebula.nutritionorders.serializers import NutritionOrderSerializer
+from dfhir.nutritionorders.models import NutritionOrder
+from dfhir.nutritionorders.serializers import NutritionOrderSerializer
 
 
 class NutritionOrderListView(APIView):

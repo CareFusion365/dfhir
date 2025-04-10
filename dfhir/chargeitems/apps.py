@@ -8,5 +8,5 @@ class ChargeitemsConfig(AppConfig):
     """Charge items app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.chargeitems"
+    name = "dfhir.chargeitems"
     verbose_name = _("Charge Items")

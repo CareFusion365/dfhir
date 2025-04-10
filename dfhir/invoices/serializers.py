@@ -2,8 +2,8 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.accounts.serializers import AccountReferenceSerializer
-from nebula.base.serializers import (
+from dfhir.accounts.serializers import AccountReferenceSerializer
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -14,7 +14,7 @@ from nebula.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 from .models import (
     Invoice,

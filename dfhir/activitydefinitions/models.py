@@ -2,13 +2,13 @@
 
 from django.db import models
 
-from nebula.activitydefinitions.choices import (
+from dfhir.activitydefinitions.choices import (
     ActivityDefinitionIntentChoices,
     ActivityDefinitionParticipantTypeChoices,
     ActivityDefinitionPriorityChoices,
     ActivityDefinitionStatus,
 )
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
 
 
 class ActivityDefinitionParticipantTypeReference(BaseReference):

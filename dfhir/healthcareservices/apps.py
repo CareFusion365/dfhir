@@ -8,5 +8,5 @@ class HealthcareservicesConfig(AppConfig):
     """Healthcareservices app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.healthcareservices"
+    name = "dfhir.healthcareservices"
     verbose_name = _("Healthcareservices")

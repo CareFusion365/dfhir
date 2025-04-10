@@ -2,13 +2,13 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.groups.serializers import GroupReferenceSerializer
+from dfhir.groups.serializers import GroupReferenceSerializer
 
 from .models import (
     PersonalRelationship,

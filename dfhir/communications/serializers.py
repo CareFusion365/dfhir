@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -13,7 +13,7 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     ReferenceSerializer,
 )
-from nebula.communications.models import (
+from dfhir.communications.models import (
     Communication,
     CommunicationBsedOnReference,
     CommunicationPayload,
@@ -22,8 +22,8 @@ from nebula.communications.models import (
     CommunicationRequestReference,
     CommunicationSenderReference,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 
 class CommunicationRequestReferenceSerializer(BaseReferenceModelSerializer):

@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -13,24 +13,24 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.base.models import Quantity as Duration
-from nebula.devices.models import DeviceCodeableReference
-from nebula.encounters.models import EncounterReference
-from nebula.medicationrequests.choices import (
+from dfhir.base.models import Quantity as Duration
+from dfhir.devices.models import DeviceCodeableReference
+from dfhir.encounters.models import EncounterReference
+from dfhir.medicationrequests.choices import (
     MedicationIntent,
     MedicationRequestPriority,
     MedicationRequestStatus,
 )
-from nebula.medications.models import MedicationCodeableReference
-from nebula.organizations.models import Organization
-from nebula.patients.models import Patient
-from nebula.patients.models import PatientGroupReference as SubjectReference
-from nebula.practitioners.models import (
+from dfhir.medications.models import MedicationCodeableReference
+from dfhir.organizations.models import Organization
+from dfhir.patients.models import Patient
+from dfhir.patients.models import PatientGroupReference as SubjectReference
+from dfhir.practitioners.models import (
     Practitioner,
     PractitionerPractitionerRoleReference,
     PractitionerRole,
 )
-from nebula.provenances.models import ProvenanceReference
+from dfhir.provenances.models import ProvenanceReference
 
 
 class MedicationRequestCategory(TimeStampedModel):

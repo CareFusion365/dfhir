@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.base.models import ServiceType
+from dfhir.base.models import ServiceType
 
 from .models import ClinicalSpecialty, HealthcareService, ServiceCategory
 from .serializers import (

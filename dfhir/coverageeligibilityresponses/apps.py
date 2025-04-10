@@ -8,5 +8,5 @@ class CoverageeligibilityresponsesConfig(AppConfig):
     """Coverage Eligibility Responses App Configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.coverageeligibilityresponses"
+    name = "dfhir.coverageeligibilityresponses"
     verbose_name = _("Coverage Eligibility Responses")

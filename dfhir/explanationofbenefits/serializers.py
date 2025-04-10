@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -18,19 +18,19 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     SimpleQuantitySerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
-from nebula.claims.serializers import ClaimReferenceSerializer
-from nebula.conditions.serializers import ConditionReferenceSerializer
-from nebula.coverages.serializers import CoverageReferenceSerializer
-from nebula.devices.serializers import DeviceReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import (
+from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
+from dfhir.claims.serializers import ClaimReferenceSerializer
+from dfhir.conditions.serializers import ConditionReferenceSerializer
+from dfhir.coverages.serializers import CoverageReferenceSerializer
+from dfhir.devices.serializers import DeviceReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import (
     LocationOrganizationReferenceSerializer,
     LocationReferenceSerializer,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
-from nebula.procedures.serializers import ProcedureReferenceSerializer
-from nebula.servicerequests.serializers import ServiceRequestReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
+from dfhir.procedures.serializers import ProcedureReferenceSerializer
+from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
 
 from .models import (
     ExplanationOfBenefit,

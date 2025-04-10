@@ -8,5 +8,5 @@ class AllergyintolerancesConfig(AppConfig):
     """Allergy intolerances app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.allergyintolerances"
+    name = "dfhir.allergyintolerances"
     verbose_name = _("Allergy Intolerances")

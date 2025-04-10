@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     Attachment,
     BaseReference,
@@ -16,13 +16,13 @@ from nebula.base.models import (
     TimeStampedModel,
     Timing,
 )
-from nebula.bodystructures.models import BodyStructureReference
-from nebula.devices.models import DeviceDeviceMetricReference
-from nebula.encounters.models import EncounterReference
-from nebula.molecularsequences.models import MolecularSequenceReference
-from nebula.observationdefinitions.models import ObservationDefinitionReference
-from nebula.patients.models import Patient, PatientGroupReference
-from nebula.practitioners.models import Practitioner
+from dfhir.bodystructures.models import BodyStructureReference
+from dfhir.devices.models import DeviceDeviceMetricReference
+from dfhir.encounters.models import EncounterReference
+from dfhir.molecularsequences.models import MolecularSequenceReference
+from dfhir.observationdefinitions.models import ObservationDefinitionReference
+from dfhir.patients.models import Patient, PatientGroupReference
+from dfhir.practitioners.models import Practitioner
 
 from .choices import (
     ObservationStatus,

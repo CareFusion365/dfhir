@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AgeSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -21,8 +21,8 @@ from nebula.base.serializers import (
     TriggerDefinitionSerializer,
     UsageContextSerializer,
 )
-from nebula.groups.serializers import GroupReferenceSerializer
-from nebula.locations.serializers import LocationCodeableReferenceSerializer
+from dfhir.groups.serializers import GroupReferenceSerializer
+from dfhir.locations.serializers import LocationCodeableReferenceSerializer
 
 from .models import (
     PlanDefinition,

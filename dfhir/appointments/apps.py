@@ -8,5 +8,5 @@ class AppointmentsConfig(AppConfig):
     """Appointments app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.appointments"
+    name = "dfhir.appointments"
     verbose_name = _("Appointments")

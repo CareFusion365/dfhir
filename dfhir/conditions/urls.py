@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.conditions.views import ConditionDetailView, ConditionListView
+from dfhir.conditions.views import ConditionDetailView, ConditionListView
 
 app_name = "conditions"
 

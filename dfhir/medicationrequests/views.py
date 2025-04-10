@@ -8,7 +8,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.medicationrequests.models import (
+from dfhir.medicationrequests.models import (
     AdditionalIllustration,
     DosageMethod,
     DosageRoute,
@@ -20,7 +20,7 @@ from nebula.medicationrequests.models import (
     MedicationRequestReferenceType,
     ReferenceAsNeededFor,
 )
-from nebula.medicationrequests.serializers import (
+from dfhir.medicationrequests.serializers import (
     AdditionalIllustrationSerializer,
     DosageMethodSerializer,
     DosageRouteSerializer,

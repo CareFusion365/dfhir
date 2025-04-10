@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.immunizations import views
+from dfhir.immunizations import views
 
 app_name = "immunizations"
 urlpatterns = [

@@ -8,5 +8,5 @@ class DevicerequestsConfig(AppConfig):
     """Devicerequests app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.devicerequests"
+    name = "dfhir.devicerequests"
     verbose_name = _("devicerequests")

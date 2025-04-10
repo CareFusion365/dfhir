@@ -8,5 +8,5 @@ class TasksConfig(AppConfig):
     """task app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.tasks"
+    name = "dfhir.tasks"
     verbose_name = _("Tasks")

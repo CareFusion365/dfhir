@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -14,9 +14,9 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     TimingSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.nutritionintakes.models import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.nutritionintakes.models import (
     NutritionIntake,
     NutritionIntakeBasedOnReference,
     NutritionIntakeCodeableReference,
@@ -31,10 +31,10 @@ from nebula.nutritionintakes.models import (
     NutritionIntakeReference,
     NutritionIntakeReportedReference,
 )
-from nebula.nutritionproducts.serializers import (
+from dfhir.nutritionproducts.serializers import (
     NutritionProductCodeableReferenceSerializer,
 )
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 
 class NutritionIntakeBasedOnReferenceSerializer(BaseReferenceModelSerializer):

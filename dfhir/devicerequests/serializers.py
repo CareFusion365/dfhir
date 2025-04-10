@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -15,10 +15,10 @@ from nebula.base.serializers import (
     TimingSerializer,
 )
 
-# from nebula.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
-# from nebula.coverages.serializers import CoverageClaimReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
+# from dfhir.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
+# from dfhir.coverages.serializers import CoverageClaimReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
 
 from .models import (
     DeviceRequest,

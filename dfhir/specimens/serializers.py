@@ -1,9 +1,8 @@
 """specimen serializers."""
 
 from drf_writable_nested import WritableNestedModelSerializer
-from fhir.resources.specimen import SpecimenFeature
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -13,20 +12,21 @@ from nebula.base.serializers import (
     PeriodSerializer,
     SimpleQuantitySerializer,
 )
-from nebula.devices.serializers import DeviceReferenceSerializer
-from nebula.procedures.serializers import ProcedureReferenceSerializer
-from nebula.servicerequests.serializers import ServiceRequestReferenceSerializer
-from nebula.specimens.models import (
+from dfhir.devices.serializers import DeviceReferenceSerializer
+from dfhir.procedures.serializers import ProcedureReferenceSerializer
+from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
+from dfhir.specimens.models import (
     Specimen,
     SpecimenCollection,
     SpecimenCollectorReference,
     SpecimenContainer,
+    SpecimenFeature,
     SpecimenProcessing,
     SpecimenProcessingPerformerReference,
     SpecimenReference,
     SpecimenSubjectReference,
 )
-from nebula.substances.serializers import SubstanceReferenceSerializer
+from dfhir.substances.serializers import SubstanceReferenceSerializer
 
 
 class SpecimenReferenceSerializer(BaseReferenceModelSerializer):

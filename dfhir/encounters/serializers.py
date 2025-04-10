@@ -3,8 +3,8 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.appointments.serializers import AppointmentReferenceSerializer
-from nebula.base.serializers import (
+from dfhir.appointments.serializers import AppointmentReferenceSerializer
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -13,15 +13,15 @@ from nebula.base.serializers import (
     PeriodSerializer,
     VirtualServiceDetailsSerializer,
 )
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     QuantitySerializer as DurationSerializer,
 )
-from nebula.conditions.serializers import ConditionCodeableReferenceSerializer
-from nebula.locations.serializers import (
+from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
+from dfhir.locations.serializers import (
     LocationOrganizationReferenceSerializer,
     LocationReferenceSerializer,
 )
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 from .models import (
     DietPreference,

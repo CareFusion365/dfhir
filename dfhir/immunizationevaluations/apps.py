@@ -8,5 +8,5 @@ class ImmunizationevaluationsConfig(AppConfig):
     """immunization evaluations app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.immunizationevaluations"
+    name = "dfhir.immunizationevaluations"
     verbose_name = _("Immunization Evaluations")

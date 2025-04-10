@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.activitydefinitions import views
+from dfhir.activitydefinitions import views
 
 app_name = "activitydefinitions"
 

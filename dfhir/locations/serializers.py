@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework.serializers import ModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AvailabilitySerializer,
     BaseReferenceModelSerializer,
@@ -15,7 +15,7 @@ from nebula.base.serializers import (
     OrganizationReferenceSerializer,
     VirtualServiceDetailsSerializer,
 )
-from nebula.endpoints.serializers import EndpointSerializer
+from dfhir.endpoints.serializers import EndpointSerializer
 
 from .models import (
     Location,

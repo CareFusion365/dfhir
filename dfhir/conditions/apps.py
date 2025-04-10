@@ -8,5 +8,5 @@ class ConditionsConfig(AppConfig):
     """Conditions app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.conditions"
+    name = "dfhir.conditions"
     verbose_name = _("Conditions")

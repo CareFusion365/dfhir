@@ -8,5 +8,5 @@ class SlotsConfig(AppConfig):
     """App configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.slots"
+    name = "dfhir.slots"
     verbose_name = _("Slots")

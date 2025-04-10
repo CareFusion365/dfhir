@@ -1,11 +1,11 @@
 """provenance serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     IdentifierSerializer,
 )
-from nebula.provenances.models import Provenance, ProvenanceReference
+from dfhir.provenances.models import Provenance, ProvenanceReference
 
 
 class ProvenanceReferenceSerializer(BaseReferenceModelSerializer):

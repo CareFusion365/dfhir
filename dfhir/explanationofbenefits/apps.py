@@ -7,5 +7,5 @@ class ExplanationofbenefitsConfig(AppConfig):
     """Explanation of Benefits app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.explanationofbenefits"
+    name = "dfhir.explanationofbenefits"
     verbose_name = "Explanation of Benefits"

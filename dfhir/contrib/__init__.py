@@ -1,4 +1,4 @@
-"""Contrib directory for the Nebula project."""
+"""Contrib directory for the dfhir project."""
 
 # """To understand why this file is here, please read:
 #

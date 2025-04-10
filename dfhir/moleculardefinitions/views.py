@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.moleculardefinitions.models import MolecularDefinition
-from nebula.moleculardefinitions.serializers import MolecularDefinitionSerializer
+from dfhir.moleculardefinitions.models import MolecularDefinition
+from dfhir.moleculardefinitions.serializers import MolecularDefinitionSerializer
 
 
 class MolecularDefinitionListView(APIView):

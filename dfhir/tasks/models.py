@@ -2,16 +2,16 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     CodeableReference,
     Identifier,
     TimeStampedModel,
 )
-from nebula.coverages.models import CoverageClaimResponseReference
-from nebula.provenances.models import ProvenanceReference
-from nebula.tasks.choices import (
+from dfhir.coverages.models import CoverageClaimResponseReference
+from dfhir.provenances.models import ProvenanceReference
+from dfhir.tasks.choices import (
     TaskIntentChoices,
     TaskPriorityChoices,
     TaskStatusChoices,

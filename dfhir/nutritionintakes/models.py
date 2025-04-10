@@ -2,15 +2,15 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     Reference,
     TimeStampedModel,
 )
-from nebula.nutritionintakes.choices import NutritionIntakeStatusChoices
-from nebula.substances.models import SubstanceCodeableReference
+from dfhir.nutritionintakes.choices import NutritionIntakeStatusChoices
+from dfhir.substances.models import SubstanceCodeableReference
 
 
 class NutritionIntakeBasedOnReference(BaseReference):

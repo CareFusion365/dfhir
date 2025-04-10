@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -11,8 +11,8 @@ from nebula.base.serializers import (
     SimpleQuantitySerializer,
     TimingSerializer,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
-from nebula.supplydelivery.models import (
+from dfhir.patients.serializers import PatientReferenceSerializer
+from dfhir.supplydelivery.models import (
     SupplyDeliverReference,
     SupplyDelivery,
     SupplyDeliveryContractReference,

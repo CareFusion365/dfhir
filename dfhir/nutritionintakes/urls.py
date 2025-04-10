@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.nutritionintakes.views import (
+from dfhir.nutritionintakes.views import (
     NutritionIntakeDetailView,
     NutritionIntakeListView,
 )

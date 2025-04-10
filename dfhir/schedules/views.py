@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.schedules.models import Schedule
-from nebula.schedules.serializers import ScheduleSerializer
+from dfhir.schedules.models import Schedule
+from dfhir.schedules.serializers import ScheduleSerializer
 
 from .filters import ScheduleFilter
 

@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
@@ -11,10 +11,10 @@ from nebula.base.models import (
     TimeStampedModel,
     VirtualServiceDetails,
 )
-from nebula.base.models import (
+from dfhir.base.models import (
     Quantity as Duration,
 )
-from nebula.healthcareservices.models import (
+from dfhir.healthcareservices.models import (
     HealthCareServiceCodeableReference,
 )
 

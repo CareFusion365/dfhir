@@ -8,5 +8,5 @@ class FamilymemberhistoriesConfig(AppConfig):
     """Family member history app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.familymemberhistories"
+    name = "dfhir.familymemberhistories"
     verbose_name = _("Family Member Histories")

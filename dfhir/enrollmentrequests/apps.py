@@ -8,5 +8,5 @@ class EnrollmentrequestsConfig(AppConfig):
     """Enrollment Requests App Configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.enrollmentrequests"
+    name = "dfhir.enrollmentrequests"
     verbose_name = _("Enrollment Requests")

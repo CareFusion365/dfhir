@@ -2,19 +2,19 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.base.models import Quantity as Duration
-from nebula.inventoryitems.choices import (
+from dfhir.base.models import Quantity as Duration
+from dfhir.inventoryitems.choices import (
     InventoryItemNameLanguageChoices,
     InventoryItemNameTypeChoices,
     InventoryItemStatusChoices,
 )
-from nebula.patients.models import PatientOrganizationReference
+from dfhir.patients.models import PatientOrganizationReference
 
 
 class InventoryItemAssociationTypeReference(BaseReference):

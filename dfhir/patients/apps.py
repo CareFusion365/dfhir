@@ -10,10 +10,10 @@ class PatientsConfig(AppConfig):
     """Patients app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.patients"
+    name = "dfhir.patients"
     verbose_name = _("Patients")
 
     def ready(self):
         """Import signals."""
         with contextlib.suppress(ImportError):
-            import nebula.patients.signals  # noqa: F401
+            import dfhir.patients.signals  # noqa: F401

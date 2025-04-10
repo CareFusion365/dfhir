@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     Attachment,
     BaseReference,
@@ -12,12 +12,12 @@ from nebula.base.models import (
     Period,
     TimeStampedModel,
 )
-from nebula.encounters.models import EncounterReference
-from nebula.medicationrequests.models import MedicationRequest
-from nebula.observations.models import Observation
-from nebula.patients.models import Patient
-from nebula.practitioners.models import Practitioner
-from nebula.servicerequests.models import ServiceRequest
+from dfhir.encounters.models import EncounterReference
+from dfhir.medicationrequests.models import MedicationRequest
+from dfhir.observations.models import Observation
+from dfhir.patients.models import Patient
+from dfhir.practitioners.models import Practitioner
+from dfhir.servicerequests.models import ServiceRequest
 
 from .choices import DiagnosticReportStatus
 

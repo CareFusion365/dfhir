@@ -7,4 +7,4 @@ class LocationsConfig(AppConfig):
     """Locations app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.locations"
+    name = "dfhir.locations"

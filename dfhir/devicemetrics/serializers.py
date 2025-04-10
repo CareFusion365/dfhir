@@ -2,13 +2,13 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     QuantitySerializer,
 )
-from nebula.devices.serializers import DeviceReferenceSerializer
+from dfhir.devices.serializers import DeviceReferenceSerializer
 
 from .models import (
     DeviceMetric,

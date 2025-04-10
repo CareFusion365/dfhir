@@ -2,13 +2,13 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.formularyitems.choices import FormularyItemStatusChoices
+from dfhir.formularyitems.choices import FormularyItemStatusChoices
 
 
 class FormularyItem(TimeStampedModel):

@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -12,13 +12,13 @@ from nebula.base.serializers import (
     SimpleQuantitySerializer,
 )
 
-# from nebula.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
-from nebula.careplans.serializers import CarePlanDeviceRequestReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.patients.serializers import PatientPractitionerReferenceSerializer
-from nebula.procedures.serializers import ProcedureReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
+# from dfhir.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
+from dfhir.careplans.serializers import CarePlanDeviceRequestReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.patients.serializers import PatientPractitionerReferenceSerializer
+from dfhir.procedures.serializers import ProcedureReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
 
 from .models import (
     DeviceDispense,
@@ -27,7 +27,7 @@ from .models import (
     DeviceDispenseReceiverReference,
 )
 
-# from nebula.detectedissues.serializers import DetectedIssueCodeableReferenceSerializer
+# from dfhir.detectedissues.serializers import DetectedIssueCodeableReferenceSerializer
 
 
 class DeviceDispenseReceiverReferenceSerializer(BaseReferenceModelSerializer):

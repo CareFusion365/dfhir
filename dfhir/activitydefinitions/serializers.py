@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.activitydefinitions.models import (
+from dfhir.activitydefinitions.models import (
     ActivityDefinition,
     ActivityDefinitionDynamicValue,
     ActivityDefinitionParticipant,
@@ -11,7 +11,7 @@ from nebula.activitydefinitions.models import (
     ActivityDefinitionReference,
     ActivityDefinitionSubjectReference,
 )
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AgeSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -28,7 +28,7 @@ from nebula.base.serializers import (
     TimingSerializer,
     UsageContextSerializer,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 
 class ActivityDefinitionProductProductReferenceSerializer(BaseReferenceModelSerializer):

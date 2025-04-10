@@ -8,5 +8,5 @@ class SubstancesConfig(AppConfig):
     """Substances app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.substances"
+    name = "dfhir.substances"
     verbose_name = _("Substances")

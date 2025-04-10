@@ -1,1 +1,1 @@
-"""Tests for nebula."""
+"""Tests for dfhir."""

@@ -8,5 +8,5 @@ class MedicationstatementsConfig(AppConfig):
     """medication statements app."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.medicationstatements"
+    name = "dfhir.medicationstatements"
     verbose_name = _("Medication Statements")

@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.medicationknowledges import views
+from dfhir.medicationknowledges import views
 
 app_name = "medicationknowledges"
 urlpatterns = [

@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.imagingselections.models import ImagingSelection
-from nebula.imagingselections.serializers import ImagingSelectionSerializer
+from dfhir.imagingselections.models import ImagingSelection
+from dfhir.imagingselections.serializers import ImagingSelectionSerializer
 
 
 class ImagingSelectionListView(APIView):

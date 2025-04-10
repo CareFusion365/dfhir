@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
-from nebula.biologicallyderivedproductdispenses.choices import (
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.biologicallyderivedproductdispenses.choices import (
     BiologicallyDerivedProductDispenseStatus,
 )
 

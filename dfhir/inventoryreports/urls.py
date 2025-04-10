@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.inventoryreports import views
+from dfhir.inventoryreports import views
 
 app_name = "inventoryreports"
 

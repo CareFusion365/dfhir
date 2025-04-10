@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.supplyrequests.models import SupplyRequest
-from nebula.supplyrequests.serializers import SupplyRequestSerializer
+from dfhir.supplyrequests.models import SupplyRequest
+from dfhir.supplyrequests.serializers import SupplyRequestSerializer
 
 
 class SupplyRequestListView(APIView):

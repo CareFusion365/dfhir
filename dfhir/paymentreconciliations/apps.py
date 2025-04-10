@@ -8,5 +8,5 @@ class PaymentreconciliationsConfig(AppConfig):
     """payment reconciliations app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.paymentreconciliations"
+    name = "dfhir.paymentreconciliations"
     verbose_name = _("Payment Reconciliations")

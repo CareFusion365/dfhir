@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AgeSerializer,
     AnnotationSerializer,
     BaseReferenceModelSerializer,
@@ -13,7 +13,7 @@ from nebula.base.serializers import (
     PeriodSerializer,
     RangeSerializer,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 from .models import (
     FamilyMemberHistory,

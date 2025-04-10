@@ -3,7 +3,7 @@
 # from django.contrib.auth import get_user_model
 # from django.test import TestCase
 #
-# from nebula.organizations.models import Organization
+# from dfhir.organizations.models import Organization
 #
 #
 # class TestOrganizationModel(TestCase):

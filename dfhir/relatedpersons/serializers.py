@@ -1,6 +1,6 @@
 """Related persons serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -12,7 +12,7 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 from .models import RelatedPerson, RelatedPersonReference
 

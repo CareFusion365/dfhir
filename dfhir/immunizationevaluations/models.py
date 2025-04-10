@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.models import Identifier, TimeStampedModel
-from nebula.immunizationevaluations.choices import ImmunizationEvaluationStatusChoices
+from dfhir.base.models import Identifier, TimeStampedModel
+from dfhir.immunizationevaluations.choices import ImmunizationEvaluationStatusChoices
 
 
 class ImmunizationEvaluation(TimeStampedModel):

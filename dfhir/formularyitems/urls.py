@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.formularyitems import views
+from dfhir.formularyitems import views
 
 app_name = "formularyitems"
 

@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
@@ -10,7 +10,7 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.patients.models import PatientReference
+from dfhir.patients.models import PatientReference
 
 
 class ImmunizationRecommendationRecommendationDateCriterion(TimeStampedModel):

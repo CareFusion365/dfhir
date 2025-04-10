@@ -8,5 +8,5 @@ class DiagnosticreportsConfig(AppConfig):
     """diagnostic report app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.diagnosticreports"
+    name = "dfhir.diagnosticreports"
     verbose_name = _("Diagnostic Reports")

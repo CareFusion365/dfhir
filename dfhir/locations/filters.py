@@ -2,7 +2,7 @@
 
 from django_filters import rest_framework as filters
 
-from nebula.locations.models import Location
+from dfhir.locations.models import Location
 
 
 class LocationFilter(filters.FilterSet):

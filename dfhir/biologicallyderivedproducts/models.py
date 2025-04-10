@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Attachment,
     BaseReference,
     CodeableConcept,
@@ -15,8 +15,8 @@ from nebula.base.models import (
     Ratio,
     TimeStampedModel,
 )
-from nebula.patients.models import PatientOrganizationReference
-from nebula.practitioners.models import PractitionerPractitionerRoleReference
+from dfhir.patients.models import PatientOrganizationReference
+from dfhir.practitioners.models import PractitionerPractitionerRoleReference
 
 
 class BiologicallyDerivedProductReference(BaseReference):

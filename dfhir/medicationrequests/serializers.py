@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -13,10 +13,10 @@ from nebula.base.serializers import (
     PeriodSerializer,
     QuantitySerializer,
 )
-from nebula.base.serializers import QuantitySerializer as DurationSerializer
-from nebula.devices.serializers import DeviceCodeableReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.medicationrequests.models import (
+from dfhir.base.serializers import QuantitySerializer as DurationSerializer
+from dfhir.devices.serializers import DeviceCodeableReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.medicationrequests.models import (
     AdditionalIllustration,
     DispenseRequest,
     DispenseRequestInitialFill,
@@ -40,11 +40,11 @@ from nebula.medicationrequests.models import (
     ReferenceAsNeededFor,
     medicationRequestInformationSourceReference,
 )
-from nebula.medications.serializers import MedicationCodeableReferenceSerializer
-from nebula.patients.serializers import (
+from dfhir.medications.serializers import MedicationCodeableReferenceSerializer
+from dfhir.patients.serializers import (
     PatientGroupReferenceSerializer as SubjectSerializer,
 )
-from nebula.practitioners.serializers import (
+from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
 

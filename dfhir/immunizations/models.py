@@ -2,14 +2,14 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     Reference,
     TimeStampedModel,
 )
-from nebula.immunizations.choices import ImmunizationStatusChoices
+from dfhir.immunizations.choices import ImmunizationStatusChoices
 
 
 class ImmunizationBasedOnReference(BaseReference):

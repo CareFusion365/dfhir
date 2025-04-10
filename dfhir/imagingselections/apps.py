@@ -8,5 +8,5 @@ class ImagingselectionsConfig(AppConfig):
     """Image selections config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.imagingselections"
+    name = "dfhir.imagingselections"
     verbose_name = _("Image Selections")

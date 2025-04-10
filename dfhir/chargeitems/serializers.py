@@ -2,8 +2,8 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.accounts.serializers import AccountReferenceSerializer
-from nebula.base.serializers import (
+from dfhir.accounts.serializers import AccountReferenceSerializer
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -16,8 +16,8 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     TimingSerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureReferenceSerializer
-from nebula.chargeitems.models import (
+from dfhir.bodystructures.serializers import BodyStructureReferenceSerializer
+from dfhir.chargeitems.models import (
     ChargeItem,
     ChargeItemEntererReference,
     ChargeItemPerformer,
@@ -30,8 +30,8 @@ from nebula.chargeitems.models import (
     ChargeItemServiceReference,
     CharItemReference,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 
 class ChargeItemReferenceSerializer(BaseReferenceModelSerializer):

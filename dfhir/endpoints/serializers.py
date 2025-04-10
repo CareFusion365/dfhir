@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AvailabilitySerializer,
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,

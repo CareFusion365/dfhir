@@ -8,5 +8,5 @@ class AdverseeventsConfig(AppConfig):
     """Adverse events app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.adverseevents"
+    name = "dfhir.adverseevents"
     verbose_name = _("Adverse Events")

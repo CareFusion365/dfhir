@@ -8,5 +8,5 @@ class ProvenancesConfig(AppConfig):
     """Provenances app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.provenances"
+    name = "dfhir.provenances"
     verbose_name = _("Provenances")

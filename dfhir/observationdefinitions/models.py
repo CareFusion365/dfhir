@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
 
 from .choices import (
     ObservationDefinitionPermittedDataTypeChoices,

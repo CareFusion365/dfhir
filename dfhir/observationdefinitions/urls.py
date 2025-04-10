@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.observationdefinitions.views import (
+from dfhir.observationdefinitions.views import (
     ObservationDefinitionDetailView,
     ObservationDefinitionListView,
 )

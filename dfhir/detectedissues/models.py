@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -11,7 +11,7 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.practitioners.models import PractitionerPractitionerRoleReference
+from dfhir.practitioners.models import PractitionerPractitionerRoleReference
 
 from . import choices
 

@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.imagingselections import views
+from dfhir.imagingselections import views
 
 app_name = "imagingselections"
 

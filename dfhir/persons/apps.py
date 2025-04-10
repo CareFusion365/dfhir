@@ -8,5 +8,5 @@ class PersonsConfig(AppConfig):
     """Persons app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.persons"
+    name = "dfhir.persons"
     verbose_name = _("Persons")

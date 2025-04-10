@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -14,13 +14,13 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     VirtualServiceDetailsSerializer,
 )
-from nebula.healthcareservices.serializers import (
+from dfhir.healthcareservices.serializers import (
     HealthCareServiceCodeableReferenceSerializer,
 )
-from nebula.patients.serializers import (
+from dfhir.patients.serializers import (
     PatientGroupReferenceSerializer,
 )
-from nebula.slots.serializers import SlotSerializer
+from dfhir.slots.serializers import SlotSerializer
 
 from .models import (
     Appointment,

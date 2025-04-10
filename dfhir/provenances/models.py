@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, Reference, TimeStampedModel
+from dfhir.base.models import BaseReference, Identifier, Reference, TimeStampedModel
 
 # Create your models here.
 

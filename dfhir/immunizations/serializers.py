@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -12,8 +12,8 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     SimpleQuantitySerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.immunizations.models import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.immunizations.models import (
     Immunization,
     ImmunizationBasedOnReference,
     ImmunizationInformationSourceRefrence,
@@ -25,15 +25,15 @@ from nebula.immunizations.models import (
     ImmunizationReasonCodeableReference,
     ImmunizationReasonReference,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.medications.serializers import (
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.medications.serializers import (
     MedicationCodeableReferenceSerializer,
 )
-from nebula.observations.serializers import (
+from dfhir.observations.serializers import (
     ObservationCodeableReferenceSerializer,
 )
-from nebula.organizations.serializers import OrganizationCodeableReferenceSerializer
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.organizations.serializers import OrganizationCodeableReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 
 class ImmunizationBasedOnReferenceSerializer(BaseReferenceModelSerializer):

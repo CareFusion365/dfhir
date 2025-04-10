@@ -8,5 +8,5 @@ class OrganizationaffiliationsConfig(AppConfig):
     """Organization affiliations configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.organizationaffiliations"
+    name = "dfhir.organizationaffiliations"
     verbose_name = _("Organization Affiliations")

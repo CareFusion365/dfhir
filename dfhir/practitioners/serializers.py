@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     AvailabilitySerializer,
@@ -18,14 +18,12 @@ from nebula.base.serializers import (
     PeriodSerializer,
     QualificationSerializer,
 )
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.healthcareservices.serializers import HealthCareServiceReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.users.serializers import UserSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.healthcareservices.serializers import HealthCareServiceReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 from .models import (
     Practitioner,
-    PractitionerExt,
     PractitionerPractitionerRoleReference,
     PractitionerReference,
     PractitionerRole,
@@ -102,28 +100,6 @@ class PractitionerSerializer(BaseWritableNestedModelSerializer):
     communication = CommunicationSerializer(many=True, required=False)
     qualification = QualificationSerializer(many=True, required=False)
     address = AddressSerializer(many=True, required=False)
-
-    class Meta:
-        """Meta class."""
-
-        model = Practitioner
-        exclude = ["created_at", "updated_at"]
-
-
-class PractitionerExtSerializer(PractitionerSerializer):
-    """Practitioner serializer with user detail."""
-
-    class Meta:
-        """Meta class."""
-
-        model = PractitionerExt
-        exclude = ["created_at", "updated_at"]
-
-
-class PractitionerSerializerWithUserDetail(PractitionerSerializer):
-    """Practitioner serializer with user detail."""
-
-    user = UserSerializer()
 
     class Meta:
         """Meta class."""

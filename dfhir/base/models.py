@@ -1,4 +1,4 @@
-"""Base models for the nebula app."""
+"""Base models for the dfhir app."""
 
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import RegexValidator

@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.paymentreconciliations.models import PaymentReconciliation
-from nebula.paymentreconciliations.serializers import (
+from dfhir.paymentreconciliations.models import PaymentReconciliation
+from dfhir.paymentreconciliations.serializers import (
     PaymentReconciliationSerializer,
 )
 

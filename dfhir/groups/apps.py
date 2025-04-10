@@ -8,5 +8,5 @@ class GroupsConfig(AppConfig):
     """Groups config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.groups"
+    name = "dfhir.groups"
     verbose_name = _("Groups")

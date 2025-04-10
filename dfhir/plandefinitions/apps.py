@@ -8,5 +8,5 @@ class PlandefinitionsConfig(AppConfig):
     """Plandefinitions app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.plandefinitions"
+    name = "dfhir.plandefinitions"
     verbose_name = _("Plan definitions")

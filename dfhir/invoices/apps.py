@@ -8,5 +8,5 @@ class InvoicesConfig(AppConfig):
     """Invoice app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.invoices"
+    name = "dfhir.invoices"
     verbose_name = _("Invoices")

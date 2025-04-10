@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     Attachment,
     BaseReference,
@@ -13,8 +13,8 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.encounters.models import EncounterReference
-from nebula.patients.models import PatientGroupReference
+from dfhir.encounters.models import EncounterReference
+from dfhir.patients.models import PatientGroupReference
 
 
 class CommunicationRequestReference(BaseReference):

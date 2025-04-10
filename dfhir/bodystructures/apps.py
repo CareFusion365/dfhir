@@ -8,5 +8,5 @@ class BodystructuresConfig(AppConfig):
     """body structure app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.bodystructures"
+    name = "dfhir.bodystructures"
     verbose_name = _("Body Structures")

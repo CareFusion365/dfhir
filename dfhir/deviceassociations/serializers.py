@@ -2,15 +2,15 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureReferenceSerializer
-from nebula.devices.serializers import DeviceReferenceSerializer
+from dfhir.bodystructures.serializers import BodyStructureReferenceSerializer
+from dfhir.devices.serializers import DeviceReferenceSerializer
 
 from .models import (
     DeviceAssociation,

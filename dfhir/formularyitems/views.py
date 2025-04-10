@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.formularyitems.models import FormularyItem
-from nebula.formularyitems.serializers import FormularyItemSerializer
+from dfhir.formularyitems.models import FormularyItem
+from dfhir.formularyitems.serializers import FormularyItemSerializer
 
 
 class FormularyItemListView(APIView):

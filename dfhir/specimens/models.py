@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Duration,
@@ -10,10 +10,10 @@ from nebula.base.models import (
     SimpleQuantity,
     TimeStampedModel,
 )
-from nebula.devices.models import DeviceCodeableReference
-from nebula.procedures.models import ProcedureReference
-from nebula.specimens.choices import SpecimenCombinedChoices, SpecimenStatus
-from nebula.substances.models import SubstanceReference
+from dfhir.devices.models import DeviceCodeableReference
+from dfhir.procedures.models import ProcedureReference
+from dfhir.specimens.choices import SpecimenCombinedChoices, SpecimenStatus
+from dfhir.substances.models import SubstanceReference
 
 
 class SpecimenReference(BaseReference):
@@ -33,7 +33,7 @@ class SpecimenReference(BaseReference):
     )
 
 
-class SepcimenFeature(TimeStampedModel):
+class SpecimenFeature(TimeStampedModel):
     """Specimen feature model."""
 
     type = models.ForeignKey(
@@ -331,7 +331,7 @@ class Specimen(TimeStampedModel):
         CodeableConcept, related_name="specimen_role", blank=True
     )
     feature = models.ManyToManyField(
-        SepcimenFeature, related_name="specimen_feature", blank=True
+        SpecimenFeature, related_name="specimen_feature", blank=True
     )
     collections = models.ForeignKey(
         SpecimenCollection,

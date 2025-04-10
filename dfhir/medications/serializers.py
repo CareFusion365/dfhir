@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -12,7 +12,7 @@ from nebula.base.serializers import (
     QuantitySerializer,
     RatioSerializer,
 )
-from nebula.medications.models import (
+from dfhir.medications.models import (
     Medication,
     MedicationBatch,
     MedicationCodeableReference,

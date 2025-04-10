@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Attachment,
     BaseReference,
     CodeableConcept,
@@ -10,7 +10,7 @@ from nebula.base.models import (
     Quantity,
     TimeStampedModel,
 )
-from nebula.imagingselections.models import ImagingSelectionReference
+from dfhir.imagingselections.models import ImagingSelectionReference
 
 
 class DistanceFromLandmark(TimeStampedModel):

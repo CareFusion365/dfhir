@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.choices import GenderChoices
-from nebula.base.models import (
+from dfhir.base.choices import GenderChoices
+from dfhir.base.models import (
     Address,
     Attachment,
     BaseReference,

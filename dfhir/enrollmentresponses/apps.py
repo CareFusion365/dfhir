@@ -8,5 +8,5 @@ class EnrollmentresponsesConfig(AppConfig):
     """Enrollment Responses App Configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.enrollmentresponses"
+    name = "dfhir.enrollmentresponses"
     verbose_name = _("Enrollment Responses")

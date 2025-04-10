@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AgeSerializer,
     AnnotationSerializer,
     BaseReferenceModelSerializer,
@@ -11,10 +11,10 @@ from nebula.base.serializers import (
     PeriodSerializer,
     RangeSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
-# from nebula.observations.serializers import ObservationCodeableReferenceSerializer
+# from dfhir.observations.serializers import ObservationCodeableReferenceSerializer
 from .models import (
     AllergyIntolerance,
     AllergyIntoleranceAsserterReference,

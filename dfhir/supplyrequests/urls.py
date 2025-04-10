@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.supplyrequests import views
+from dfhir.supplyrequests import views
 
 app_name = "supplyrequests"
 

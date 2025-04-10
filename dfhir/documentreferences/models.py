@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     CodeableReference,
@@ -12,7 +12,7 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.documentreferences.choices import (
+from dfhir.documentreferences.choices import (
     DocumentReferenceDocStatusChoices,
     DocumentReferenceStatusChoices,
 )

@@ -1,17 +1,17 @@
 """organization affiliation serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     ExtendedContactDetailSerializer,
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.healthcareservices.serializers import HealthCareServiceReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.organizationaffiliations.models import OrganizationAffiliation
-from nebula.organizations.serializers import OrganizationReferenceSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.healthcareservices.serializers import HealthCareServiceReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.organizationaffiliations.models import OrganizationAffiliation
+from dfhir.organizations.serializers import OrganizationReferenceSerializer
 
 
 class OrganizationAffiliationSerializer(BaseWritableNestedModelSerializer):

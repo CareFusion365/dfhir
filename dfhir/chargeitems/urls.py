@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.chargeitems import views
+from dfhir.chargeitems import views
 
 app_name = "chargeitems"
 

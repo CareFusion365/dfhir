@@ -1,6 +1,6 @@
 """Detected issues serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -9,8 +9,8 @@ from nebula.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.practitioners.serializers import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
 

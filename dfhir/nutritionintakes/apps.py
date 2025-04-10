@@ -8,5 +8,5 @@ class NutritionintakesConfig(AppConfig):
     """nutrition intake app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.nutritionintakes"
+    name = "dfhir.nutritionintakes"
     verbose_name = _("Nutrition Intakes")

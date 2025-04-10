@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.medications.views import (
+from dfhir.medications.views import (
     MedicationCodesList,
     MedicationDetail,
     MedicationDoseFormList,

@@ -2,14 +2,14 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.patients.models import Patient
-from nebula.practitioners.models import Practitioner
+from dfhir.patients.models import Patient
+from dfhir.practitioners.models import Practitioner
 
 from .choices import (
     ServiceRequestIntent,

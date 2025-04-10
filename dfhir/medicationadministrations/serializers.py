@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -14,10 +14,10 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     TimingSerializer,
 )
-from nebula.careplans.serializers import CarePlanReferenceSerializer
-from nebula.devices.serializers import DeviceCodeableReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.medicationadministrations.models import (
+from dfhir.careplans.serializers import CarePlanReferenceSerializer
+from dfhir.devices.serializers import DeviceCodeableReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.medicationadministrations.models import (
     MedicationAdministration,
     MedicationAdministrationDosage,
     MedicationAdministrationPartOf,
@@ -27,10 +27,10 @@ from nebula.medicationadministrations.models import (
     MedicationAdministrationReasonCodeableReference,
     MedicationAdministrationReasonReference,
 )
-from nebula.medicationrequests.serializers import MedicationRequestReferenceSerializer
-from nebula.medications.serializers import MedicationCodeableReferenceSerializer
-from nebula.patients.serializers import PatientGroupReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
+from dfhir.medicationrequests.serializers import MedicationRequestReferenceSerializer
+from dfhir.medications.serializers import MedicationCodeableReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
 
 
 class MedicationAdministrationPartOfSerializer(BaseReferenceModelSerializer):

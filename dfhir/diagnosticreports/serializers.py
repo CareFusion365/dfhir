@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -13,9 +13,9 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.base.validators import validate_date_time_fields
-from nebula.communications.serializers import CommunicationReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
+from dfhir.base.validators import validate_date_time_fields
+from dfhir.communications.serializers import CommunicationReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
 
 from .models import (
     ConclusionCode,
@@ -33,7 +33,7 @@ from .models import (
     SupportingInfoReference,
 )
 
-# TODO: from nebula.observations.serializers import ObservationReferenceSerializer
+# TODO: from dfhir.observations.serializers import ObservationReferenceSerializer
 
 
 class DiagnosticReportDocumentReferenceReferenceSerializer(

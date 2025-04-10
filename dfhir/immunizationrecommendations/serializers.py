@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -10,13 +10,13 @@ from nebula.base.serializers import (
     OrganizationReferenceSerializer,
     ReferenceSerializer,
 )
-from nebula.immunizationrecommendations.models import (
+from dfhir.immunizationrecommendations.models import (
     ImmunizationRecommendation,
     ImmunizationRecommendationRecommendation,
     ImmunizationRecommendationRecommendationDateCriterion,
     ImmunizationRecommendationSupportingImmunizationReference,
 )
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 
 class ImmunizationRecommendationSupportingImmunizationReferenceSerializer(

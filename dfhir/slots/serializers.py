@@ -1,12 +1,12 @@
 """Slot serializer module."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
 )
-from nebula.healthcareservices.serializers import (
+from dfhir.healthcareservices.serializers import (
     HealthCareServiceCodeableReferenceSerializer,
 )
 

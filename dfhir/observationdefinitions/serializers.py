@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -13,7 +13,7 @@ from nebula.base.serializers import (
     RangeSerializer,
     UsageContextSerializer,
 )
-from nebula.observationdefinitions.models import (
+from dfhir.observationdefinitions.models import (
     ObservationDefinition,
     ObservationDefinitionComponent,
     ObservationDefinitionQualifiedValue,
