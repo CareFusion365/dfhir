@@ -8,13 +8,13 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.diagnosticreports.models import (
+from dfhir.diagnosticreports.models import (
     ConclusionCode,
     DiagnosticCategory,
     DiagnosticReport,
     DiagnosticReportCode,
 )
-from nebula.diagnosticreports.serializers import (
+from dfhir.diagnosticreports.serializers import (
     ConclusionCodeSerializer,
     DiagnosticCategorySerializer,
     DiagnosticReportCodeSerializer,

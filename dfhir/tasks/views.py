@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.tasks.models import Task
-from nebula.tasks.serializers import TaskSerializer
+from dfhir.tasks.models import Task
+from dfhir.tasks.serializers import TaskSerializer
 
 
 class TaskListView(APIView):

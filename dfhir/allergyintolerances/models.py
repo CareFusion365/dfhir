@@ -3,7 +3,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Age,
     Annotation,
     BaseReference,

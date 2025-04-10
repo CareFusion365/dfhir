@@ -2,8 +2,8 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.admins.serializers import AdminWithoutOrganizationSerializer
-from nebula.base.serializers import (
+from dfhir.admins.serializers import AdminWithoutOrganizationSerializer
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     ExtendedContactDetailSerializer,
@@ -11,8 +11,8 @@ from nebula.base.serializers import (
     OrganizationReferenceSerializer,
     QualificationSerializer,
 )
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.organizations.models import Organization, OrganizationCodeableReference
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.organizations.models import Organization, OrganizationCodeableReference
 
 
 class OrganizationSerializer(BaseWritableNestedModelSerializer):

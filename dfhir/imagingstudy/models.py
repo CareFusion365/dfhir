@@ -2,13 +2,13 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.imagingstudy.choices import ImagingStudyStatusChoices
+from dfhir.imagingstudy.choices import ImagingStudyStatusChoices
 
 
 class ImagingStudySubjectReference(BaseReference):

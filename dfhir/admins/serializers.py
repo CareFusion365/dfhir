@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from nebula.users.serializers import UserSerializer
+from dfhir.users.serializers import UserSerializer
 
 from .models import Admin
 

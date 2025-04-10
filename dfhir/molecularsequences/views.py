@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.molecularsequences.models import MolecularSequence
-from nebula.molecularsequences.serializers import MolecularSequenceSerializer
+from dfhir.molecularsequences.models import MolecularSequence
+from dfhir.molecularsequences.serializers import MolecularSequenceSerializer
 
 
 class MolecularSequenceListView(APIView):

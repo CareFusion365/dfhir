@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.organizations.models import Organization
-from nebula.organizations.serializers import OrganizationSerializer
+from dfhir.organizations.models import Organization
+from dfhir.organizations.serializers import OrganizationSerializer
 
 # print(CreateOrganizationSchema.schema())
 

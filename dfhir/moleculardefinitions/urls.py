@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.moleculardefinitions import views
+from dfhir.moleculardefinitions import views
 
 app_name = "moleculardefinitions"
 

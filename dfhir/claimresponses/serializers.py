@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -15,12 +15,12 @@ from nebula.base.serializers import (
     QuantitySerializer,
     SimpleQuantitySerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
-from nebula.claims.serializers import ClaimReferenceSerializer
-from nebula.coverages.serializers import CoverageReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
+from dfhir.claims.serializers import ClaimReferenceSerializer
+from dfhir.coverages.serializers import CoverageReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 from .models import (
     ClaimResponse,

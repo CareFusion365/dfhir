@@ -1,6 +1,6 @@
 """Payment Notices serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,

@@ -8,5 +8,5 @@ class AppointmentresponsesConfig(AppConfig):
     """Appointment responses app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.appointmentresponses"
+    name = "dfhir.appointmentresponses"
     verbose_name = _("Appointment Responses")

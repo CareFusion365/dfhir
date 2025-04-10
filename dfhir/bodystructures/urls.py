@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.bodystructures.views import BodyStructureDetailView, BodyStructureListView
+from dfhir.bodystructures.views import BodyStructureDetailView, BodyStructureListView
 
 app_name = "bodystructures"
 

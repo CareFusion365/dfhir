@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.http import HttpRequest
 
-from nebula.users.models import Invite
+from dfhir.users.models import Invite
 
 from .models import PractitionerExt
 

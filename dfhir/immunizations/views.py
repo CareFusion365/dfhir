@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.immunizations.models import Immunization
-from nebula.immunizations.serializers import ImmunizationSerializer
+from dfhir.immunizations.models import Immunization
+from dfhir.immunizations.serializers import ImmunizationSerializer
 
 
 class ImmunizationListView(APIView):

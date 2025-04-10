@@ -8,5 +8,5 @@ class PaymentnoticesConfig(AppConfig):
     """Payment Notices App Configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.paymentnotices"
+    name = "dfhir.paymentnotices"
     verbose_name = _("Payment Notices")

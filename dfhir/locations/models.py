@@ -3,7 +3,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Address,
     Availability,
     BaseReference,
@@ -15,7 +15,7 @@ from nebula.base.models import (
     TimeStampedModel,
     VirtualServiceDetails,
 )
-from nebula.endpoints.models import EndpointReference
+from dfhir.endpoints.models import EndpointReference
 
 from .choices import (
     LocationMode,

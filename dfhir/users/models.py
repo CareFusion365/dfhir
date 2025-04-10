@@ -1,4 +1,4 @@
-"""User models for nebula."""
+"""User models for dfhir."""
 
 import datetime
 from typing import ClassVar
@@ -16,14 +16,14 @@ from django.utils.html import strip_tags
 from django.utils.translation import gettext_lazy as _
 from rest_framework.exceptions import ValidationError
 
-from nebula.base.models import PHONE_REGEX, TimeStampedModel
+from dfhir.base.models import PHONE_REGEX, TimeStampedModel
 
 from .choices import UserRoleChoices
 from .managers import BaseInvitationManager, UserManager
 
 
 class User(AbstractBaseUser, TimeStampedModel):
-    """Default custom user model for nebula.
+    """Default custom user model for dfhir.
     If adding fields that need to be filled at user signup,
     check forms.SignupForm and forms.SocialSignupForms accordingly.
     """
@@ -54,7 +54,7 @@ class User(AbstractBaseUser, TimeStampedModel):
 
 
 class Role(TimeStampedModel):
-    """Role model for nebula."""
+    """Role model for dfhir."""
 
     display = models.CharField(max_length=50, choices=UserRoleChoices.choices)
 
@@ -99,7 +99,7 @@ class AbstractBaseInvitation(models.Model):
 
 
 class Invite(TimeStampedModel, AbstractBaseInvitation):
-    """Invite model for nebula."""
+    """Invite model for dfhir."""
 
     practitioner = models.ForeignKey(
         "practitioners.PractitionerExt",
@@ -116,7 +116,7 @@ class Invite(TimeStampedModel, AbstractBaseInvitation):
     email = models.EmailField(
         unique=True,
         verbose_name=_("e-mail address"),
-        max_length=settings.EMAIL_MAX_LENGTH,
+        max_length=255,
     )
 
     def __str__(self):

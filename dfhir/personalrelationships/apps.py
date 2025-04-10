@@ -8,5 +8,5 @@ class PersonalrelationshipsConfig(AppConfig):
     """Personal Relationships Config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.personalrelationships"
+    name = "dfhir.personalrelationships"
     verbose_name = _("Personal Relationships")

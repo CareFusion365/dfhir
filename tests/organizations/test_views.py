@@ -3,8 +3,8 @@
 # from django.test import TestCase
 # from rest_framework.test import APIRequestFactory
 #
-# from nebula.organizations.models import Organization
-# from nebula.organizations.views import OrganizationDetailView, OrganizationListView
+# from dfhir.organizations.models import Organization
+# from dfhir.organizations.views import OrganizationDetailView, OrganizationListView
 #
 #
 # class TestOrganizationListView(TestCase):

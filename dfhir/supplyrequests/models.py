@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
-from nebula.supplyrequests.choices import (
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.supplyrequests.choices import (
     SupplyRequestIntentChoices,
     SupplyRequestPriorityChoices,
     SupplyRequestStatusChoices,

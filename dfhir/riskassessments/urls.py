@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.riskassessments.views import (
+from dfhir.riskassessments.views import (
     RiskAssessmentDetialView,
     RiskManagementListView,
 )

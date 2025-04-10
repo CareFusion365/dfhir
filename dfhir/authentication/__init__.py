@@ -1,1 +1,1 @@
-"""Authentication module for Nebula."""
+"""Authentication module for dfhir."""

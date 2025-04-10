@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
-from nebula.transports.choices import TransportStatusChoices
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.transports.choices import TransportStatusChoices
 
 
 class TransportReference(BaseReference):

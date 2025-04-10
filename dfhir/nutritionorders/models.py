@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -11,14 +11,14 @@ from nebula.base.models import (
     TimeStampedModel,
     Timing,
 )
-from nebula.devicedefinitions.models import DeviceDefinitionCodeableReference
-from nebula.nutritionorders.choices import (
+from dfhir.devicedefinitions.models import DeviceDefinitionCodeableReference
+from dfhir.nutritionorders.choices import (
     NutritionOrderIntentChoices,
     NutritionOrderPriorityChoices,
     NutritionOrderStatusChoices,
 )
-from nebula.patients.models import PatientGroupReference
-from nebula.practitioners.models import PractitionerPractitionerRoleReference
+from dfhir.patients.models import PatientGroupReference
+from dfhir.practitioners.models import PractitionerPractitionerRoleReference
 
 
 class NutritionOrderReference(BaseReference):

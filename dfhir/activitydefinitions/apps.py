@@ -8,5 +8,5 @@ class ActivitydefinitionsConfig(AppConfig):
     """activity definition app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.activitydefinitions"
+    name = "dfhir.activitydefinitions"
     verbose_name = _("Activity Definitions")

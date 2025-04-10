@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     AvailabilitySerializer,
@@ -18,10 +18,10 @@ from nebula.base.serializers import (
     PeriodSerializer,
     QualificationSerializer,
 )
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.healthcareservices.serializers import HealthCareServiceReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.users.serializers import UserSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.healthcareservices.serializers import HealthCareServiceReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.users.serializers import UserSerializer
 
 from .models import (
     Practitioner,

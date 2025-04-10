@@ -8,5 +8,5 @@ class NutritionordersConfig(AppConfig):
     """nutrition orders app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.nutritionorders"
+    name = "dfhir.nutritionorders"
     verbose_name = _("Nutrition Orders")

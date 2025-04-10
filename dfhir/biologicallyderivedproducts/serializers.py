@@ -1,6 +1,6 @@
 """Biolocically Derived Products serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -13,12 +13,12 @@ from nebula.base.serializers import (
     RangeSerializer,
     RatioSerializer,
 )
-from nebula.patients.serializers import PatientOrganizationReferenceSerializer
-from nebula.practitioners.serializers import (
+from dfhir.patients.serializers import PatientOrganizationReferenceSerializer
+from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
-from nebula.procedures.serializers import ProcedureSerializer
-from nebula.servicerequests.serializers import ServiceRequestReferenceSerializer
+from dfhir.procedures.serializers import ProcedureSerializer
+from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
 
 from .models import (
     BiologicallyDerivedProduct,

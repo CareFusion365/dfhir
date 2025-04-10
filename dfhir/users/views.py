@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from nebula.users.models import Invite, User
+from dfhir.users.models import Invite, User
 
 from .serializers import UserSerializer
 

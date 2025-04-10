@@ -8,5 +8,5 @@ class AdminsConfig(AppConfig):
     """Admin config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.admins"
+    name = "dfhir.admins"
     verbose_name = _("Admins")

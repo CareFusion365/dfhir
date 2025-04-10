@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
@@ -11,10 +11,10 @@ from nebula.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
-from nebula.conditions.serializers import ConditionCodeableReferenceSerializer
-from nebula.devices.serializers import DeviceReferenceSerializer
-from nebula.encounters.serializers import EncounterEpisodeOfCareReferenceSerializer
-from nebula.procedures.serializers import ProcedureCodeableReferenceSerializer
+from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
+from dfhir.devices.serializers import DeviceReferenceSerializer
+from dfhir.encounters.serializers import EncounterEpisodeOfCareReferenceSerializer
+from dfhir.procedures.serializers import ProcedureCodeableReferenceSerializer
 
 from .models import (
     Account,

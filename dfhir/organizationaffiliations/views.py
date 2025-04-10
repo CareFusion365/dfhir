@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.organizationaffiliations.models import OrganizationAffiliation
-from nebula.organizationaffiliations.serializers import (
+from dfhir.organizationaffiliations.models import OrganizationAffiliation
+from dfhir.organizationaffiliations.serializers import (
     OrganizationAffiliationSerializer,
 )
 

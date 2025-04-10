@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.users.models import Role, User
+from dfhir.users.models import Role, User
 
 
 class UserRoleSerializer(serializers.ModelSerializer):

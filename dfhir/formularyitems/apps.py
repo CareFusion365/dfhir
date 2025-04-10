@@ -8,5 +8,5 @@ class FormularyitemsConfig(AppConfig):
     """Formulary items app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.formularyitems"
+    name = "dfhir.formularyitems"
     verbose_name = _("Formulary Items")

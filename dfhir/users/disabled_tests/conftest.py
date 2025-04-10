@@ -1,9 +1,9 @@
-"""Pytest configuration for the nebula app."""
+"""Pytest configuration for the dfhir app."""
 
 import pytest
 
-from nebula.users.models import User
-from nebula.users.tests.factories import UserFactory
+from dfhir.users.models import User
+from dfhir.users.tests.factories import UserFactory
 
 
 @pytest.fixture(autouse=True)

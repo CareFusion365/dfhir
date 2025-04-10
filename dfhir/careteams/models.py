@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -12,7 +12,7 @@ from nebula.base.models import (
     Period,
     TimeStampedModel,
 )
-from nebula.patients.models import PatientGroupReference
+from dfhir.patients.models import PatientGroupReference
 
 from . import choices
 

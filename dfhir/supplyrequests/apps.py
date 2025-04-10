@@ -8,5 +8,5 @@ class SupplyrequestsConfig(AppConfig):
     """supply request app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.supplyrequests"
+    name = "dfhir.supplyrequests"
     verbose_name = _("Supply request")

@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -10,15 +10,15 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     SimpleQuantitySerializer,
 )
-from nebula.biologicallyderivedproductdispenses.models import (
+from dfhir.biologicallyderivedproductdispenses.models import (
     BiologicallyDerivedProductDispense,
     BiologicallyDerivedProductDispensePerformer,
     BiologicallyDerivedProductDispenseReference,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.patients.serializers import PatientReferenceSerializer
-from nebula.practitioners.serializers import PractitionerReferenceSerializer
-from nebula.servicerequests.serializers import ServiceRequestReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
+from dfhir.practitioners.serializers import PractitionerReferenceSerializer
+from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
 
 
 class BiologicallyDerivedProductDispenseReferenceSerializer(

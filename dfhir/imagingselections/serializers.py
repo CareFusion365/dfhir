@@ -3,13 +3,13 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
 )
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.imagingselections.models import (
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.imagingselections.models import (
     ImagingSelection,
     ImagingSelectionBasedOnReference,
     ImagingSelectionCodeableReference,
@@ -22,7 +22,7 @@ from nebula.imagingselections.models import (
     ImagingSelectionSubjectReference,
 )
 
-# from nebula.imagingstudy.serializers import ImagingStudyReferenceSerializer
+# from dfhir.imagingstudy.serializers import ImagingStudyReferenceSerializer
 
 
 class ImagingSelectionPerformerActorReferenceSerializer(BaseReferenceModelSerializer):
@@ -125,10 +125,10 @@ class ImagingSelectionSerializer(WritableNestedModelSerializer):
 
     def get_fields(self):
         """Get fields."""
-        from nebula.bodystructures.serializers import (
+        from dfhir.bodystructures.serializers import (
             BodyStructureCodeableReferenceSerializer,
         )
-        from nebula.imagingstudy.serializers import ImagingStudyReferenceSerializer
+        from dfhir.imagingstudy.serializers import ImagingStudyReferenceSerializer
 
         fields = super().get_fields()
         fields["body_site"] = BodyStructureCodeableReferenceSerializer(

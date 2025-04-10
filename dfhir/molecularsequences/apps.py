@@ -8,5 +8,5 @@ class MolecularsequencesConfig(AppConfig):
     """molecular sequences config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.molecularsequences"
+    name = "dfhir.molecularsequences"
     verbose_name = _("Molecular Sequences")

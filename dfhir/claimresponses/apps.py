@@ -8,5 +8,5 @@ class ClaimresponsesConfig(AppConfig):
     """Claimresponses app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.claimresponses"
+    name = "dfhir.claimresponses"
     verbose_name = _("Claim Responses")

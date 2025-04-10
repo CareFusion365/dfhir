@@ -8,5 +8,5 @@ class DetectedissuesConfig(AppConfig):
     """Detected issues app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.detectedissues"
+    name = "dfhir.detectedissues"
     verbose_name = _("Detected Issues")

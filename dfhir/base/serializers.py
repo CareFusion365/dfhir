@@ -647,7 +647,7 @@ class TriggerDefinitionSerializer(WritableNestedModelSerializer):
 
     def get_fields(self) -> dict[str, serializers.Field]:
         """Get fields."""
-        from nebula.schedules.serializers import ScheduleReferenceSerializer
+        from dfhir.schedules.serializers import ScheduleReferenceSerializer
 
         fields = super().get_fields()
 

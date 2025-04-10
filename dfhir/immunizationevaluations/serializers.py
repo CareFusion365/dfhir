@@ -1,13 +1,13 @@
 """immunization serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     OrganizationReferenceSerializer,
 )
-from nebula.immunizationevaluations.models import ImmunizationEvaluation
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.immunizationevaluations.models import ImmunizationEvaluation
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 
 class ImmunizationEvaluationSerializer(BaseWritableNestedModelSerializer):

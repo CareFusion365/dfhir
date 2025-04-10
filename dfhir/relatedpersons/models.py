@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base import choices as base_choices
-from nebula.base.models import (
+from dfhir.base import choices as base_choices
+from dfhir.base.models import (
     Address,
     Attachment,
     BaseReference,

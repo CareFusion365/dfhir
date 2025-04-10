@@ -10,10 +10,10 @@ class OrganizationsConfig(AppConfig):
     """Organizations app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.organizations"
+    name = "dfhir.organizations"
     verbose_name = _("Organizations")
 
     def ready(self):
         """Import signals."""
         with contextlib.suppress(ImportError):
-            import nebula.organizations.signals  # noqa: F401
+            import dfhir.organizations.signals  # noqa: F401

@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -12,16 +12,16 @@ from nebula.base.serializers import (
     ReferenceSerializer,
     TimingSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.medications.serializers import MedicationCodeableReferenceSerializer
-from nebula.medicationstatements.models import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.medications.serializers import MedicationCodeableReferenceSerializer
+from dfhir.medicationstatements.models import (
     MedicationStatement,
     MedicationStatementAdherence,
     MedicationStatementInformationSourceReference,
     MedicationStatementPartOfReference,
     MedicationStatementReasonReference,
 )
-from nebula.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 
 class MedicationStatementPartOfReferenceSerializer(BaseReferenceModelSerializer):

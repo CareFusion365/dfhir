@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -14,9 +14,9 @@ from nebula.base.serializers import (
     QuantitySerializer,
     RangeSerializer,
 )
-from nebula.devicedefinitions.serializers import DeviceDefinitionReferenceSerializer
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
+from dfhir.devicedefinitions.serializers import DeviceDefinitionReferenceSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 from .models import (
     Device,

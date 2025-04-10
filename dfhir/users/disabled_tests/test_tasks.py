@@ -1,8 +1,8 @@
 import pytest
 from celery.result import EagerResult
 
-from nebula.users.tasks import get_users_count
-from nebula.users.tests.factories import UserFactory
+from dfhir.users.tasks import get_users_count
+from dfhir.users.tests.factories import UserFactory
 
 pytestmark = pytest.mark.django_db
 

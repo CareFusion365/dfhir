@@ -4,7 +4,7 @@ from typing import Any
 from factory import Faker, post_generation
 from factory.django import DjangoModelFactory
 
-from nebula.users.models import User
+from dfhir.users.models import User
 
 
 class UserFactory(DjangoModelFactory):

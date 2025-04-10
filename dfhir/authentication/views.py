@@ -1,4 +1,4 @@
-"""Authentication views for the Nebula app."""
+"""Authentication views for the dfhir app."""
 
 from abc import ABC, abstractmethod
 
@@ -6,15 +6,15 @@ from dj_rest_auth.views import LoginView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from nebula.admins.models import Admin
-from nebula.admins.serializers import AdminSerializer
-from nebula.patients.models import Patient
-from nebula.patients.serializers import PatientSerializer
-from nebula.practitioners.models import Practitioner
-from nebula.practitioners.serializers import (
+from dfhir.admins.models import Admin
+from dfhir.admins.serializers import AdminSerializer
+from dfhir.patients.models import Patient
+from dfhir.patients.serializers import PatientSerializer
+from dfhir.practitioners.models import Practitioner
+from dfhir.practitioners.serializers import (
     PractitionerSerializerWithUserDetail,
 )
-from nebula.users.models import Role
+from dfhir.users.models import Role
 
 from .exceptions import AuthenticationError
 

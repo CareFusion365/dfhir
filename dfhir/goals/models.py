@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,

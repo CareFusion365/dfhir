@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.immunizationrecommendations.views import (
+from dfhir.immunizationrecommendations.views import (
     ImmunizationRecommendationDetailView,
     ImmunizationRecommendationListView,
 )

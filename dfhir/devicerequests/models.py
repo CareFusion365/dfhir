@@ -3,7 +3,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -16,9 +16,9 @@ from nebula.base.models import (
     Timing,
 )
 
-# from nebula.coverages.models import CoverageClaimReference
-# from nebula.devices.models import DeviceDeviceDefinitionCodeableReference
-from nebula.provenances.models import ProvenanceReference
+# from dfhir.coverages.models import CoverageClaimReference
+# from dfhir.devices.models import DeviceDeviceDefinitionCodeableReference
+from dfhir.provenances.models import ProvenanceReference
 
 from . import choices
 

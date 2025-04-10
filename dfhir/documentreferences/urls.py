@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.documentreferences.views import (
+from dfhir.documentreferences.views import (
     DocumentReferenceDetailView,
     DocumentReferenceListView,
 )

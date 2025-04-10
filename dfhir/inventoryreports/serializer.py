@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -11,7 +11,7 @@ from nebula.base.serializers import (
     PeriodSerializer,
     QuantitySerializer,
 )
-from nebula.inventoryreports.models import (
+from dfhir.inventoryreports.models import (
     InventoryReport,
     InventoryReportInventoryListing,
     InventoryReportInventoryListingItem,
@@ -19,7 +19,7 @@ from nebula.inventoryreports.models import (
     InventoryReportInventoryListingItemItemReference,
     InventoryReportReporterReference,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 
 class InventoryReportReporterReferenceSerializer(BaseReferenceModelSerializer):

@@ -3,7 +3,7 @@
 from celery import shared_task
 from django.utils.timezone import timedelta
 
-from nebula.slots.models import Slot
+from dfhir.slots.models import Slot
 
 from .models import Schedule
 

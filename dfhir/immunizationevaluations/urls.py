@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.immunizationevaluations import views
+from dfhir.immunizationevaluations import views
 
 app_name = "immunizationevaluations"
 

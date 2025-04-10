@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.paymentreconciliations import views
+from dfhir.paymentreconciliations import views
 
 app_name = "paymentreconciliations"
 

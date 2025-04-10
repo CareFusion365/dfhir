@@ -4,7 +4,7 @@ from django.conf import settings
 import django.core.validators
 from django.db import migrations, models
 import django.db.models.deletion
-import nebula.users.managers
+import dfhir.users.managers
 
 
 class Migration(migrations.Migration):
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
             managers=[
-                ('objects', nebula.users.managers.UserManager()),
+                ('objects', dfhir.users.managers.UserManager()),
             ],
         ),
         migrations.CreateModel(

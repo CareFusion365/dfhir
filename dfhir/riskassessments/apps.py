@@ -8,5 +8,5 @@ class RiskassessmentsConfig(AppConfig):
     """Risk assessments app Config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.riskassessments"
+    name = "dfhir.riskassessments"
     verbose_name = _("Risk Assessments")

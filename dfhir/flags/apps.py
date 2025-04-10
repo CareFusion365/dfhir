@@ -8,5 +8,5 @@ class FlagsConfig(AppConfig):
     """Flag app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.flags"
+    name = "dfhir.flags"
     verbose_name = _("Flags")

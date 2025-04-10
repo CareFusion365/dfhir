@@ -8,5 +8,5 @@ class CommunicationsConfig(AppConfig):
     """Communications app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.communications"
+    name = "dfhir.communications"
     verbose_name = _("Communications")

@@ -3,7 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
@@ -14,7 +14,7 @@ from nebula.base.serializers import (
     QuantitySerializer,
     RatioSerializer,
 )
-from nebula.substances.serializers import SubstanceCodeableReferenceSerializer
+from dfhir.substances.serializers import SubstanceCodeableReferenceSerializer
 
 from .models import (
     NutritionProduct,

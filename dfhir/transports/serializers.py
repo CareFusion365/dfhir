@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -11,10 +11,10 @@ from nebula.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
-from nebula.transports.models import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
+from dfhir.transports.models import (
     Transport,
     TransportBasedOnReference,
     TransportInput,

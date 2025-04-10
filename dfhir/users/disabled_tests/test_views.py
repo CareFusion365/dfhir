@@ -11,10 +11,10 @@ from django.test import RequestFactory
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from nebula.users.forms import UserAdminChangeForm
-from nebula.users.models import User
-from nebula.users.tests.factories import UserFactory
-from nebula.users.views import UserRedirectView, UserUpdateView, user_detail_view
+from dfhir.users.forms import UserAdminChangeForm
+from dfhir.users.models import User
+from dfhir.users.tests.factories import UserFactory
+from dfhir.users.views import UserRedirectView, UserUpdateView, user_detail_view
 
 pytestmark = pytest.mark.django_db
 

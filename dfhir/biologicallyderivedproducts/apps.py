@@ -8,5 +8,5 @@ class BiologicallyderivedproductsConfig(AppConfig):
     """Biologically Derived Products app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.biologicallyderivedproducts"
+    name = "dfhir.biologicallyderivedproducts"
     verbose_name = _("Biologically Derived Products")

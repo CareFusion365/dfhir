@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
@@ -11,11 +11,11 @@ from nebula.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from nebula.coverages.serializers import CoverageClaimResponseReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.provenances.serializers import ProvenanceReferenceSerializer
-from nebula.tasks.models import (
+from dfhir.coverages.serializers import CoverageClaimResponseReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.provenances.serializers import ProvenanceReferenceSerializer
+from dfhir.tasks.models import (
     Task,
     TaskInput,
     TaskOutput,

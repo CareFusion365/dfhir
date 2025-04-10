@@ -3,17 +3,17 @@
 from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.endpoints.serializers import EndpointReferenceSerializer
-from nebula.imagingstudy.models import (
+from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
+from dfhir.imagingstudy.models import (
     ImagingStudy,
     ImagingStudyBasedOnReference,
     ImagingStudyProcedureReference,
@@ -25,11 +25,11 @@ from nebula.imagingstudy.models import (
     ImagingStudySeriesPerformerActorReference,
     ImagingStudySubjectReference,
 )
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.practitioners.serializers import (
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
-from nebula.specimens.serializers import SpecimenReferenceSerializer
+from dfhir.specimens.serializers import SpecimenReferenceSerializer
 
 
 class ImagingStudySubjectReferenceSerializer(BaseReferenceModelSerializer):

@@ -2,8 +2,8 @@
 
 from django.utils.translation import gettext_lazy as _
 
-from nebula.users.forms import UserAdminCreationForm
-from nebula.users.models import User
+from dfhir.users.forms import UserAdminCreationForm
+from dfhir.users.models import User
 
 
 class TestUserAdminCreationForm:

@@ -2,14 +2,14 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     Reference,
     TimeStampedModel,
 )
-from nebula.riskassessments.choices import RiskAssessmentStatusChoices
+from dfhir.riskassessments.choices import RiskAssessmentStatusChoices
 
 
 class RiskAssessmentPrediction(TimeStampedModel):

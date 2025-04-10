@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.specimens.models import Specimen
-from nebula.specimens.serializers import SpecimenSerializer
+from dfhir.specimens.models import Specimen
+from dfhir.specimens.serializers import SpecimenSerializer
 
 
 class SpecimenListView(APIView):

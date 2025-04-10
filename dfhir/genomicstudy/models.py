@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Annotation,
     BaseReference,
     CodeableConcept,
@@ -10,13 +10,13 @@ from nebula.base.models import (
     Reference,
     TimeStampedModel,
 )
-from nebula.conditions.models import ConditionObservationCodeableReference
-from nebula.encounters.models import EncounterReference
-from nebula.genomicstudy.choices import GenomicStudyStatusChoices
-from nebula.observations.models import DocumentReferenceObservationReference
-from nebula.practitioners.models import PractitionerPractitionerRoleReference
-from nebula.servicerequests.models import ServiceRequest
-from nebula.specimens.models import SpecimenReference
+from dfhir.conditions.models import ConditionObservationCodeableReference
+from dfhir.encounters.models import EncounterReference
+from dfhir.genomicstudy.choices import GenomicStudyStatusChoices
+from dfhir.observations.models import DocumentReferenceObservationReference
+from dfhir.practitioners.models import PractitionerPractitionerRoleReference
+from dfhir.servicerequests.models import ServiceRequest
+from dfhir.specimens.models import SpecimenReference
 
 
 class GenomicStudyReference(BaseReference):

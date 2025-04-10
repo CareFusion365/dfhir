@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
@@ -11,7 +11,7 @@ from nebula.base.models import (
     Ratio,
     TimeStampedModel,
 )
-from nebula.medications.choices import MedicationStatus
+from dfhir.medications.choices import MedicationStatus
 
 
 class MedicationCodes(TimeStampedModel):

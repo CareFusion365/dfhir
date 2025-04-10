@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.activitydefinitions.models import ActivityDefinition
-from nebula.activitydefinitions.serializers import ActivityDefinitionSerializer
+from dfhir.activitydefinitions.models import ActivityDefinition
+from dfhir.activitydefinitions.serializers import ActivityDefinitionSerializer
 
 
 class ActivityDefinitionListView(APIView):

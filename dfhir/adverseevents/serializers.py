@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -10,11 +10,11 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.conditions.serializers import (
+from dfhir.conditions.serializers import (
     ConditionObservationCodeableReferenceSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 from .models import (
     AdverseEvent,

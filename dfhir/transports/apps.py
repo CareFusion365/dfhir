@@ -8,5 +8,5 @@ class TransportsConfig(AppConfig):
     """Transport app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.transports"
+    name = "dfhir.transports"
     verbose_name = _("Transports")

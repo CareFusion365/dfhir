@@ -1,4 +1,4 @@
-"""choices module for nebula observations."""
+"""choices module for dfhir observations."""
 
 from django.db.models import TextChoices
 from django.utils.translation import gettext_lazy as _

@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.genomicstudy import views
+from dfhir.genomicstudy import views
 
 app_name = "genomicstudy"
 

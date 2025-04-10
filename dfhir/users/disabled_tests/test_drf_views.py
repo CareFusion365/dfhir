@@ -1,8 +1,8 @@
 import pytest
 from rest_framework.test import APIRequestFactory
 
-from nebula.users.api.views import UserViewSet
-from nebula.users.models import User
+from dfhir.users.api.views import UserViewSet
+from dfhir.users.models import User
 
 
 class TestUserViewSet:

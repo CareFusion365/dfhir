@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.supplydelivery.models import SupplyDelivery
-from nebula.supplydelivery.serializers import SupplyDeliverySerializer
+from dfhir.supplydelivery.models import SupplyDelivery
+from dfhir.supplydelivery.serializers import SupplyDeliverySerializer
 
 
 class SupplyDeliveryListView(APIView):

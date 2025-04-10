@@ -3,15 +3,15 @@
 from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     QuantitySerializer,
     RangeSerializer,
 )
-from nebula.documentreferences.serializers import DocumentReferenceReferenceSerializer
-from nebula.moleculardefinitions.models import (
+from dfhir.documentreferences.serializers import DocumentReferenceReferenceSerializer
+from dfhir.moleculardefinitions.models import (
     MolecularDefinition,
     MolecularDefinitionCoordinateInterval,
     MolecularDefinitionCoordinateIntervalCoordinateSystem,

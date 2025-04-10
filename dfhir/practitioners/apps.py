@@ -10,10 +10,10 @@ class PractitionersConfig(AppConfig):
     """Practitioners app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.practitioners"
+    name = "dfhir.practitioners"
     verbose_name = _("Practitioners")
 
     def ready(self):
         """Import signals."""
         with contextlib.suppress(ImportError):
-            import nebula.practitioners.signals  # noqa: F401
+            import dfhir.practitioners.signals  # noqa: F401

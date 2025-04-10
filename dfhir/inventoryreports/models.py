@@ -2,15 +2,15 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
-from nebula.biologicallyderivedproducts.models import BiologicallyDerivedProduct
-from nebula.devices.models import Device
-from nebula.inventoryreports.choices import (
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.biologicallyderivedproducts.models import BiologicallyDerivedProduct
+from dfhir.devices.models import Device
+from dfhir.inventoryreports.choices import (
     InventoryReportCountTypeChoices,
     InventoryReportStatusChoices,
 )
-from nebula.medications.models import Medication
-from nebula.nutritionproducts.models import NutritionProduct
+from dfhir.medications.models import Medication
+from dfhir.nutritionproducts.models import NutritionProduct
 
 
 class InventoryReportInventoryListingItemItemReference(BaseReference):

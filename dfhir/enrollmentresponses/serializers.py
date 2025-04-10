@@ -1,12 +1,12 @@
 """Enrollment responses serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     IdentifierSerializer,
     OrganizationReferenceSerializer,
 )
-from nebula.enrollmentrequests.serializers import EnrollmentRequestReferenceSerializer
+from dfhir.enrollmentrequests.serializers import EnrollmentRequestReferenceSerializer
 
 from .models import (
     EnrollmentResponse,

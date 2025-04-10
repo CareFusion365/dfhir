@@ -1,15 +1,15 @@
 """Schedule serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     PeriodSerializer,
 )
-from nebula.schedules.models import Schedule, ScheduleReference, SchedulesActorReference
+from dfhir.schedules.models import Schedule, ScheduleReference, SchedulesActorReference
 
-# from nebula.healthcareservices.serializers import HealthCareServiceCodeableReferenceSerializer
+# from dfhir.healthcareservices.serializers import HealthCareServiceCodeableReferenceSerializer
 
 
 class ActorSerializer(BaseReferenceModelSerializer):

@@ -8,5 +8,5 @@ class AuthenticationConfig(AppConfig):
     """App configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.authentication"
+    name = "dfhir.authentication"
     verbose_name = _("Authentication")

@@ -3,17 +3,17 @@
 from drf_writable_nested import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.accounts.serializers import AccountReferenceSerializer
-from nebula.base.serializers import (
+from dfhir.accounts.serializers import AccountReferenceSerializer
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
     MoneySerializer,
     PeriodSerializer,
 )
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
-from nebula.paymentreconciliations.models import (
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
+from dfhir.paymentreconciliations.models import (
     OrganizationPractitionerPractitionerRoleReference,
     PaymentReconciliation,
     PaymentReconciliationAllocation,
@@ -22,7 +22,7 @@ from nebula.paymentreconciliations.models import (
     PaymentReconciliationProcessNote,
     PaymentReconciliationReference,
 )
-from nebula.practitioners.serializers import PractitionerRoleReferenceSerializer
+from dfhir.practitioners.serializers import PractitionerRoleReferenceSerializer
 
 
 class OrganizationPractitionerPractitionerRoleReferenceSerializer(

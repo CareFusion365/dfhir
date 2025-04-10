@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from nebula.base import choices as base_choices
-from nebula.base.models import (
+from dfhir.base import choices as base_choices
+from dfhir.base.models import (
     Address,
     Attachment,
     BaseReference,

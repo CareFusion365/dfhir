@@ -8,5 +8,5 @@ class ProceduresConfig(AppConfig):
     """procedures app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.procedures"
+    name = "dfhir.procedures"
     verbose_name = _("Procedures")

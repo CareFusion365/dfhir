@@ -1,4 +1,4 @@
-"""Base validators for the Nebula app."""
+"""Base validators for the dfhir app."""
 
 from django.utils import timezone
 from rest_framework import serializers

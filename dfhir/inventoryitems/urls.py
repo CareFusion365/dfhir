@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.inventoryitems.views import InventoryItemDetailView, InventoryItemListView
+from dfhir.inventoryitems.views import InventoryItemDetailView, InventoryItemListView
 
 app_name = "inventoryitems"
 

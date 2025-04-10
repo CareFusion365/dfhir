@@ -8,8 +8,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.users.models import Invite
-from nebula.users.serializers import UserSerializer
+from dfhir.users.models import Invite
+from dfhir.users.serializers import UserSerializer
 
 from .models import Patient
 from .serializers import PatientSerializer

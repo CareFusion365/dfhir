@@ -8,5 +8,5 @@ class ObservationsConfig(AppConfig):
     """Observations app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.observations"
+    name = "dfhir.observations"
     verbose_name = _("Observations")

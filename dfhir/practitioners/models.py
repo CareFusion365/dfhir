@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from nebula.base import choices as base_choices
-from nebula.base.models import (
+from dfhir.base import choices as base_choices
+from dfhir.base.models import (
     Address,
     Attachment,
     Availability,
@@ -21,12 +21,12 @@ from nebula.base.models import (
     Qualification,
     TimeStampedModel,
 )
-from nebula.endpoints.models import EndpointReference
-from nebula.healthcareservices.models import (
+from dfhir.endpoints.models import EndpointReference
+from dfhir.healthcareservices.models import (
     HealthCareServiceReference,
 )
-from nebula.locations.models import LocationReference
-from nebula.organizations.models import Organization
+from dfhir.locations.models import LocationReference
+from dfhir.organizations.models import Organization
 
 
 class PractitionerReference(BaseReference):

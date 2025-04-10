@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -10,7 +10,7 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     QuantitySerializer,
 )
-from nebula.bodystructures.models import (
+from dfhir.bodystructures.models import (
     BodyLandmarkOrientation,
     BodyStructure,
     BodyStructureCodeableReference,
@@ -18,9 +18,9 @@ from nebula.bodystructures.models import (
     DistanceFromLandmark,
     IncludedStructure,
 )
-from nebula.devices.serializers import DeviceReferenceSerializer
-from nebula.imagingselections.serializers import ImagingSelectionReferenceSerializer
-from nebula.patients.serializers import PatientReferenceSerializer
+from dfhir.devices.serializers import DeviceReferenceSerializer
+from dfhir.imagingselections.serializers import ImagingSelectionReferenceSerializer
+from dfhir.patients.serializers import PatientReferenceSerializer
 
 
 class DistanceFromLandmarkSerializer(WritableNestedModelSerializer):

@@ -8,5 +8,5 @@ class EpisodeofcareConfig(AppConfig):
     """Episode of Care app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.episodeofcare"
+    name = "dfhir.episodeofcare"
     verbose_name = _("Episode of Care")

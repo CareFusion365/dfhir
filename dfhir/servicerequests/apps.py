@@ -8,5 +8,5 @@ class ServicerequestsConfig(AppConfig):
     """Service requests app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.servicerequests"
+    name = "dfhir.servicerequests"
     verbose_name = _("Service Requests")

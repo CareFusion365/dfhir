@@ -2,8 +2,8 @@
 
 from django.db import models
 
-from nebula.base.models import BaseReference, Identifier, TimeStampedModel
-from nebula.supplydelivery.choices import SupplyDeliveryStatusChoices
+from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.supplydelivery.choices import SupplyDeliveryStatusChoices
 
 
 class SupplyDeliveryContractReference(BaseReference):

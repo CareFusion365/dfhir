@@ -3,13 +3,13 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
 )
-from nebula.molecularsequences.models import (
+from dfhir.molecularsequences.models import (
     MolecularSequence,
     MolecularSequenceConcatenated,
     MolecularSequenceConcatenatedSequenceElement,

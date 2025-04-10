@@ -1,4 +1,4 @@
-"""Utility functions for Nebula."""
+"""Utility functions for dfhir."""
 
 import re
 

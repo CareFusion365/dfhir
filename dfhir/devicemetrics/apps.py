@@ -8,5 +8,5 @@ class DevicemetricsConfig(AppConfig):
     """Device Metrics app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.devicemetrics"
+    name = "dfhir.devicemetrics"
     verbose_name = _("Device Metrics")

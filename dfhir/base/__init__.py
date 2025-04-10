@@ -1,1 +1,1 @@
-"""Base module for Nebula."""
+"""Base module for dfhir."""

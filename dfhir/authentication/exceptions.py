@@ -1,4 +1,4 @@
-"""Authentication exceptions for Nebula."""
+"""Authentication exceptions for dfhir."""
 
 from rest_framework.exceptions import ValidationError, _get_error_details
 

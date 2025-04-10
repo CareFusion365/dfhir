@@ -3,8 +3,8 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
-from nebula.base.models import ServiceType
-from nebula.base.serializers import (
+from dfhir.base.models import ServiceType
+from dfhir.base.serializers import (
     AttachmentSerializer,
     AvailabilitySerializer,
     BaseReferenceModelSerializer,
@@ -17,8 +17,8 @@ from nebula.base.serializers import (
     RangeSerializer,
     ReferenceSerializer,
 )
-from nebula.endpoints.serializers import EndpointSerializer
-from nebula.locations.serializers import LocationReferenceSerializer
+from dfhir.endpoints.serializers import EndpointSerializer
+from dfhir.locations.serializers import LocationReferenceSerializer
 
 from .models import (
     ClinicalSpecialty,

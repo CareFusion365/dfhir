@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -14,8 +14,8 @@ from nebula.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from nebula.bodystructures.serializers import BodyStructureReferenceSerializer
-from nebula.documentreferences.models import (
+from dfhir.bodystructures.serializers import BodyStructureReferenceSerializer
+from dfhir.documentreferences.models import (
     DocumentReference,
     DocumentReferenceAttester,
     DocumentReferenceAttesterPartyReference,

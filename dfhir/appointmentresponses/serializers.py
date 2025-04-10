@@ -1,7 +1,7 @@
 """Appointment Responses Serializers."""
 
-from nebula.appointments.serializers import AppointmentReferenceSerializer
-from nebula.base.serializers import (
+from dfhir.appointments.serializers import AppointmentReferenceSerializer
+from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,

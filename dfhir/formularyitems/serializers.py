@@ -1,11 +1,11 @@
 """formulary item serializers."""
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     IdentifierSerializer,
 )
-from nebula.formularyitems.models import FormularyItem, FormularyItemReference
+from dfhir.formularyitems.models import FormularyItem, FormularyItemReference
 
 
 class FormularyItemSerializer(BaseWritableNestedModelSerializer):

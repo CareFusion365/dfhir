@@ -8,5 +8,5 @@ class EncountersConfig(AppConfig):
     """Encounter Configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.encounters"
+    name = "dfhir.encounters"
     verbose_name = _("Encounters")

@@ -2,7 +2,7 @@
 
 from drf_writable_nested import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
@@ -10,13 +10,13 @@ from nebula.base.serializers import (
     IdentifierSerializer,
     ReferenceSerializer,
 )
-from nebula.conditions.serializers import (
+from dfhir.conditions.serializers import (
     ConditionObservationCodeableReferenceSerializer,
 )
-from nebula.devices.serializers import DeviceReferenceSerializer
-from nebula.documentreferences.serializers import DocumentReferenceReferenceSerializer
-from nebula.encounters.serializers import EncounterReferenceSerializer
-from nebula.genomicstudy.models import (
+from dfhir.devices.serializers import DeviceReferenceSerializer
+from dfhir.documentreferences.serializers import DocumentReferenceReferenceSerializer
+from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.genomicstudy.models import (
     GenomicStudy,
     GenomicStudyAnalysis,
     GenomicStudyAnalysisDevice,
@@ -29,13 +29,13 @@ from nebula.genomicstudy.models import (
     GenomicStudyReference,
     GenomicStudySubjectReference,
 )
-from nebula.observations.serializers import (
+from dfhir.observations.serializers import (
     DocumentReferenceObservationReferenceSerializer,
 )
-from nebula.practitioners.serializers import (
+from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
-from nebula.specimens.serializers import SpecimenReferenceSerializer
+from dfhir.specimens.serializers import SpecimenReferenceSerializer
 
 
 class GenomicStudyReferenceSerializer(BaseReferenceModelSerializer):

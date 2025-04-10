@@ -2,7 +2,7 @@
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
-from nebula.base.serializers import (
+from dfhir.base.serializers import (
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     CodingSerializer,
@@ -13,7 +13,7 @@ from nebula.base.serializers import (
     RangeSerializer,
     UsageContextSerializer,
 )
-from nebula.groups.serializers import GroupReferenceSerializer
+from dfhir.groups.serializers import GroupReferenceSerializer
 
 from .models import (
     SpecimenDefinition,

@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from nebula.organizationaffiliations.views import (
+from dfhir.organizationaffiliations.views import (
     OrganizationAffiliationDetailview,
     OrganizationAffiliationListview,
 )

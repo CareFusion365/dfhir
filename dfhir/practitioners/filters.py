@@ -2,7 +2,7 @@
 
 from django_filters import rest_framework as filters
 
-from nebula.practitioners.models import PractitionerExt
+from dfhir.practitioners.models import PractitionerExt
 
 
 class PractitionerFilter(filters.FilterSet):

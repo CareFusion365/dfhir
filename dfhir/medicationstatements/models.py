@@ -2,14 +2,14 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     BaseReference,
     CodeableConcept,
     Identifier,
     Reference,
     TimeStampedModel,
 )
-from nebula.medicationstatements.choices import MedicationStatementStatusChoices
+from dfhir.medicationstatements.choices import MedicationStatementStatusChoices
 
 
 class MedicationStatementPartOfReference(BaseReference):

@@ -7,5 +7,5 @@ class MoleculardefinitionsConfig(AppConfig):
     """molecular definitions app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.moleculardefinitions"
+    name = "dfhir.moleculardefinitions"
     verbose_name = "Molecular Definitions"

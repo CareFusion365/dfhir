@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from nebula.inventoryitems.models import InventoryItem
-from nebula.inventoryitems.serializers import InventoryItemSerializer
+from dfhir.inventoryitems.models import InventoryItem
+from dfhir.inventoryitems.serializers import InventoryItemSerializer
 
 
 class InventoryItemListView(APIView):

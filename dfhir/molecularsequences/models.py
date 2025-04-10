@@ -2,14 +2,14 @@
 
 from django.db import models
 
-from nebula.base.models import (
+from dfhir.base.models import (
     Attachment,
     BaseReference,
     CodeableConcept,
     Identifier,
     TimeStampedModel,
 )
-from nebula.molecularsequences.choices import MolecularSequenceTypeChoices
+from dfhir.molecularsequences.choices import MolecularSequenceTypeChoices
 
 
 class MolecularSequenceReference(BaseReference):

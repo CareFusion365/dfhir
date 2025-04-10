@@ -8,5 +8,5 @@ class ContractsConfig(AppConfig):
     """Contracts app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "nebula.contracts"
+    name = "dfhir.contracts"
     verbose_name = _("Contracts")
