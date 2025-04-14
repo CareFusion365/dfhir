@@ -127,7 +127,7 @@ class RecurrenceTemplate(TimeStampedModel):
     excluding_date = ArrayField(models.DateField(), null=True)
 
 
-class EncounterReason(TimeStampedModel):
+class AppointmentEncounterReason(TimeStampedModel):
     """Reason this appointment is scheduled."""
 
     display = models.CharField(max_length=255, null=True)
