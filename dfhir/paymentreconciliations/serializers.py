@@ -22,7 +22,7 @@ from dfhir.paymentreconciliations.models import (
     PaymentReconciliationProcessNote,
     PaymentReconciliationReference,
 )
-from dfhir.practitioners.serializers import PractitionerRoleReferenceSerializer
+from dfhir.practitionerroles.serializers import PractitionerRoleReferenceSerializer
 
 
 class OrganizationPractitionerPractitionerRoleReferenceSerializer(

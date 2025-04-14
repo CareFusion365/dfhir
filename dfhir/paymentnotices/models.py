@@ -30,7 +30,7 @@ class PaymentNoticeReporterReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="payment_notice_reporter_reference",
         null=True,
@@ -59,7 +59,7 @@ class PaymentNoticePayeeReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="payment_notice_payee_reference",
         null=True,

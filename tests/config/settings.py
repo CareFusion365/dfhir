@@ -122,6 +122,7 @@ INSTALLED_APPS = [
     "dfhir.devicerequests",
     "dfhir.activitydefinitions",
     "dfhir.biologicallyderivedproductdispenses",
+    "dfhir.practitionerroles",
 ]
 
 MIDDLEWARE = [

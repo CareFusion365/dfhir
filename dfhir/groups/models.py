@@ -204,7 +204,7 @@ class GroupMemberEntityReference(BaseReference):
         related_name="group_member_entity_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         null=True,
         related_name="group_member_entity_reference_practitioner_role",
@@ -263,7 +263,7 @@ class GroupManagingEntityReference(BaseReference):
         related_name="group_managing_entity_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         null=True,
         related_name="group_managing_entity_reference_practitioner_role",

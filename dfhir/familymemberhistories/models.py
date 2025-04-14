@@ -32,7 +32,7 @@ class FamilyMemberHistoryParticipantActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="family_member_history_participant_actor_reference_practitioner_role",
         null=True,

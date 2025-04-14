@@ -330,6 +330,9 @@ urlpatterns = [
             namespace="biologicallyderivedproductdispenses",
         ),
     ),
+    path(
+        "api/", include("dfhir.practitionerroles.urls", namespace="practitionerroles")
+    ),
     # path("api/", include("dfhir.provenances.urls", namespace="provenance")),
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]

@@ -74,7 +74,7 @@ class RiskAssessmentPerformerReference(BaseReference):
         related_name="risk_assessment_performer_references_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="risk_assessment_performer_references_practitioner_role",

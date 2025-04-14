@@ -306,7 +306,7 @@ class EncounterParticipantActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="encounter_participant_actor_practitioner_role",
         null=True,

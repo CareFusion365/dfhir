@@ -191,7 +191,7 @@ class DiagnosticReportPerformerReference(BaseReference):
         related_name="performer_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="performer_practitioner_role",

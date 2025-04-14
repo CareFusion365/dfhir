@@ -174,15 +174,15 @@ class PaymentReconciliationAllocation(TimeStampedModel):
         null=True,
         related_name="payment_reconciliation_allocation_submitter",
     )
-    # TODO: response = models.ForeignKey(
-    #     "claimresponses.ClainResponse",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_allocation_response",
-    # )
+    response = models.ForeignKey(
+        "claimresponses.ClaimResponse",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_allocation_response",
+    )
     date = models.DateField(null=True)
     responsible = models.ForeignKey(
-        "practitioners.PractitionerRoleReference",
+        "practitionerroles.PractitionerRoleReference",
         on_delete=models.CASCADE,
         null=True,
         related_name="payment_reconciliation_allocation_responsible",

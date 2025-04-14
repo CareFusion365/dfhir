@@ -141,7 +141,7 @@ class DocumentReferenceAuthorReference(BaseReference):
         related_name="document_reference_author_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="document_reference_author_reference_practitioner_role",
@@ -212,7 +212,7 @@ class DocumentReferenceAttesterPartyReference(BaseReference):
         related_name="document_reference_attester_party_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="document_reference_attester_party_reference_practitioner_role",

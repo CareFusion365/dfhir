@@ -53,7 +53,7 @@ class CarePlanCustodianReference(BaseReference):
         "practitioners.Practitioner", on_delete=models.SET_NULL, null=True
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole", on_delete=models.SET_NULL, null=True
+        "practitionerroles.PRactitionerRole", on_delete=models.SET_NULL, null=True
     )
     device = models.ForeignKey("devices.Device", on_delete=models.SET_NULL, null=True)
     related_person = models.ForeignKey(

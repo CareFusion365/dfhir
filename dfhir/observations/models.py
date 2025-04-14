@@ -249,7 +249,7 @@ class ObservationPerformerReference(BaseReference):
         related_name="observation_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="observation_performer_reference_practitioner_role",

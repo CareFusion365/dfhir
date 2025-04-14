@@ -19,7 +19,7 @@ class MedicationDispensePerformerActorReference(BaseReference):
         "practitioners.Practitioner", on_delete=models.SET_NULL, null=True
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole", on_delete=models.SET_NULL, null=True
+        "practitionerroles.PRactitionerRole", on_delete=models.SET_NULL, null=True
     )
     organization = models.ForeignKey(
         "organizations.Organization", on_delete=models.SET_NULL, null=True
@@ -53,7 +53,7 @@ class MedicationDispenseReceiverReference(BaseReference):
         "locations.Location", on_delete=models.SET_NULL, null=True
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole", on_delete=models.SET_NULL, null=True
+        "practitionerroles.PRactitionerRole", on_delete=models.SET_NULL, null=True
     )
 
 
@@ -82,7 +82,7 @@ class MedicationDispenseSubstitutionResponsiblePartyReference(BaseReference):
         "practitioners.Practitioner", on_delete=models.SET_NULL, null=True
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole", on_delete=models.SET_NULL, null=True
+        "practitionerroles.PRactitionerRole", on_delete=models.SET_NULL, null=True
     )
     organization = models.ForeignKey(
         "organizations.Organization", on_delete=models.SET_NULL, null=True

@@ -93,7 +93,7 @@ class ActivityDefinitionParticipantTypeReference(BaseReference):
         related_name="activity_definition_practitioner_type_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="activity_definition_practitioner_type_reference_practitioner_role",

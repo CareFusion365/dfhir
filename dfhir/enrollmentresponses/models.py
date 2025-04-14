@@ -28,7 +28,7 @@ class EnrollmentResponseRequestProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         related_name="enrollment_response_request_provider_reference_practitioner_role",
         on_delete=models.CASCADE,
         null=True,

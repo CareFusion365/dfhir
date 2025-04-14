@@ -209,7 +209,7 @@ class NutritionIntakePerformerActorReference(BaseReference):
         related_name="nutrition_intake_performer_actor_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="nutrition_intake_performer_actor_reference_practitioner_role",

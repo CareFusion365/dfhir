@@ -38,7 +38,7 @@ class ExplanationOfBenefitEntererReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="explanation_of_benefit_enterer_reference_practitioner_role",
         null=True,
@@ -73,7 +73,7 @@ class ExplanationOfBenefitProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="explanation_of_benefit_provider_reference_practitioner_role",
         null=True,
@@ -184,7 +184,7 @@ class ExplanationOfBenefitPayeePartyReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="explanation_of_benefit_payee_party_reference_practitioner_role",
         null=True,

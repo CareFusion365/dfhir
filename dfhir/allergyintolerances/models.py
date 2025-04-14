@@ -33,7 +33,7 @@ class AllergyIntoleranceRecorderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="allergy_intolerance_recorder_reference_practitioner_role",
         null=True,
@@ -74,7 +74,7 @@ class AllergyIntoleranceAsserterReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="allergy_intolerance_asserter_reference_practitioner_role",
         null=True,

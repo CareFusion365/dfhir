@@ -49,7 +49,7 @@ class DeviceDispenseReceiverReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="device_dispense_receiver_reference_practitioner_role",
         null=True,
@@ -84,7 +84,7 @@ class DeviceDispensePerformerActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.CASCADE,
         related_name="device_dispense_performer_actor_reference_practitioner_role",
         null=True,

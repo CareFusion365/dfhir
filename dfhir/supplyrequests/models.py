@@ -55,7 +55,7 @@ class SupplyRequestRequesterReference(BaseReference):
         related_name="supply_request_requester_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="supply_reques_requestert_reference_practitioner_role",

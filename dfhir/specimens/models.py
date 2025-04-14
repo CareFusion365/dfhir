@@ -67,7 +67,7 @@ class SpecimenCollectorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="specimen_collector_reference_practitioner_role",
         null=True,
@@ -167,7 +167,7 @@ class SpecimenProcessingPerformerReference(BaseReference):
         related_name="specimen_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PRactitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="specimen_performer_reference_practitioner_role",
