@@ -8,10 +8,10 @@ from dfhir.base.models import (
     Attachment,
     BaseReference,
     CodeableConcept,
-    Communication,
     ContactPoint,
     HumanName,
     Identifier,
+    OralCommunication,
     Period,
     TimeStampedModel,
 )
@@ -58,7 +58,7 @@ class RelatedPerson(TimeStampedModel):
         null=True,
     )
     communication = models.ManyToManyField(
-        Communication, related_name="relatedpersons_communication", blank=True
+        OralCommunication, related_name="relatedpersons_communication", blank=True
     )
 
 

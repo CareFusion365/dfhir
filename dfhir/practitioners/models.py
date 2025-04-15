@@ -9,11 +9,11 @@ from dfhir.base.models import (
     Availability,
     BaseReference,
     CodeableConcept,
-    Communication,
     ContactPoint,
     ExtendedContactDetail,
     HumanName,
     Identifier,
+    OralCommunication,
     OrganizationReference,
     Period,
     Qualification,
@@ -80,7 +80,7 @@ class Practitioner(TimeStampedModel):
         Qualification, related_name="practitioner_qualification", blank=True
     )
     communication = models.ManyToManyField(
-        Communication, related_name="practitioner_communication", blank=True
+        OralCommunication, related_name="practitioner_communication", blank=True
     )
 
 

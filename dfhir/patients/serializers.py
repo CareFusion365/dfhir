@@ -8,10 +8,10 @@ from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
-    CommunicationSerializer,
     ContactPointSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
+    OralCommunicationSerializer,
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
@@ -99,7 +99,7 @@ class PatientSerializer(WritableNestedModelSerializer):
     telecom = ContactPointSerializer(many=True, required=False)
     marital_status = CodeableConceptSerializer(required=False)
     photo = AttachmentSerializer(many=True, required=False)
-    communication = CommunicationSerializer(many=True, required=False)
+    communication = OralCommunicationSerializer(many=True, required=False)
     contact = PatientContactSerializer(many=True, required=False)
     address = AddressSerializer(many=True, required=False)
     managing_organization = OrganizationReferenceSerializer(required=False)

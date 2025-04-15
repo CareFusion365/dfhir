@@ -6,10 +6,10 @@ from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
-    CommunicationSerializer,
     ContactPointSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
+    OralCommunicationSerializer,
     PeriodSerializer,
 )
 from dfhir.patients.serializers import PatientReferenceSerializer
@@ -41,7 +41,7 @@ class RelatedPersonSerializer(BaseWritableNestedModelSerializer):
     address = AddressSerializer(many=True, required=False)
     photo = AttachmentSerializer(many=True, required=False)
     period = PeriodSerializer(required=False)
-    communication = CommunicationSerializer(many=True, required=False)
+    communication = OralCommunicationSerializer(many=True, required=False)
 
     class Meta:
         """Meta class."""

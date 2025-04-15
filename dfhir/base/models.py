@@ -447,7 +447,7 @@ class Annotation(TimeStampedModel):
     text = models.TextField(null=True)
 
 
-class Communication(TimeStampedModel):
+class OralCommunication(TimeStampedModel):
     """communication model."""
 
     language = models.ForeignKey(

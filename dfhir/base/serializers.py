@@ -16,7 +16,6 @@ from .models import (
     CodeableConcept,
     CodeableReference,
     Coding,
-    Communication,
     ContactDetail,
     ContactPoint,
     Duration,
@@ -27,6 +26,7 @@ from .models import (
     MonetaryComponent,
     Money,
     NotAvailableTime,
+    OralCommunication,
     OrganizationReference,
     Payload,
     Period,
@@ -398,15 +398,15 @@ class AnnotationSerializer(WritableNestedModelSerializer):
         exclude = ["created_at", "updated_at"]
 
 
-class CommunicationSerializer(WritableNestedModelSerializer):
-    """Patient communication serializer."""
+class OralCommunicationSerializer(WritableNestedModelSerializer):
+    """oral communication serializer."""
 
     language = CodeableConceptSerializer(required=False)
 
     class Meta:
         """Meta class."""
 
-        model = Communication
+        model = OralCommunication
         exclude = ["created_at", "updated_at"]
 
 

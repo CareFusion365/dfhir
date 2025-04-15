@@ -14,7 +14,7 @@ from dfhir.base.models import (
 )
 from dfhir.encounters.models import EncounterReference
 from dfhir.medicationrequests.models import MedicationRequest
-from dfhir.observations.models import Observation
+from dfhir.observations.models import Observation, ObservationReference
 from dfhir.patients.models import Patient
 from dfhir.practitioners.models import Practitioner
 from dfhir.servicerequests.models import ServiceRequest
@@ -41,24 +41,6 @@ class ConclusionCode(TimeStampedModel):
 
     display = models.CharField(max_length=255)
     code = models.CharField(max_length=255, null=True)
-
-
-class ObservationReference(BaseReference):
-    """Observation Reference model."""
-
-    identifier = models.ForeignKey(
-        Identifier,
-        on_delete=models.DO_NOTHING,
-        null=True,
-        related_name="observation_reference_identifier",
-    )
-
-    observation = models.ForeignKey(
-        "observations.Observation",
-        on_delete=models.DO_NOTHING,
-        related_name="observation_reference",
-        null=True,
-    )
 
 
 class DiagnosticReportBasedOnReference(BaseReference):
