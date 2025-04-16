@@ -6,10 +6,10 @@ from dfhir.base.serializers import (
     BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
+    CommunicationSerializer,
     ContactPointSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
-    CommunicationSerializer,
     PeriodSerializer,
 )
 from dfhir.patients.serializers import PatientReferenceSerializer

@@ -8,10 +8,10 @@ from dfhir.base.models import (
     Attachment,
     BaseReference,
     CodeableConcept,
+    Communication,
     ContactPoint,
     HumanName,
     Identifier,
-    Communication,
     Period,
     TimeStampedModel,
 )

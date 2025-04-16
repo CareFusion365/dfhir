@@ -8,10 +8,10 @@ from dfhir.base.serializers import (
     AttachmentSerializer,
     BaseReferenceModelSerializer,
     CodeableConceptSerializer,
+    CommunicationSerializer,
     ContactPointSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
-    CommunicationSerializer,
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
