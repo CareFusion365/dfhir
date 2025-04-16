@@ -14,7 +14,10 @@ from dfhir.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
-from dfhir.bodystructures.serializers import BodyStructureReferenceSerializer
+from dfhir.bodystructures.serializers import (
+    BodyStructureCodeableReferenceSerializer,
+    BodyStructureReferenceSerializer,
+)
 from dfhir.documentreferences.models import (
     DocumentReference,
     DocumentReferenceAttester,
@@ -153,6 +156,7 @@ class DocumentReferenceSerializer(BaseWritableNestedModelSerializer):
     event = CodeableReferenceSerializer(required=False, many=True)
     related = ReferenceSerializer(required=False, many=True)
     body_site = BodyStructureReferenceSerializer(required=False, many=True)
+    body_site = BodyStructureCodeableReferenceSerializer(required=False, many=True)
     facility_type = CodeableConceptSerializer(required=False)
     practice_setting = CodeableConceptSerializer(required=False)
     period = PeriodSerializer(required=False)

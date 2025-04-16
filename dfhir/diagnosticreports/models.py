@@ -71,22 +71,30 @@ class DiagnosticReportBasedOnReference(BaseReference):
         related_name="diagnostic_report_based_on_identifier",
     )
 
-    # TODO: careplan = models.ForeignKey(
-    #     "careplans.CarePlan",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="diagnostic_report_based_on_careplan",
-    # )
-    # TODO: ImmunizationRecommendation = models.ForeignKey(
-    #     "ImmunizationRecommendation", on_delete=models.DO_NOTHING, null=True
-    # )
+    careplan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_based_on_careplan",
+    )
+    Immunization_recommendation = models.ForeignKey(
+        "immunizationrecommendations.ImmunizationRecommendation",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_based_on_immunization_recommendation",
+    )
     medication_request = models.ForeignKey(
         MedicationRequest,
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="diagnostic_report_based_on_medication_request",
     )
-    # TODO: nutrition_order = models.ForeignKey("NutritionOrder", on_delete=models.DO_NOTHING)
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_based_on_nutrition_order",
+    )
     service_request = models.ForeignKey(
         ServiceRequest,
         on_delete=models.DO_NOTHING,
@@ -117,21 +125,47 @@ class DiagnosticReportSubjectReference(BaseReference):
         "organizations.Organization", on_delete=models.DO_NOTHING, null=True
     )
     healthcare_service = models.ForeignKey(
-        "healthcareservices.HealthcareService", on_delete=models.DO_NOTHING, null=True
+        "healthcareservices.HealthcareService",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_healthcare_service",
     )
     practitioner = models.ForeignKey(
-        "practitioners.Practitioner", on_delete=models.DO_NOTHING, null=True
+        "practitioners.Practitioner",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_practitioner",
     )
     medication = models.ForeignKey(
         "medications.Medication",
         null=True,
         on_delete=models.DO_NOTHING,
-        related_name="diagnostic_report_subject_medication",
+        related_name="diagnostic_report_subject_reference_medication",
     )
-    # TODO: group = models.ForeignKey("Group", on_delete=models.DO_NOTHING, null=True)
-    device = models.ForeignKey("devices.Device", on_delete=models.DO_NOTHING, null=True)
-    # TODO: substance = models.ForeignKey("Substance", on_delete=models.DO_NOTHING, null=True)
-    # TODO: biologically_derived_product = models.ForeignKey("BiologicallyDerivedProduct", on_delete=models.DO_NOTHING, null=True)
+    group = models.ForeignKey(
+        "groups.Group",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_group",
+    )
+    device = models.ForeignKey(
+        "devices.Device",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_device",
+    )
+    substance = models.ForeignKey(
+        "substances.Substance",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_substance",
+    )
+    biologically_derived_product = models.ForeignKey(
+        "biologicallyderivedproducts.BiologicallyDerivedProduct",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_subject_reference_biologically_derived_product",
+    )
 
 
 class DiagnosticReportEffective(TimeStampedModel):
@@ -168,12 +202,12 @@ class DiagnosticReportPerformerReference(BaseReference):
         null=True,
         related_name="performer_organization",
     )
-    # TODO: care_plan = models.ForeignKey(
-    #     "careplans.CarePlan",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="performer_care_plan",
-    # )
+    care_plan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="performer_care_plan",
+    )
 
 
 class SupportingInfoReference(BaseReference):
@@ -185,10 +219,18 @@ class SupportingInfoReference(BaseReference):
         null=True,
         related_name="supporting_info_reference_identifier",
     )
-    # TODO: imaging_study = models.ForeignKey(
-    #     "ImagingStudy", on_delete=models.DO_NOTHING, null=True
-    # )
-    # TODO: procedure = models.ForeignKey("Procedure", on_delete=models.DO_NOTHING, null=True)
+    imaging_study = models.ForeignKey(
+        "imagingstudy.ImagingStudy",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="supporting_info_imaging_study",
+    )
+    procedure = models.ForeignKey(
+        "procedures.Procedure",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="supporting_info_procedure",
+    )
     observation = models.ForeignKey(
         Observation,
         on_delete=models.DO_NOTHING,
@@ -202,11 +244,24 @@ class SupportingInfoReference(BaseReference):
         related_name="supporting_info_diagnostic_report",
     )
     # TODO: citation = models.ForeignKey("Citation", on_delete=models.DO_NOTHING, null=True)
-    # TODO: family_member_history = models.ForeignKey(
-    #     "FamilyMemberHistory", on_delete=models.DO_NOTHING, null=True
-    # )
-    # TODO: allergy_intolerance = models.ForeignKey("AllergyIntolerance", on_delete=models.DO_NOTHING, null=True)
-    # TODO: device_usage = models.ForeignKey("DeviceUsage", on_delete=models.DO_NOTHING, null=True)
+    family_member_history = models.ForeignKey(
+        "familymemberhistories.FamilyMemberHistory",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="supporting_info_family_member_history",
+    )
+    allergy_intolerance = models.ForeignKey(
+        "allergyintolerances.AllergyIntolerance",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="supporting_info_allergy_intolerance",
+    )
+    device_usage = models.ForeignKey(
+        "deviceusages.DeviceUsage",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="supporting_info_device_usage",
+    )
 
 
 class SupportingInfo(TimeStampedModel):
@@ -270,12 +325,12 @@ class DiagnosticReportMedia(TimeStampedModel):
     """media model."""
 
     comment = models.TextField(blank=True)
-    # TODO: link = models.ForeignKey(
-    #     "DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="media_link",
-    # )
+    link = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="diagnostic_report_media_document_reference",
+    )
 
 
 class DiagnosticReport(TimeStampedModel):
@@ -331,14 +386,22 @@ class DiagnosticReport(TimeStampedModel):
         related_name="diagnostic_results_interpretation",
     )
 
-    # TODO: specimen models.ManyToMany(|"specimens.Specimen", on_delete=models.DO_NOTHING, null=True)
+    specimen = models.ManyToManyField(
+        "specimens.SpecimenReference",
+        blank=True,
+        related_name="diagnostic_report_specimen",
+    )
     result = models.ManyToManyField(
         ObservationReference, blank=True, related_name="diagnostic_result"
     )
     note = models.ManyToManyField(
         Annotation, blank=True, related_name="diagnostic_report_note"
     )
-    # TODO: study = models.ManyToManyField(GenomicImagingReference, blank=True)
+    # study = models.ManyToManyField(
+    #     "genomistudy.GenomicImagingStudyReference",
+    #     blank=True,
+    #     related_name="diagnostic_report_study",
+    # )
     supporting_info = models.ManyToManyField(
         SupportingInfo, blank=True, related_name="diagnostic_report_supporting_info"
     )
@@ -374,12 +437,12 @@ class DiagnosticReportDocumentReferenceReference(BaseReference):
         related_name="document_reference_reference_identifier",
     )
     # TODO: fix!
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="document_reference_reference_document_reference",
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_reference_document_reference",
+    )
     diagnostic_report = models.ForeignKey(
         DiagnosticReport,
         on_delete=models.DO_NOTHING,

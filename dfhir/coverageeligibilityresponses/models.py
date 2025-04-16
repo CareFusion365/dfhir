@@ -137,6 +137,7 @@ class CoverageEligibilityResponseInsurance(TimeStampedModel):
     coverage = models.ForeignKey(
         "coverages.CoverageReference",
         on_delete=models.CASCADE,
+        null=True,
         related_name="coverage_eligibility_response_insurance_coverage",
     )
     inforce = models.BooleanField(default=False)  # codespell:ignore inforce

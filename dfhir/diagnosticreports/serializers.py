@@ -15,7 +15,10 @@ from dfhir.base.serializers import (
 )
 from dfhir.base.validators import validate_date_time_fields
 from dfhir.communications.serializers import CommunicationReferenceSerializer
+from dfhir.documentreferences.serializers import DocumentReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.observations.serializers import ObservationReferenceSerializer
+from dfhir.specimens.serializers import SpecimenReferenceSerializer
 
 from .models import (
     ConclusionCode,
@@ -74,8 +77,10 @@ class SubjectReferenceSerializer(BaseReferenceModelSerializer):
         exclude = ["created_at", "updated_at"]
 
 
-class DiagnosticReportMediaSerializer(serializers.ModelSerializer):
+class DiagnosticReportMediaSerializer(WritableNestedModelSerializer):
     """diagnostic report media serializer."""
+
+    link = DocumentReferenceSerializer(many=False, required=False)
 
     class Meta:
         """Meta class."""
@@ -128,7 +133,7 @@ class DiagnosticReportPerformerSerializer(BaseReferenceModelSerializer):
 
 
 class SupportingInfoSerializer(WritableNestedModelSerializer):
-    """diagnostic report supporting info serializer."""
+    """diagnostic report supporting  serializer."""
 
     type = CodeableConceptSerializer(many=False, required=False)
     reference = SupportingInfoReferenceSerializer(many=False, required=False)
@@ -154,10 +159,10 @@ class DiagnosticReportSerializer(BaseWritableNestedModelSerializer):
     results_interpretation = DiagnosticReportPerformerSerializer(
         many=True, required=False
     )
-    # TODO: results = ObservationsReferenceSerializer(many=True, required=False)
+    specimen = SpecimenReferenceSerializer(many=True, required=False)
     supporting_info = SupportingInfoSerializer(many=True, required=False)
     media = DiagnosticReportMediaSerializer(many=True, required=False)
-    # TODO: result = ObservationReferenceSerializer(many=True, required=False)
+    results = ObservationReferenceSerializer(many=True, required=False)
     note = AnnotationSerializer(many=True, required=False)
     conclusion_code = ConclusionCodeCodeableReferenceSerializer(
         many=True, required=False
