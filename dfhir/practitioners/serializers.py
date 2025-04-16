@@ -13,7 +13,7 @@ from dfhir.base.serializers import (
     ExtendedContactDetailSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
-    OralCommunicationSerializer,
+    CommunicationSerializer,
     OrganizationReferenceSerializer,
     PeriodSerializer,
     QualificationSerializer,
@@ -97,7 +97,7 @@ class PractitionerSerializer(BaseWritableNestedModelSerializer):
     name = HumanNameSerializer(many=True, required=False)
     telecom = ContactPointSerializer(many=True, required=False)
     photo = AttachmentSerializer(many=True, required=False)
-    communication = OralCommunicationSerializer(many=True, required=False)
+    communication = CommunicationSerializer(many=True, required=False)
     qualification = QualificationSerializer(many=True, required=False)
     address = AddressSerializer(many=True, required=False)
 

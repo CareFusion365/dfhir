@@ -11,7 +11,7 @@ from dfhir.base.models import (
     ContactPoint,
     HumanName,
     Identifier,
-    OralCommunication,
+    Communication,
     Period,
     TimeStampedModel,
 )
@@ -58,7 +58,7 @@ class RelatedPerson(TimeStampedModel):
         null=True,
     )
     communication = models.ManyToManyField(
-        OralCommunication, related_name="relatedpersons_communication", blank=True
+        Communication, related_name="relatedpersons_communication", blank=True
     )
 
 

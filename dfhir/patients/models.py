@@ -12,7 +12,7 @@ from dfhir.base.models import (
     ContactPoint,
     HumanName,
     Identifier,
-    OralCommunication,
+    Communication,
     OrganizationReference,
     Period,
     TimeStampedModel,
@@ -147,7 +147,7 @@ class Patient(TimeStampedModel):
         related_name="patient_marital_status",
     )
     communication = models.ManyToManyField(
-        OralCommunication, related_name="patient_communication", blank=True
+        Communication, related_name="patient_communication", blank=True
     )
     multiple_birth_boolean = models.BooleanField(default=False)
     multiple_birth_integer = models.IntegerField(null=True, blank=True)

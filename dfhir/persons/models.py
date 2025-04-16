@@ -11,7 +11,7 @@ from dfhir.base.models import (
     ContactPoint,
     HumanName,
     Identifier,
-    OralCommunication,
+    Communication,
     OrganizationReference,
     TimeStampedModel,
 )
@@ -93,7 +93,7 @@ class Person(TimeStampedModel):
     )
     photo = models.ManyToManyField(Attachment, related_name="persons_photo", blank=True)
     communication = models.ManyToManyField(
-        OralCommunication, related_name="persons_communication", blank=True
+        Communication, related_name="persons_communication", blank=True
     )
     managing_organization = models.ForeignKey(
         OrganizationReference,

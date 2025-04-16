@@ -11,7 +11,7 @@ from dfhir.base.serializers import (
     ContactPointSerializer,
     HumanNameSerializer,
     IdentifierSerializer,
-    OralCommunicationSerializer,
+    CommunicationSerializer,
     OrganizationReferenceSerializer,
 )
 
@@ -68,7 +68,7 @@ class PersonSerializer(BaseWritableNestedModelSerializer):
     address = AddressSerializer(required=False, many=True)
     marital_status = CodeableConceptSerializer(required=False)
     photo = AttachmentSerializer(required=False, many=True)
-    communication = OralCommunicationSerializer(required=False, many=True)
+    communication = CommunicationSerializer(required=False, many=True)
     managing_organization = OrganizationReferenceSerializer(required=False)
     link = PersonLinkSerializer(required=False, many=True)
 
