@@ -1,0 +1,52 @@
+name: Integration Tests
+
+on:
+  push:
+    branches: ['main']
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    branches: ['main']
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.12.0']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup_build_env
+        with:
+          python-version: ${{ matrix.python-version }}
+          run-poetry-install: true
+          create-venv-at-path: .venv
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Dependencies
+        run: poetry install
+
+      - name: Run DB Migrations
+        working-directory: .
+        run: poetry run python manage.py migrate
+
+      - name: Load DB Fixtures
+        working-directory: .
+        run: |
+          for fixture in $(find nebula/fixtures -type f -name "*.json"); do
+            echo "Loading fixture: $fixture"
+            poetry run python manage.py loaddata "$fixture"
+          done
+
+      - name: Run Django Tests
+        working-directory: ./backend/nebula
+        run: poetry run pytest tests
