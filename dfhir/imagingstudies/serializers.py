@@ -13,7 +13,7 @@ from dfhir.base.serializers import (
 from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.endpoints.serializers import EndpointReferenceSerializer
-from dfhir.imagingstudy.models import (
+from dfhir.imagingstudies.models import (
     ImagingStudy,
     ImagingStudyBasedOnReference,
     ImagingStudyProcedureReference,

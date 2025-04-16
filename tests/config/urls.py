@@ -86,7 +86,7 @@ urlpatterns = [
     ),
     path(
         "api/",
-        include("dfhir.episodeofcare.urls", namespace="episodeofcare"),
+        include("dfhir.episodeofcares.urls", namespace="episodeofcare"),
     ),
     path(
         "api/",
@@ -249,7 +249,7 @@ urlpatterns = [
         "api/",
         include("dfhir.medicationknowledges.urls", namespace="medicationknowledges"),
     ),
-    path("api/", include("dfhir.genomicstudy.urls", namespace="genomicstudy")),
+    path("api/", include("dfhir.genomicstudies.urls", namespace="genomicstudy")),
     path(
         "api/",
         include(
@@ -270,7 +270,7 @@ urlpatterns = [
         "api/",
         include("dfhir.molecularsequences.urls", namespace="molecularsequences"),
     ),
-    path("api/", include("dfhir.imagingstudy.urls", namespace="imagingstudy")),
+    path("api/", include("dfhir.imagingstudies.urls", namespace="imagingstudies")),
     path(
         "api/",
         include("dfhir.medicationstatements.urls", namespace="medicationstatements"),
@@ -301,7 +301,7 @@ urlpatterns = [
         include("dfhir.deviceassociations.urls", namespace="deviceassociations"),
     ),
     path("api/", include("dfhir.tasks.urls", namespace="tasks")),
-    path("api/", include("dfhir.supplydelivery.urls", namespace="supplydelivery")),
+    path("api/", include("dfhir.supplydeliveries.urls", namespace="supplydelivery")),
     path("api/", include("dfhir.transports.urls", namespace="transports")),
     path(
         "api/",

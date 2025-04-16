@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from dfhir.supplydelivery import views
+from dfhir.supplydeliveries import views
 
 app_name = "supplydelivery"
 

@@ -8,5 +8,5 @@ class EpisodeofcareConfig(AppConfig):
     """Episode of Care app configuration."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "dfhir.episodeofcare"
+    name = "dfhir.episodeofcares"
     verbose_name = _("Episode of Care")

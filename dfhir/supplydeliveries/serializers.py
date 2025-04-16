@@ -12,7 +12,7 @@ from dfhir.base.serializers import (
     TimingSerializer,
 )
 from dfhir.patients.serializers import PatientReferenceSerializer
-from dfhir.supplydelivery.models import (
+from dfhir.supplydeliveries.models import (
     SupplyDeliverReference,
     SupplyDelivery,
     SupplyDeliveryContractReference,

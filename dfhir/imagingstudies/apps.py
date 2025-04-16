@@ -8,5 +8,5 @@ class ImagingstudyConfig(AppConfig):
     """imaging study app config."""
 
     default_auto_field = "django.db.models.BigAutoField"
-    name = "dfhir.imagingstudy"
+    name = "dfhir.imagingstudies"
     verbose_name = _("Imaging Study")

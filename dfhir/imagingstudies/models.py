@@ -8,7 +8,7 @@ from dfhir.base.models import (
     Identifier,
     TimeStampedModel,
 )
-from dfhir.imagingstudy.choices import ImagingStudyStatusChoices
+from dfhir.imagingstudies.choices import ImagingStudyStatusChoices
 
 
 class ImagingStudySubjectReference(BaseReference):

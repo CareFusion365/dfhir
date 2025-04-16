@@ -12,7 +12,7 @@ from dfhir.base.models import (
 )
 from dfhir.conditions.models import ConditionObservationCodeableReference
 from dfhir.encounters.models import EncounterReference
-from dfhir.genomicstudy.choices import GenomicStudyStatusChoices
+from dfhir.genomicstudies.choices import GenomicStudyStatusChoices
 from dfhir.observations.models import DocumentReferenceObservationReference
 from dfhir.practitioners.models import PractitionerPractitionerRoleReference
 from dfhir.servicerequests.models import ServiceRequest

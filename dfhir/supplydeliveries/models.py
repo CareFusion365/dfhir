@@ -3,7 +3,7 @@
 from django.db import models
 
 from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
-from dfhir.supplydelivery.choices import SupplyDeliveryStatusChoices
+from dfhir.supplydeliveries.choices import SupplyDeliveryStatusChoices
 
 
 class SupplyDeliveryContractReference(BaseReference):

@@ -7,8 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from dfhir.imagingstudy.models import ImagingStudy
-from dfhir.imagingstudy.serializers import ImagingStudySerializer
+from dfhir.imagingstudies.models import ImagingStudy
+from dfhir.imagingstudies.serializers import ImagingStudySerializer
 
 
 class ImagingStudyListView(APIView):

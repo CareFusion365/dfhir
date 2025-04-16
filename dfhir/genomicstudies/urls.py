@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from dfhir.genomicstudy import views
+from dfhir.genomicstudies import views
 
 app_name = "genomicstudy"
 

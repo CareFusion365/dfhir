@@ -16,7 +16,7 @@ from dfhir.conditions.serializers import (
 from dfhir.devices.serializers import DeviceReferenceSerializer
 from dfhir.documentreferences.serializers import DocumentReferenceReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
-from dfhir.genomicstudy.models import (
+from dfhir.genomicstudies.models import (
     GenomicStudy,
     GenomicStudyAnalysis,
     GenomicStudyAnalysisDevice,

@@ -22,7 +22,7 @@ from dfhir.imagingselections.models import (
     ImagingSelectionSubjectReference,
 )
 
-# from dfhir.imagingstudy.serializers import ImagingStudyReferenceSerializer
+# from dfhir.imagingstudies.serializers import ImagingStudyReferenceSerializer
 
 
 class ImagingSelectionPerformerActorReferenceSerializer(BaseReferenceModelSerializer):
@@ -128,7 +128,7 @@ class ImagingSelectionSerializer(WritableNestedModelSerializer):
         from dfhir.bodystructures.serializers import (
             BodyStructureCodeableReferenceSerializer,
         )
-        from dfhir.imagingstudy.serializers import ImagingStudyReferenceSerializer
+        from dfhir.imagingstudies.serializers import ImagingStudyReferenceSerializer
 
         fields = super().get_fields()
         fields["body_site"] = BodyStructureCodeableReferenceSerializer(
