@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="episode_of_care_diagnosis",
-                to="episodeofcare.episodeofcarediagnosis",
+                to="episodeofcares.episodeofcarediagnosis",
             ),
         ),
         migrations.AddField(
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="episode_of_care_reason_value",
-                to="episodeofcare.episodeofcarereasonvaluecodeablereference",
+                to="episodeofcares.episodeofcarereasonvaluecodeablereference",
             ),
         ),
         migrations.AddField(

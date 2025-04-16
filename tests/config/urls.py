@@ -86,7 +86,7 @@ urlpatterns = [
     ),
     path(
         "api/",
-        include("dfhir.episodeofcares.urls", namespace="episodeofcare"),
+        include("dfhir.episodeofcares.urls", namespace="episodeofcares"),
     ),
     path(
         "api/",
