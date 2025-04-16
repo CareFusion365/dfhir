@@ -71,11 +71,12 @@ class AccountSubjectReference(BaseReference):
 class AccountCoverage(TimeStampedModel):
     """Account coverage model."""
 
-    # coverage = models.ForeignKey(
-    #     "coverages.Coverage",
-    #     related_name="account_coverage_coverage",
-    #     on_delete=models.CASCADE,
-    # )
+    coverage = models.ForeignKey(
+        "coverages.Coverage",
+        related_name="account_coverage_coverage",
+        on_delete=models.CASCADE,
+        null=True,
+    )
     priority = models.PositiveIntegerField(null=True)
 
 

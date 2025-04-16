@@ -190,6 +190,14 @@ class EncounterReasonSerializer(serializers.ModelSerializer):
 class AppointmentSerializer(BaseWritableNestedModelSerializer):
     """Appointment serializer."""
 
+    def get_fields(self):
+        """Get fields."""
+        from dfhir.accounts.serializers import AccountReferenceSerializer
+
+        fields = super().get_fields()
+        fields["account"] = AccountReferenceSerializer(many=True, required=False)
+        return fields
+
     identifier = IdentifierSerializer(many=True, required=False)
     cancellation_reason = CodeableConceptSerializer(required=False)
     klass = CodeableConceptSerializer(many=True, required=False)

@@ -1,4 +1,5 @@
 """Practitioner models."""
+
 from django.db import models
 
 from dfhir.base import choices as base_choices

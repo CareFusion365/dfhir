@@ -102,11 +102,11 @@ class AllergyIntoleranceReaction(TimeStampedModel):
         related_name="allergy_intolerance_reaction_substance",
         null=True,
     )
-    # manifestation = models.ManyToManyField(
-    #     "observations.ObservationCodeableReference",
-    #     related_name="allergy_intolerance_reaction_manifestation",
-    #     blank=True,
-    # )
+    manifestation = models.ManyToManyField(
+        "observations.ObservationCodeableReference",
+        related_name="allergy_intolerance_reaction_manifestation",
+        blank=True,
+    )
     description = models.TextField(null=True)
     onset = models.DateTimeField(null=True)
     severity = models.CharField(

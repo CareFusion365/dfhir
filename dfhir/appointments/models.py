@@ -144,18 +144,18 @@ class AppointmentBasedOnReference(BaseReference):
         null=True,
         related_name="appointment_based_on_reference_identifier",
     )
-    # care_plan = models.ForeignKey(
-    #     "careplans.CarePlan",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="appointment_based_on_reference_care_plan",
-    # )
-    # device_request = models.ForeignKey(
-    #     "devices.DeviceRequest",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="appointment_based_on_reference_device_request",
-    # )
+    care_plan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="appointment_based_on_reference_care_plan",
+    )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="appointment_based_on_reference_device_request",
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.DO_NOTHING,
@@ -174,12 +174,12 @@ class AppointmentBasedOnReference(BaseReference):
     #     null=True,
     #     related_name="appointment_based_on_reference_request_orchestration",
     # )
-    # nutrition_order = models.ForeignKey(
-    #     "nutritionorders.NutritionOrder",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="appointment_based_on_reference_nutrition_order",
-    # )
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="appointment_based_on_reference_nutrition_order",
+    )
     # visual_prescription = models.ForeignKey(
     #     "visualprescriptions.VisualPrescription",
     #     on_delete=models.DO_NOTHING,
@@ -197,24 +197,24 @@ class DocumentReferenceBinaryCommunicationReference(BaseReference):
         related_name="document_reference_binary_communication_reference_identifier",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="document_reference_binary_communication_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        related_name="document_reference_binary_communication_reference_document_reference",
+        null=True,
+    )
     # binary = models.ForeignKey(
     #     "binaries.Binary",
     #     on_delete=models.DO_NOTHING,
     #     related_name="document_reference_binary_communication_reference_binary",
     #     null=True,
     # )
-    # communication = models.ForeignKey(
-    #     "communications.Communication",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="document_reference_binary_communication_reference_communication",
-    #     null=True,
-    # )
+    communication = models.ForeignKey(
+        "communications.Communication",
+        on_delete=models.DO_NOTHING,
+        related_name="document_reference_binary_communication_reference_communication",
+        null=True,
+    )
 
 
 class AppointmentParticipantActor(BaseReference):
@@ -244,25 +244,24 @@ class AppointmentParticipantActor(BaseReference):
         related_name="appointment_participant_actor_healthcareservice",
         null=True,
     )
-    # TODO: uncomment after adding refs
-    # device = models.ForeignKey(
-    #     "devices.Device",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="appointment_participant_actor_device",
-    #     null=True,
-    # )
-    # group = models.ForeignKey(
-    #     "Group",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="appointment_participant_actor_group",
-    #     null=True,
-    # )
-    # care_team = models.ForeignKey(
-    #     "CareTeam",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="appointment_participant_actor_care_team",
-    #     null=True,
-    # )
+    device = models.ForeignKey(
+        "devices.Device",
+        on_delete=models.DO_NOTHING,
+        related_name="appointment_participant_actor_device",
+        null=True,
+    )
+    group = models.ForeignKey(
+        "groups.Group",
+        on_delete=models.DO_NOTHING,
+        related_name="appointment_participant_actor_group",
+        null=True,
+    )
+    care_team = models.ForeignKey(
+        "careteams.CareTeam",
+        on_delete=models.DO_NOTHING,
+        related_name="appointment_participant_actor_care_team",
+        null=True,
+    )
     location = models.ForeignKey(
         Location,
         on_delete=models.DO_NOTHING,
@@ -305,7 +304,7 @@ class AppointmentReference(BaseReference):
         null=True,
     )
     appointment = models.ForeignKey(
-        "Appointment",
+        "appointments.Appointment",
         on_delete=models.CASCADE,
         related_name="appointment_reference_appointment",
         null=True,
@@ -391,7 +390,9 @@ class Appointment(TimeStampedModel):
     )
     # TODO: uncomment after implementing accounts model
 
-    # account = models.ManyToManyField("accounts.AccountReference", related_name="appointment_account", blank=True)
+    account = models.ManyToManyField(
+        "accounts.AccountReference", related_name="appointment_account", blank=True
+    )
     cancellation_date = models.DateTimeField(
         null=True, blank=True, help_text="Date of cancellation"
     )

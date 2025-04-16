@@ -253,11 +253,11 @@ class Coverage(TimeStampedModel):
         blank=True,
     )
     subrogation = models.BooleanField(default=True)
-    # contract = models.ManyToManyField(
-    #     "contracts.Contract",
-    #     related_name="coverage_contract",
-    #     blank=True,
-    # )
+    contract = models.ManyToManyField(
+        "contracts.ContractReference",
+        related_name="coverage_contract",
+        blank=True,
+    )
     # insurance_plan = models.ForeignKey(
     #     "insuranceplans.InsurancePlan",
     #     on_delete=models.DO_NOTHING,
@@ -298,9 +298,9 @@ class CoverageClaimResponseReference(BaseReference):
         null=True,
         related_name="coverage_claim_response_reference_coverage",
     )
-    # TODO: claim_response = models.ForeignKey(
-    #     "claimresponses.ClaimResponse",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="coverage_claim_response_reference_claim_response",
-    # )
+    claim_response = models.ForeignKey(
+        "claimresponses.ClaimResponse",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="coverage_claim_response_reference_claim_response",
+    )

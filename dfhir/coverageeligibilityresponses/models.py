@@ -134,11 +134,11 @@ class CoverageEligibilityResponseError(TimeStampedModel):
 class CoverageEligibilityResponseInsurance(TimeStampedModel):
     """Coverage Eligibility Response Insurance model."""
 
-    # coverage = models.ForeignKey(
-    #     "coverages.CoverageReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="coverage_eligibility_response_insurance_coverage",
-    # )
+    coverage = models.ForeignKey(
+        "coverages.CoverageReference",
+        on_delete=models.CASCADE,
+        related_name="coverage_eligibility_response_insurance_coverage",
+    )
     inforce = models.BooleanField(default=False)  # codespell:ignore inforce
     benefit_period = models.ForeignKey(
         Period,

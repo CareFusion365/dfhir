@@ -117,12 +117,12 @@ class ClaimPrescriptionReference(BaseReference):
         related_name="claim_prescription_reference_identifier",
         null=True,
     )
-    # device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_prescription_reference_device_request",
-    #     null=True,
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_prescription_reference_device_request",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -146,12 +146,12 @@ class ClaimOriginalPrescriptionReference(BaseReference):
         related_name="claim_original_prescription_reference_identifier",
         null=True,
     )
-    # device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_original_prescription_reference_device_request",
-    #     null=True,
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_original_prescription_reference_device_request",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -404,12 +404,12 @@ class ClaimInsurance(TimeStampedModel):
         related_name="claim_insurance_identifier",
         null=True,
     )
-    # coverage = models.ForeignKey(
-    #     "coverages.CoverageReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_insurance_coverage",
-    #     null=True,
-    # )
+    coverage = models.ForeignKey(
+        "coverages.CoverageReference",
+        on_delete=models.CASCADE,
+        related_name="claim_insurance_coverage",
+        null=True,
+    )
     business_arrangement = models.CharField(max_length=255, null=True)
     pre_auth_ref = ArrayField(models.CharField(max_length=255), null=True)
     # claim_response = models.ForeignKey(
@@ -453,12 +453,12 @@ class ClaimItemRequestReference(BaseReference):
         related_name="claim_item_request_reference_identifier",
         null=True,
     )
-    # device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_item_request_reference_device_request",
-    #     null=True,
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_item_request_reference_device_request",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -477,12 +477,12 @@ class ClaimItemRequestReference(BaseReference):
         related_name="claim_item_request_reference_service_request",
         null=True,
     )
-    # supply_request = models.ForeignKey(
-    #     "supplyrequests.SupplyRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_item_request_reference_supply_request",
-    #     null=True,
-    # )
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_item_request_reference_supply_request",
+        null=True,
+    )
     vision_prescription = models.ForeignKey(
         "visionprescriptions.VisionPrescription",
         on_delete=models.CASCADE,

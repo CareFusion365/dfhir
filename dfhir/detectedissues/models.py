@@ -73,12 +73,12 @@ class DetectedIssueSubjectReference(BaseReference):
         null=True,
         related_name="detected_issue_subject_reference_medication",
     )
-    # biologically_derived_product = models.ForeignKey(
-    #     "biologicallyderivedproducts.BiologicallyDerivedProduct",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="detected_issue_subject_reference_biologically_derived_product",
-    # )
+    biologically_derived_product = models.ForeignKey(
+        "biologicallyderivedproducts.BiologicallyDerivedProduct",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="detected_issue_subject_reference_biologically_derived_product",
+    )
     nutrition_product = models.ForeignKey(
         "nutritionproducts.NutritionProduct",
         on_delete=models.SET_NULL,
@@ -224,4 +224,38 @@ class DetectedIssue(TimeStampedModel):
     reference = models.URLField(null=True)
     mitigation = models.ManyToManyField(
         DetectedIssueMitigation, blank=True, related_name="detected_issue_mitigation"
+    )
+
+
+class DetectedIssueReference(BaseReference):
+    """detected issue reference."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="detected_issue_reference_identifier",
+    )
+    detected_issue = models.ForeignKey(
+        DetectedIssue,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="detected_issue_reference_detected_issue",
+    )
+
+
+class DetectedIssueCodeableReference(TimeStampedModel):
+    """detected issue codeable reference."""
+
+    concept = models.ForeignKey(
+        CodeableConcept,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="detected_issue_codeable_reference_concept",
+    )
+    reference = models.ForeignKey(
+        DetectedIssueReference,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="detected_issue_codeable_reference_reference",
     )

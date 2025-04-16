@@ -162,18 +162,18 @@ class ChargeItemServiceReference(BaseReference):
         null=True,
         related_name="charge_item_service_reference_diagnostic_report",
     )
-    # TODO: imaging_study = models.ForeignKey(
-    #     "imagingstudy.ImagingStudy",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="charge_item_service_reference_imaging_study",
-    # )
-    # TODO: immunization = models.ForeignKey(
-    #     "immunization.Immunization",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="charge_item_service_reference_immunization",
-    # )
+    imaging_study = models.ForeignKey(
+        "imagingstudy.ImagingStudy",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="charge_item_service_reference_imaging_study",
+    )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="charge_item_service_reference_immunization",
+    )
     medication_administration = models.ForeignKey(
         "medicationadministrations.MedicationAdministration",
         on_delete=models.DO_NOTHING,
@@ -210,7 +210,12 @@ class ChargeItemServiceReference(BaseReference):
         null=True,
         related_name="charge_item_service_reference_service_request",
     )
-    # TODO: supply_delivery = models.ForeignKey("supplydeliveries.SupplyDelivery", on_delete=models.DO_NOTHING, null=True, related_name="charge_item_service_reference_supply_delivery")
+    supply_delivery = models.ForeignKey(
+        "supplydelivery.SupplyDelivery",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="charge_item_service_reference_supply_delivery",
+    )
 
 
 class ChargeItemServiceCodealbeReference(TimeStampedModel):

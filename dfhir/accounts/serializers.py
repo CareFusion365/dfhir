@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     PeriodSerializer,
 )
 from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
+from dfhir.coverages.serializers import CoverageSerializer
 from dfhir.devices.serializers import DeviceReferenceSerializer
 from dfhir.encounters.serializers import EncounterEpisodeOfCareReferenceSerializer
 from dfhir.procedures.serializers import ProcedureCodeableReferenceSerializer
@@ -97,6 +98,8 @@ class AccountBalanceSerializer(WritableNestedModelSerializer):
 
 class AccountCoverageSerializer(WritableNestedModelSerializer):
     """Account coverage serializer."""
+
+    coverage = CoverageSerializer(required=False)
 
     class Meta:
         """Meta class."""

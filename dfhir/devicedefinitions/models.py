@@ -326,7 +326,12 @@ class DeviceDefinitionCorrectiveAction(TimeStampedModel):
 class DeviceDefinitionChargeItem(TimeStampedModel):
     """DeviceDefinitionChargeItem model."""
 
-    # charge_item_code = models.ForeignKey("chargeitems.ChargeItemDefinitionCodeableReference", related_name="device_definition_charge_item_charge_item_code", on_delete=models.CASCADE, null=True)
+    # charge_item_code = models.ForeignKey(
+    #     "chargeitems.ChargeItemDefinitionCodeableReference",
+    #     related_name="device_definition_charge_item_charge_item_code",
+    #     on_delete=models.CASCADE,
+    #     null=True,
+    # )
     count = models.ForeignKey(
         Quantity,
         related_name="device_definition_charge_item_count",

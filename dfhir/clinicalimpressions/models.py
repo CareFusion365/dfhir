@@ -54,12 +54,12 @@ class ClinicalImpressionFindingItemReference(BaseReference):
         related_name="clinical_impression_finding_item_reference_observation",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="clinical_impression_finding_item_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="clinical_impression_finding_item_reference_document_reference",
+        null=True,
+    )
 
 
 class ClinicalImpressionFindingItemCodeableReference(TimeStampedModel):

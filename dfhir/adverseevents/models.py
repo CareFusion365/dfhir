@@ -117,12 +117,12 @@ class AdverseEventContributingFactorReference(BaseReference):
         related_name="adverse_event_contributing_factor_reference_family_member_history",
         null=True,
     )
-    # immunization = models.ForeignKey(
-    #     "immunizations.Immunization",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_contributing_factor_reference_immunization",
-    #     null=True,
-    # )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_contributing_factor_reference_immunization",
+        null=True,
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.CASCADE,
@@ -135,30 +135,30 @@ class AdverseEventContributingFactorReference(BaseReference):
         related_name="adverse_event_contributing_factor_reference_device",
         null=True,
     )
-    # device_usage = models.ForeignKey(
-    #     "deviceusages.DeviceUsage",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_contributing_factor_reference_device_usage",
-    #     null=True,
-    # )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_contributing_factor_reference_document_reference",
-    #     null=True,
-    # )
+    device_usage = models.ForeignKey(
+        "deviceusages.DeviceUsage",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_contributing_factor_reference_device_usage",
+        null=True,
+    )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_contributing_factor_reference_document_reference",
+        null=True,
+    )
     medication_administration = models.ForeignKey(
         "medicationadministrations.MedicationAdministration",
         on_delete=models.CASCADE,
         related_name="adverse_event_contributing_factor_reference_medication_administration",
         null=True,
     )
-    # medication_statement = models.ForeignKey(
-    #     "medicationstatements.MedicationStatement",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_contributing_factor_reference_medication_statement",
-    #     null=True,
-    # )
+    medication_statement = models.ForeignKey(
+        "medicationstatements.MedicationStatement",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_contributing_factor_reference_medication_statement",
+        null=True,
+    )
 
 
 class AdverseEventContributingFactorCodeableReference(TimeStampedModel):
@@ -187,24 +187,24 @@ class AdverseEventPreventiveActionReference(BaseReference):
         related_name="adverse_event_preventive_action_reference_identifier",
         null=True,
     )
-    # immunization = models.ForeignKey(
-    #     "immunizations.Immunization",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_preventive_action_reference_immunization",
-    #     null=True,
-    # )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_preventive_action_reference_immunization",
+        null=True,
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.CASCADE,
         related_name="adverse_event_preventive_action_reference_procedure",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_preventive_action_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_preventive_action_reference_document_reference",
+        null=True,
+    )
     medication_administration = models.ForeignKey(
         "medicationadministrations.MedicationAdministration",
         on_delete=models.CASCADE,
@@ -251,12 +251,12 @@ class AdverseEventMitigatingActionReference(BaseReference):
         related_name="adverse_event_mitigating_action_reference_procedure",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_mitigating_action_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_mitigating_action_reference_document_reference",
+        null=True,
+    )
     medication_administration = models.ForeignKey(
         "medicationadministrations.MedicationAdministration",
         on_delete=models.CASCADE,
@@ -321,36 +321,36 @@ class AdverseEventSupportingInfoReference(BaseReference):
         related_name="adverse_event_supporting_info_reference_family_member_history",
         null=True,
     )
-    # immunization = models.ForeignKey(
-    #     "immunizations.Immunization",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_supporting_info_reference_immunization",
-    #     null=True,
-    # )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_supporting_info_reference_immunization",
+        null=True,
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.CASCADE,
         related_name="adverse_event_supporting_info_reference_procedure",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_supporting_info_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_supporting_info_reference_document_reference",
+        null=True,
+    )
     medication_administration = models.ForeignKey(
         "medicationadministrations.MedicationAdministration",
         on_delete=models.CASCADE,
         related_name="adverse_event_supporting_info_reference_medication_administration",
         null=True,
     )
-    # medication_statement = models.ForeignKey(
-    #     "medicationstatements.MedicationStatement",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_supporting_info_reference_medication_statement",
-    #     null=True,
-    # )
+    medication_statement = models.ForeignKey(
+        "medicationstatements.MedicationStatement",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_supporting_info_reference_medication_statement",
+        null=True,
+    )
     # questionnaire_response = models.ForeignKey(
     #     "questionnaireresponses.QuestionnaireResponse",
     #     on_delete=models.CASCADE,
@@ -385,12 +385,12 @@ class AdverseEventSuspectEntityInstanceReference(BaseReference):
         related_name="adverse_event_suspect_entity_instance_reference_identifier",
         null=True,
     )
-    # immunization = models.ForeignKey(
-    #     "immunizations.Immunization",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_suspect_entity_instance_reference_immunization",
-    #     null=True,
-    # )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_suspect_entity_instance_reference_immunization",
+        null=True,
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.CASCADE,
@@ -415,12 +415,12 @@ class AdverseEventSuspectEntityInstanceReference(BaseReference):
         related_name="adverse_event_suspect_entity_instance_reference_medication_administration",
         null=True,
     )
-    # medication_statement = models.ForeignKey(
-    #     "medicationstatements.MedicationStatement",
-    #     on_delete=models.CASCADE,
-    #     related_name="adverse_event_suspect_entity_instance_reference_medication_statement",
-    #     null=True,
-    # )
+    medication_statement = models.ForeignKey(
+        "medicationstatements.MedicationStatement",
+        on_delete=models.CASCADE,
+        related_name="adverse_event_suspect_entity_instance_reference_medication_statement",
+        null=True,
+    )
     device = models.ForeignKey(
         "devices.Device",
         on_delete=models.CASCADE,

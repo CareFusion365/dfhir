@@ -147,23 +147,23 @@ class DeviceDispense(TimeStampedModel):
     status = models.CharField(
         max_length=255, choices=choices.DeviceDispenseStatus.choices, null=True
     )
-    # status_reason = models.ForeignKey(
-    #     "detectedissues.DetectedIssueCodeableReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="device_dispense_status_reason",
-    #     null=True,
-    # )
+    status_reason = models.ForeignKey(
+        "detectedissues.DetectedIssueCodeableReference",
+        on_delete=models.CASCADE,
+        related_name="device_dispense_status_reason",
+        null=True,
+    )
     category = models.ManyToManyField(
         CodeableConcept,
         related_name="device_dispense_category",
         blank=True,
     )
-    # device = models.ForeignKey(
-    #     "devicedefinitions.DeviceDeviceDefinitionCodeableReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="device_dispense_device",
-    #     null=True,
-    # )
+    device = models.ForeignKey(
+        "devicedefinitions.DeviceDeviceDefinitionCodeableReference",
+        on_delete=models.CASCADE,
+        related_name="device_dispense_device",
+        null=True,
+    )
     subject = models.ForeignKey(
         "patients.PatientPractitionerReference",
         on_delete=models.CASCADE,
