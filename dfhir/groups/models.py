@@ -215,7 +215,12 @@ class GroupMemberEntityReference(BaseReference):
         null=True,
         related_name="group_member_entity_reference_related_person",
     )
-    # specimen = models.ForeignKey("specimens.Specimen", on_delete=models.CASCADE, null=True,related_name="group_member_entity_reference_specimen")
+    specimen = models.ForeignKey(
+        "specimens.Specimen",
+        on_delete=models.CASCADE,
+        null=True,
+        related_name="group_member_entity_reference_specimen",
+    )
 
 
 class GroupMember(TimeStampedModel):

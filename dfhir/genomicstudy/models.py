@@ -164,11 +164,12 @@ class GenomicStudyAnalysisProtocolPerformedReference(BaseReference):
         on_delete=models.DO_NOTHING,
         related_name="procedure_task_reference_procedure",
     )
-    # TODO: task = models.ForeignKey(
-    #     "tasks.Task",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="procedure_task_reference_task",
-    # )
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="procedure_task_reference_task",
+    )
 
 
 class GenomicStudyAnalysis(TimeStampedModel):
@@ -296,12 +297,12 @@ class GenomicStudyBasedOnReference(BaseReference):
         null=True,
         related_name="genomic_study_based_on_reference_service_request",
     )
-    # TODO: task = models.ForeignKey(
-    #     "tasks.Task",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="genomic_study_based_on_reference_task",
-    # )
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="genomic_study_based_on_reference_task",
+    )
 
 
 class GenomicStudy(TimeStampedModel):

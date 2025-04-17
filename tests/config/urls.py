@@ -110,9 +110,7 @@ urlpatterns = [
     ),
     path(
         "api/",
-        include(
-            "dfhir.personalrelationships.urls", namespace="personalrelateionships"
-        ),
+        include("dfhir.personalrelationships.urls", namespace="personalrelateionships"),
     ),
     path(
         "api/",
@@ -346,5 +344,3 @@ urlpatterns += [
     #     name="api-docs",
     # ),
 ]
-
-

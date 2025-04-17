@@ -1,6 +1,6 @@
 # Dfhir (Django FHIR) API
 
-Dfhir is a Django-based FHIR (Fast Healthcare Interoperability Resources) server designed to provide a robust and scalable solution for managing healthcare data. 
+Dfhir is a Django-based FHIR (Fast Healthcare Interoperability Resources) server designed to provide a robust and scalable solution for managing healthcare data.
 It leverages Django's powerful ORM and REST framework to implement FHIR-compliant APIs. It currently implements FHIR v5.
 This project is in its early stages and is not yet production-ready.
 
@@ -49,4 +49,3 @@ urlpatterns = [
     ...
 ]
 ```
-

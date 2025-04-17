@@ -73,12 +73,12 @@ class EnrollmentRequest(TimeStampedModel):
         related_name="enrollment_request_candidate",
         null=True,
     )
-    # coverage = models.ForeignKey(
-    #     "coverages.CoverageReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="enrollment_request_coverage",
-    #     null=True,
-    # )
+    coverage = models.ForeignKey(
+        "coverages.CoverageReference",
+        on_delete=models.CASCADE,
+        related_name="enrollment_request_coverage",
+        null=True,
+    )
 
 
 class EnrollmentRequestsReference(BaseReference):

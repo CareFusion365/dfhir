@@ -394,12 +394,12 @@ class ExplanationOfBenefitItemRequestReference(BaseReference):
         related_name="explanation_of_benefit_item_request_reference_identifier",
         null=True,
     )
-    # device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="explanation_of_benefit_item_request_reference_device_request",
-    #     null=True,
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.CASCADE,
+        related_name="explanation_of_benefit_item_request_reference_device_request",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -419,12 +419,12 @@ class ExplanationOfBenefitItemRequestReference(BaseReference):
         related_name="explanation_of_benefit_item_request_reference_service_request",
         null=True,
     )
-    # supply_request = models.ForeignKey(
-    #     "supplyrequests.SupplyRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="explanation_of_benefit_item_request_reference_supply_request",
-    #     null=True,
-    # )
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.CASCADE,
+        related_name="explanation_of_benefit_item_request_reference_supply_request",
+        null=True,
+    )
     vision_prescription = models.ForeignKey(
         "visionprescriptions.VisionPrescription",
         on_delete=models.CASCADE,
@@ -1404,12 +1404,12 @@ class ExplanationOfBenefit(TimeStampedModel):
         related_name="explanation_of_benefits_claim",
         null=True,
     )
-    # claim_response = models.ForeignKey(
-    #     "claimresponses.ClaimResponseReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="explanation_of_benefits_claim_response",
-    #     null=True,
-    # )
+    claim_response = models.ForeignKey(
+        "claimresponses.ClaimResponseReference",
+        on_delete=models.CASCADE,
+        related_name="explanation_of_benefits_claim_response",
+        null=True,
+    )
     outcome = models.CharField(
         max_length=255,
         choices=choices.ExplanationOfBenefitOutcome.choices,
