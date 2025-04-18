@@ -91,7 +91,12 @@ class CommunicationRecipientReference(BaseReference):
         null=True,
         related_name="communication_recipient_reference_related_person",
     )
-    # TODO endpoint = models.ForeignKey("endpoints.Endpoint", on_delete=models.DO_NOTHING, null=True)
+    endpoint = models.ForeignKey(
+        "endpoints.Endpoint",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_recipient_reference_endpoint",
+    )
 
 
 class CommunicationSenderReference(BaseReference):
@@ -145,7 +150,12 @@ class CommunicationSenderReference(BaseReference):
         null=True,
         related_name="communication_sender_reference_healthcare_service",
     )
-    # TODO: endpoint = models.ForeignKey("endpoints.Endpoint", on_delete=models.DO_NOTHING, null=True)
+    endpoint = models.ForeignKey(
+        "endpoints.Endpoint",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_sender_reference_endpoint",
+    )
     care_team = models.ForeignKey(
         "careteams.CareTeam",
         on_delete=models.DO_NOTHING,
@@ -186,34 +196,60 @@ class CommunicationBsedOnReference(BaseReference):
         null=True,
         related_name="communication_based_on_reference_identifier",
     )
-    # TODO: care_plan = models.ForeignKey("careplans.CarePlan", on_delete=models.DO_NOTHING, null=True, related_name="communication_based_on_reference_care_plan")
+    care_plan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_care_plan",
+    )
     # TODO: communication_request = models.ForeignKey(
     #     "communications.CommunicationRequest",
     #     on_delete=models.DO_NOTHING,
     #     null=True,
     #     related_name="communication_based_on_reference_communication_request",
     # )
-    # TODO: device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    # )
-    # TODO: immunization_recommendation = models.ForeignKey("immunizationrecommendations.ImmunizationRecommendation", on_delete=models.DO_NOTHING, null=True, related_name="communication_based_on_reference_immunization_recommendation")
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_device_request",
+    )
+    immunization_recommendation = models.ForeignKey(
+        "immunizationrecommendations.ImmunizationRecommendation",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_immunization_recommendation",
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="communication_based_on_reference_medication_request",
     )
-    # TODO: nutrition_order = models.ForeignKey("nutritionorders.NutritionOrder", on_delete=models.DO_NOTHING, null=True, related_name="communication_based_on_reference_nutrition_order")
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_nutrition_order",
+    )
     service_request = models.ForeignKey(
         "servicerequests.ServiceRequest",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="communication_based_on_reference_service_request",
     )
-    # TODO: task = models.ForeignKey("tasks.Task", on_delete=models.DO_NOTHING, null=True, related_name="communication_based_on_reference_task")
-    # TODO: vision_prescription = models.ForeignKey("visionprescriptions.VisionPrescription", on_delete=models.DO_NOTHING, null=True, related_name="communication_based_on_reference_vision_prescription")
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_task",
+    )
+    vision_prescription = models.ForeignKey(
+        "visionprescriptions.VisionPrescription",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="communication_based_on_reference_vision_prescription",
+    )
 
 
 class Communication(TimeStampedModel):

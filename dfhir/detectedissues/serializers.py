@@ -1,5 +1,7 @@
 """Detected issues serializers."""
 
+from drf_writable_nested import WritableNestedModelSerializer
+
 from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
@@ -17,10 +19,36 @@ from dfhir.practitioners.serializers import (
 from .models import (
     DetectedIssue,
     DetectedIssueAuthorReference,
+    DetectedIssueCodeableReference,
     DetectedIssueEvidence,
     DetectedIssueMitigation,
+    DetectedIssueReference,
     DetectedIssueSubjectReference,
 )
+
+
+class DetectedIssueReferenceSerializer(BaseReferenceModelSerializer):
+    """detected Issue reference serializer."""
+
+    identifier = IdentifierSerializer(required=False)
+
+    class Meta:
+        """meta options."""
+
+        model = DetectedIssueReference
+        exclude = ["created_at", "updated_at"]
+
+
+class DetectedIssueCodeableReferenceSerializer(WritableNestedModelSerializer):
+    """detected issue codeable reference serializer."""
+
+    concept = CodeableConceptSerializer(required=False)
+    reference = DetectedIssueReferenceSerializer(required=False)
+
+    class Meta:
+        """meta options."""
+
+        model = DetectedIssueCodeableReference
 
 
 class DetectedIssueSubjectReferenceSerializer(BaseReferenceModelSerializer):

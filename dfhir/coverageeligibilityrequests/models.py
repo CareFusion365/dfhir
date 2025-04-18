@@ -63,12 +63,12 @@ class CoverageEligibilityRequestInsurance(TimeStampedModel):
     """CoverageEligibilityRequestInsurance model."""
 
     focal = models.BooleanField(default=False)
-    # coverage = models.ForeignKey(
-    #     "coverages.CoverageReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="coverage_eligibility_request_insurance_coverage",
-    #     null=True,
-    # )
+    coverage = models.ForeignKey(
+        "coverages.CoverageReference",
+        on_delete=models.CASCADE,
+        related_name="coverage_eligibility_request_insurance_coverage",
+        null=True,
+    )
     business_arrangement = models.CharField(max_length=255, null=True)
 
 

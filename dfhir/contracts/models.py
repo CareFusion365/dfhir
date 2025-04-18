@@ -747,12 +747,12 @@ class ContractTermActionReasonReference(BaseReference):
         related_name="contract_term_action_reason_reference_diagnostic_report",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="contract_term_action_reason_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="contract_term_action_reason_reference_document_reference",
+        null=True,
+    )
     # questionnaire = models.ForeignKey(
     #     "questionnaires.Questionnaire",
     #     on_delete=models.CASCADE,
@@ -1017,12 +1017,12 @@ class ContractFriendlyContentReferenceReference(BaseReference):
     #     related_name="contract_friendly_content_reference_reference_composition",
     #     null=True,
     # )
-    # document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="contract_friendly_content_reference_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="contract_friendly_content_reference_reference_document_reference",
+        null=True,
+    )
     # questionnaire_response = models.ForeignKey(
     #     "questionnaireresponses.QuestionnaireResponse",
     #     on_delete=models.CASCADE,
@@ -1046,12 +1046,12 @@ class ContractLegalContentReferenceReference(BaseReference):
     #     related_name="contract_legal_content_reference_reference_composition",
     #     null=True,
     # )
-    # document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="contract_legal_content_reference_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="contract_legal_content_reference_reference_document_reference",
+        null=True,
+    )
     # questionnaire_response = models.ForeignKey(
     #     "questionnaireresponses.QuestionnaireResponse",
     #     on_delete=models.CASCADE,
@@ -1126,12 +1126,12 @@ class ContractLegallyBindingReferenceReference(BaseReference):
     #     related_name="contract_legally_binding_reference_reference_composition",
     #     null=True,
     # )
-    # document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="contract_legally_binding_reference_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="contract_legally_binding_reference_reference_document_reference",
+        null=True,
+    )
     # questionnaire_response = models.ForeignKey(
     #     "questionnaireresponses.QuestionnaireResponse",
     #     on_delete=models.CASCADE,

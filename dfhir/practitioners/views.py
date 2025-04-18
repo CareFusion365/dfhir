@@ -3,7 +3,6 @@
 from django.http import Http404
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
-from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,10 +14,10 @@ from .models import (
     PractitionerRoleCode,
 )
 from .serializers import (
-    PractitionerSerializer,
     PractitionerRoleCodeSerializer,
     PractitionerRoleSerializer,
     PractitionerRoleWithPractitionerIdSerializer,
+    PractitionerSerializer,
 )
 
 
@@ -72,9 +71,7 @@ class PractitionerDetailView(APIView):
     def patch(self, request, pk=None):
         """Update a practitioner."""
         queryset = self.get_object(pk)
-        serializer = PractitionerSerializer(
-            queryset, data=request.data, partial=True
-        )
+        serializer = PractitionerSerializer(queryset, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)

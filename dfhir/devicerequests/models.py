@@ -316,12 +316,12 @@ class DeviceRequest(TimeStampedModel):
         default=choices.DeviceRequestPriority.ROUTINE,
     )
     do_not_perform = models.BooleanField(default=False)
-    # code = models.ForeignKey(
-    #     DeviceDeviceDefinitionCodeableReference,
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="device_request_code",
-    # )
+    code = models.ForeignKey(
+        "devices.DeviceDeviceDefinitionCodeableReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="device_request_code",
+    )
     quantity = models.IntegerField(null=True)
     parameter = models.ManyToManyField(
         DeviceRequestParameter, related_name="device_request_parameter", blank=True

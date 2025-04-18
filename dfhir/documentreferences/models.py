@@ -47,16 +47,46 @@ class DocumentReferenceBasedOnReference(BaseReference):
         null=True,
         related_name="document_reference_based_on_reference_care_plan",
     )
-    # TODO: claim = models.ForeignKey("claims.Claim", on_delete=models.DO_NOTHING, null=True, related_name="document_reference_based_on_reference_claim")
+    claim = models.ForeignKey(
+        "claims.Claim",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_claim",
+    )
     # TODO: communication_request = models.ForeignKey(
     #     "communications.CommunicationRequest",
     #     on_delete=models.DO_NOTHING,
     #     null=True)
-    # TODO: contract = models.ForeignKey("contracts.Contract", on_delete=models.DO_NOTHING, null=True, related_name="document_reference_based_on_reference_contract")
-    # TODO: coverage_eligibility_request = models.ForeignKey("coverageeligibilityrequests.CoverageEligibilityRequest", on_delete=models.DO_NOTHING, null=True)
-    # TODO: device_request = models.ForeignKey("devicerequests.DeviceRequest", on_delete=models.DO_NOTHING, null=True)
-    # TODO: enrollment_request = models.ForeignKey("enrollmentrequests.EnrollmentRequest", on_delete=models.DO_NOTHING, null=True)
-    # TODO: immunization_recommendation = models.ForeignKey("immunizations.ImmunizationRecommendation", on_delete=models.DO_NOTHING, null=True)
+    contract = models.ForeignKey(
+        "contracts.Contract",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_contract",
+    )
+    coverage_eligibility_request = models.ForeignKey(
+        "coverageeligibilityrequests.CoverageEligibilityRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_coverage_eligibility_request",
+    )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_device_request",
+    )
+    enrollment_request = models.ForeignKey(
+        "enrollmentrequests.EnrollmentRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_enrollment_request",
+    )
+    immunization_recommendation = models.ForeignKey(
+        "immunizationrecommendations.ImmunizationRecommendation",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_immunization_recommendation",
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.DO_NOTHING,
@@ -81,8 +111,18 @@ class DocumentReferenceBasedOnReference(BaseReference):
         null=True,
         related_name="document_reference_based_on_reference_service_request",
     )
-    # TODO: supply_request = models.ForeignKey("supplyrequests.SupplyRequest", on_delete=models.DO_NOTHING, null=True)
-    # TODO: vision_prescription = models.ForeignKey("visionprescriptions.VisionPrescription", on_delete=models.DO_NOTHING, null=True)
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_supply_request",
+    )
+    vision_prescription = models.ForeignKey(
+        "visionprescriptions.VisionPrescription",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="document_reference_based_on_reference_vision_prescription",
+    )
 
 
 class DocumentReferenceAuthorReference(BaseReference):
@@ -331,11 +371,11 @@ class DocumentReference(TimeStampedModel):
     related = models.ManyToManyField(
         Reference, related_name="document_reference_related", blank=True
     )
-    # TODO: body_site = models.ManyToManyField(
-    #     "bodystructures.BodyStructureCodeabeReference",
-    #     related_name="document_reference_body_sites",
-    #     blank=True,
-    # )
+    body_site = models.ManyToManyField(
+        "bodystructures.BodyStructureCodeableReference",
+        related_name="document_reference_body_sites",
+        blank=True,
+    )
     facility_type = models.ForeignKey(
         CodeableConcept,
         on_delete=models.DO_NOTHING,

@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     RangeSerializer,
 )
 from dfhir.encounters.serializers import EncounterReferenceSerializer
+from dfhir.observations.serializers import ObservationCodeableReferenceSerializer
 from dfhir.patients.serializers import PatientReferenceSerializer
 
 # from dfhir.observations.serializers import ObservationCodeableReferenceSerializer
@@ -51,7 +52,7 @@ class AllergyIntoleranceReactionSerializer(WritableNestedModelSerializer):
     """Allergy Intolerance Reaction serializer."""
 
     substance = CodeableConceptSerializer(many=False, required=False)
-    # manifestation = ObservationCodeableReferenceSerializer(many=True, required=False)
+    manifestation = ObservationCodeableReferenceSerializer(many=True, required=False)
     exposure_route = CodeableConceptSerializer(many=False, required=False)
     note = AnnotationSerializer(many=True, required=False)
 

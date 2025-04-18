@@ -53,7 +53,12 @@ class ConditionStageAssessmentReference(BaseReference):
         related_name="condition_stage_assessment_reference_identifier",
         null=True,
     )
-    # TODO: clinical_impression = models.ForeignKey("ClinicalImpression", on_delete=models.DO_NOTHING)
+    clinical_impression = models.ForeignKey(
+        "clinicalimpressions.ClinicalImpression",
+        on_delete=models.DO_NOTHING,
+        related_name="condition_stage_assessment_reference_clinical_impression",
+        null=True,
+    )
     diagnostic_report = models.ForeignKey(
         "diagnosticreports.DiagnosticReport",
         on_delete=models.DO_NOTHING,

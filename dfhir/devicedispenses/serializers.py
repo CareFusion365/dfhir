@@ -14,6 +14,8 @@ from dfhir.base.serializers import (
 
 # from dfhir.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
 from dfhir.careplans.serializers import CarePlanDeviceRequestReferenceSerializer
+from dfhir.detectedissues.serializers import DetectedIssueCodeableReferenceSerializer
+from dfhir.devices.serializers import DeviceDeviceDefinitionCodeableReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.locations.serializers import LocationReferenceSerializer
 from dfhir.patients.serializers import PatientPractitionerReferenceSerializer
@@ -73,9 +75,11 @@ class DeviceDispenseSerializer(BaseWritableNestedModelSerializer):
     identifier = IdentifierSerializer(many=True, required=False)
     based_on = CarePlanDeviceRequestReferenceSerializer(many=True, required=False)
     part_of = ProcedureReferenceSerializer(many=True, required=False)
-    # status_reason = DetectedIssueCodeableReferenceSerializer(many=False, required=False)
+    status_reason = DetectedIssueCodeableReferenceSerializer(many=False, required=False)
     category = CodeableConceptSerializer(many=True, required=False)
-    # device = DeviceDeviceDefinitionCodeableReferenceSerializer(many=False, required=False)
+    device = DeviceDeviceDefinitionCodeableReferenceSerializer(
+        many=False, required=False
+    )
     subject = PatientPractitionerReferenceSerializer(many=False, required=False)
     receiver = DeviceDispenseReceiverReferenceSerializer(many=False, required=False)
     encounter = EncounterReferenceSerializer(many=False, required=False)

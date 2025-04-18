@@ -76,12 +76,12 @@ class CareTeamParticipant(TimeStampedModel):
         on_delete=models.CASCADE,
         null=True,
     )
-    # effective_timing = models.ForeignKey(
-    #     Timing,
-    #     related_name="care_team_participants_effective_timing",
-    #     on_delete=models.CASCADE,
-    #     null=True,
-    # )
+    effective_timing = models.ForeignKey(
+        "base.Timing",
+        related_name="care_team_participants_effective_timing",
+        on_delete=models.CASCADE,
+        null=True,
+    )
 
 
 class CareTeam(TimeStampedModel):
@@ -109,9 +109,11 @@ class CareTeam(TimeStampedModel):
     participant = models.ManyToManyField(
         CareTeamParticipant, related_name="care_teams_participant", blank=True
     )
-    # reason = models.ManyToManyField(
-    #     ConditionCodeableConcept, related_name="care_teams_reason_code", blank=True
-    # )
+    reason = models.ManyToManyField(
+        "conditions.ConditionCodeableReference",
+        related_name="care_teams_reason_code",
+        blank=True,
+    )
     managing_organization = models.ManyToManyField(
         OrganizationReference,
         related_name="care_teams_managing_organization",

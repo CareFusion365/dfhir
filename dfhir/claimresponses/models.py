@@ -236,12 +236,12 @@ class ClaimResponseAddItemRequestReference(BaseReference):
         related_name="claim_response_add_item_request_reference_identifier",
         null=True,
     )
-    # device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_response_add_item_request_reference_device_request",
-    #     null=True,
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_response_add_item_request_reference_device_request",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -260,12 +260,12 @@ class ClaimResponseAddItemRequestReference(BaseReference):
         related_name="claim_response_add_item_request_reference_service_request",
         null=True,
     )
-    # supply_request = models.ForeignKey(
-    #     "supplyrequests.SupplyRequest",
-    #     on_delete=models.CASCADE,
-    #     related_name="claim_response_add_item_request_reference_supply_request",
-    #     null=True,
-    # )
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.CASCADE,
+        related_name="claim_response_add_item_request_reference_supply_request",
+        null=True,
+    )
     vision_prescription = models.ForeignKey(
         "visionprescriptions.VisionPrescription",
         on_delete=models.CASCADE,

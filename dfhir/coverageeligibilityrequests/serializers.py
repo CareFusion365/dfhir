@@ -13,6 +13,7 @@ from dfhir.base.serializers import (
     SimpleQuantitySerializer,
 )
 from dfhir.conditions.serializers import ConditionReferenceSerializer
+from dfhir.coverages.serializers import CoverageReferenceSerializer
 from dfhir.locations.serializers import (
     LocationOrganizationReferenceSerializer,
     LocationReferenceSerializer,
@@ -132,7 +133,7 @@ class CoverageEligibilityRequestEventSerializer(WritableNestedModelSerializer):
 class CoverageEligibilityRequestInsuranceSerializer(WritableNestedModelSerializer):
     """CoverageEligibilityRequestInsurance serializer."""
 
-    # coverage = CoverageReferenceSerializer(many=False, required=False)
+    coverage = CoverageReferenceSerializer(many=False, required=False)
 
     class Meta:
         """Meta class."""

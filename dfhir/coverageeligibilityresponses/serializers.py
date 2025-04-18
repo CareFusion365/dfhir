@@ -11,6 +11,7 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
+from dfhir.coverages.serializers import CoverageReferenceSerializer
 from dfhir.patients.serializers import PatientReferenceSerializer
 from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
@@ -82,7 +83,7 @@ class CoverageEligibilityResponseInsuranceItemSerializer(WritableNestedModelSeri
 class CoverageEligibilityResponseInsuranceSerializer(WritableNestedModelSerializer):
     """Coverage Eligibility Response Insurance serializer."""
 
-    # coverage = COverageReferenceSerializer(many=False, required=False)
+    coverage = CoverageReferenceSerializer(many=False, required=False)
     benefit_period = PeriodSerializer(many=False, required=False)
     item = CoverageEligibilityResponseInsuranceItemSerializer(many=True, required=False)
 

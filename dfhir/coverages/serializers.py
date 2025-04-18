@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     PeriodSerializer,
     SimpleQuantitySerializer,
 )
+from dfhir.contracts.serializers import ContractReferenceSerializer
 from dfhir.patients.serializers import (
     PatientReferenceSerializer,
     PatientRelatedPersonReferenceSerializer,
@@ -126,6 +127,7 @@ class CoverageSerializer(BaseWritableNestedModelSerializer):
     insurer = OrganizationReferenceSerializer(required=False)
     klass = CoverageClassSerializer(required=False, many=True)
     cost_to_beneficiary = CoverageCostToBeneficiarySerializer(required=False, many=True)
+    contract = ContractReferenceSerializer(required=False, many=True)
 
     class Meta:
         """Meta class."""

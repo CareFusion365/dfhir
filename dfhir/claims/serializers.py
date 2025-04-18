@@ -18,6 +18,7 @@ from dfhir.base.serializers import (
     SimpleQuantitySerializer,
 )
 from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
+from dfhir.coverages.serializers import CoverageReferenceSerializer
 from dfhir.devices.serializers import DeviceReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.locations.serializers import (
@@ -271,7 +272,7 @@ class ClaimInsuranceSerializer(WritableNestedModelSerializer):
     """Claim insurance serializer."""
 
     identifier = IdentifierSerializer(many=False, required=False)
-    # coverage = CoverageReferenceSerializer(many=False, required=False)
+    coverage = CoverageReferenceSerializer(many=False, required=False)
 
     class Meta:
         """Meta class."""

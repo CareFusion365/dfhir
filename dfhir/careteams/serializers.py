@@ -11,7 +11,9 @@ from dfhir.base.serializers import (
     IdentifierSerializer,
     OrganizationReferenceSerializer,
     PeriodSerializer,
+    TimingSerializer,
 )
+from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
 from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 from .models import (
@@ -53,6 +55,8 @@ class CareTeamParticipantSerializer(WritableNestedModelSerializer):
     role = CodeableConceptSerializer(required=False)
     member = CareTeamParticipantMemberReferenceSerializer(required=False)
     on_behalf_of = CareTeamParticipantOnBehalfOfReferenceSerializer(required=False)
+    effective_period = PeriodSerializer(required=False)
+    effective_timing = TimingSerializer(required=False)
 
     class Meta:
         """Meta class."""
@@ -69,6 +73,7 @@ class CareTeamSerializer(BaseWritableNestedModelSerializer):
     subject = PatientGroupReferenceSerializer(required=False)
     period = PeriodSerializer(required=False)
     participant = CareTeamParticipantSerializer(many=True, required=False)
+    reason = ConditionCodeableReferenceSerializer(many=True, required=False)
     managing_organization = OrganizationReferenceSerializer(many=True, required=False)
     telecom = ContactPointSerializer(many=True, required=False)
     note = AnnotationSerializer(many=True, required=False)
