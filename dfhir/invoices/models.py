@@ -74,7 +74,7 @@ class InvoiceParticipantActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="invoice_participant_actor_reference_practitioner_role",
         null=True,

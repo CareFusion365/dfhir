@@ -63,7 +63,7 @@ class MedicationStatementInformationSourceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="medication_statement_information_source_reference_practitioner_role",
         null=True,

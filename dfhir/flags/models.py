@@ -59,7 +59,7 @@ class FlagSubjectReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="flag_subject_reference_practitioner_role",
         null=True,
@@ -119,7 +119,7 @@ class FlagAuthorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="flag_author_reference_practitioner_role",
         null=True,

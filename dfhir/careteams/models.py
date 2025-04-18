@@ -30,7 +30,7 @@ class CareTeamParticipantOnBehalfOfReference(BaseReference):
         "practitioners.Practitioner", on_delete=models.CASCADE, null=True
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole", on_delete=models.CASCADE, null=True
+        "practitionerroles.PractitionerRole", on_delete=models.CASCADE, null=True
     )
     related_person = models.ForeignKey(
         "relatedpersons.RelatedPerson", on_delete=models.CASCADE, null=True

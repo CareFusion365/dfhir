@@ -251,7 +251,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="practitioner_practitioner_role_reference_practitioner_role",
-                to="practitionerroles.practitionerrole",
+                to="practitionerroles.PractitionerRole",
             ),
         ),
         migrations.AlterField(
@@ -261,7 +261,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
                 related_name="practitioner_organization_practitioner_role_reference_practitioner_role",
-                to="practitionerroles.practitionerrole",
+                to="practitionerroles.PractitionerRole",
             ),
         ),
         migrations.RemoveField(

@@ -110,7 +110,7 @@ class TransportRequesterReference(BaseReference):
         related_name="transport_requester_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="transport_requester_practitioner_role",
@@ -139,7 +139,7 @@ class TransportOwnerReference(BaseReference):
         related_name="transport_owner_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="transport_owner_reference_practitioner_role",
@@ -204,7 +204,7 @@ class TransportRestrictionRecipientReference(BaseReference):
         related_name="transport_restriction_recipient_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="transport_restriction_recipient_practitioner_role",

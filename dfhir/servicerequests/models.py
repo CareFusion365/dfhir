@@ -281,7 +281,7 @@ class ServiceRequestRequesterReference(BaseReference):
         related_name="service_request_requester_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="service_request_requester_practitioner_role",
@@ -328,7 +328,7 @@ class ServiceRequestPerformerReference(BaseReference):
         related_name="service_request_performer_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="service_request_performer_practitioner_role",

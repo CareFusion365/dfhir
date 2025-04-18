@@ -69,7 +69,7 @@ class ImmunizationInformationSourceRefrence(BaseReference):
         related_name="immunization_information_source_references",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="immunization_information_source_references",
@@ -104,7 +104,7 @@ class ImmunizationPerformerActorReference(BaseReference):
         related_name="immunization_performer_actor_references",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="immunization_performer_actor_references",

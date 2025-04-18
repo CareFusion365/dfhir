@@ -80,7 +80,7 @@ class CommunicationRecipientReference(BaseReference):
         related_name="communication_recipient_reference_organization",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="communication_recipient_reference_practitioner_role",
@@ -133,7 +133,7 @@ class CommunicationSenderReference(BaseReference):
         related_name="communication_sender_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="communication_sender_reference_practitioner_role",

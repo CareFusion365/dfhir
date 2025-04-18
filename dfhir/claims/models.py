@@ -37,7 +37,7 @@ class ClaimEntererReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_enterer_reference_practitioner_role",
         null=True,
@@ -72,7 +72,7 @@ class ClaimProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_provider_reference_practitioner_role",
         null=True,
@@ -182,7 +182,7 @@ class ClaimPayeePartyReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_payee_party_reference_practitioner_role",
         null=True,
@@ -240,7 +240,7 @@ class ClaimCareTeamProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_care_team_provider_reference_practitioner_role",
         null=True,

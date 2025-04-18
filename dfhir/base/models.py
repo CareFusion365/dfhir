@@ -752,7 +752,7 @@ class SignatureWhoReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="signature_who_reference_practitioner_role",
         null=True,
@@ -799,7 +799,7 @@ class SignatureOnBehalfOfReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="signature_on_behalf_of_reference_practitioner_role",
         null=True,

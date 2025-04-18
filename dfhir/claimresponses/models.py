@@ -36,7 +36,7 @@ class ClaimResponseRequestorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_response_requestor_practitioner_role",
         null=True,
@@ -214,7 +214,7 @@ class ClaimResponseAddItemProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="claim_response_add_item_provider_reference_practitioner_role",
         null=True,

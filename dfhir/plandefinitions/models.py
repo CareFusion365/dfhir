@@ -200,7 +200,7 @@ class PlanDefinitionActorOptionTypeReferenceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitionerroles.PRactitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="plan_definition_actor_option_type_reference_reference_practitioner_role",
         null=True,
