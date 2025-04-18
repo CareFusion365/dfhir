@@ -221,12 +221,12 @@ class GoalAddressesReference(BaseReference):
         null=True,
     )
 
-    # medication_statement = models.ForeignKey(
-    #     "medicationstatements.MedicationStatement",
-    #     on_delete=models.CASCADE,
-    #     related_name="goal_addresses_reference_medication_statement",
-    #     null=True
-    # )
+    medication_statement = models.ForeignKey(
+        "medicationstatements.MedicationStatement",
+        on_delete=models.CASCADE,
+        related_name="goal_addresses_reference_medication_statement",
+        null=True,
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.CASCADE,
@@ -245,12 +245,12 @@ class GoalAddressesReference(BaseReference):
         related_name="goal_addresses_reference_service_request",
         null=True,
     )
-    # risk_assessment = models.ForeignKey(
-    #     "riskassessments.RiskAssessment",
-    #     on_delete=models.CASCADE,
-    #     related_name="goal_addresses_reference_risk_assessment",
-    #     null=True
-    # )
+    risk_assessment = models.ForeignKey(
+        "riskassessments.RiskAssessment",
+        on_delete=models.CASCADE,
+        related_name="goal_addresses_reference_risk_assessment",
+        null=True,
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.CASCADE,

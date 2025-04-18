@@ -7,6 +7,7 @@ from dfhir.base.serializers import (
     IdentifierSerializer,
     OrganizationReferenceSerializer,
 )
+from dfhir.coverages.serializers import CoverageReferenceSerializer
 from dfhir.patients.serializers import PatientReferenceSerializer
 
 from .models import (
@@ -35,7 +36,7 @@ class EnrollmentRequestSerializer(WritableNestedModelSerializer):
     insurer = OrganizationReferenceSerializer(many=False, required=False)
     provider = EnrollmentRequestProviderReferenceSerializer(many=False, required=False)
     candidate = PatientReferenceSerializer(many=False, required=False)
-    # coverage = CoverageReferenceSerializer(many=False, required=False)
+    coverage = CoverageReferenceSerializer(many=False, required=False)
 
     class Meta:
         """Meta class."""

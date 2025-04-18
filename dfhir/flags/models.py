@@ -153,8 +153,18 @@ class FlagSupportingInfoReference(BaseReference):
         related_name="flag_supporting_info_reference_procedure",
         null=True,
     )
-    # allergy_intolerance = models.ForeignKey("allergyintolerances.AllergyIntolerance", on_delete=models.CASCADE, related_name="flag_supporting_info_reference_allergy_intolerance", null=True)
-    # risk_assessment = models.ForeignKey("riskassessments.RiskAssessment", on_delete=models.CASCADE, related_name="flag_supporting_info_reference_risk_assessment", null=True)
+    allergy_intolerance = models.ForeignKey(
+        "allergyintolerances.AllergyIntolerance",
+        on_delete=models.CASCADE,
+        related_name="flag_supporting_info_reference_allergy_intolerance",
+        null=True,
+    )
+    risk_assessment = models.ForeignKey(
+        "riskassessments.RiskAssessment",
+        on_delete=models.CASCADE,
+        related_name="flag_supporting_info_reference_risk_assessment",
+        null=True,
+    )
 
 
 class Flag(TimeStampedModel):

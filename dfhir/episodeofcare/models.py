@@ -150,7 +150,11 @@ class EpisodeOfCare(TimeStampedModel):
         on_delete=models.CASCADE,
         null=True,
     )
-    # referral_request = models.ManyToManyField('servicerequests.ServiceRequestReference', related_name='episode_of_care_referral_request', blank=True)
+    referral_request = models.ManyToManyField(
+        "servicerequests.ServiceRequestReference",
+        related_name="episode_of_care_referral_request",
+        blank=True,
+    )
     care_manager = models.ForeignKey(
         "practitioners.PractitionerPractitionerRoleReference",
         related_name="episode_of_care_care_manager",

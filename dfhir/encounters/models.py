@@ -75,12 +75,12 @@ class EncounterReasonValueReference(BaseReference):
         null=True,
         related_name="encounter_reason_value_reference_identifier",
     )
-    # condition = models.ForeignKey(
-    #     "conditions.Condition",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_reason_value_reference_condition",
-    # )
+    condition = models.ForeignKey(
+        "conditions.Condition",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_reason_value_reference_condition",
+    )
     diagnostic_report = models.ForeignKey(
         "diagnosticreports.DiagnosticReport",
         on_delete=models.DO_NOTHING,
@@ -93,18 +93,18 @@ class EncounterReasonValueReference(BaseReference):
         null=True,
         related_name="encounter_reason_value_reference_observation",
     )
-    # immunization_recommendation = models.ForeignKey(
-    #     "immunizationrecommendations.ImmunizationRecommendation",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_reason_value_reference_immunization_recommendation",
-    # )
-    # procedure = models.ForeignKey(
-    #     "procedures.Procedure",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_reason_value_reference_procedure",
-    # )
+    immunization_recommendation = models.ForeignKey(
+        "immunizationrecommendations.ImmunizationRecommendation",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_reason_value_reference_immunization_recommendation",
+    )
+    procedure = models.ForeignKey(
+        "procedures.Procedure",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_reason_value_reference_procedure",
+    )
 
 
 class EncounterReasonValueCodeableReference(TimeStampedModel):
@@ -160,18 +160,18 @@ class EncounterBasedOnReference(BaseReference):
         null=True,
         related_name="encounter_based_on_reference_identifier",
     )
-    # care_plan = models.ForeignKey(
-    #     "careplans.CarePlan",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_based_on_reference_care_plan",
-    # )
-    # device_request = models.ForeignKey(
-    #     "devices.DeviceRequest",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_based_on_reference_device_request",
-    # )
+    care_plan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_based_on_reference_care_plan",
+    )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_based_on_reference_device_request",
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.DO_NOTHING,
@@ -190,12 +190,12 @@ class EncounterBasedOnReference(BaseReference):
     #     null=True,
     #     related_name="encounter_based_on_reference_request_orchestration",
     # )
-    # nutrition_order = models.ForeignKey(
-    #     "nutritionorders.NutritionOrder",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="encounter_based_on_reference_nutrition_order",
-    # )
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="encounter_based_on_reference_nutrition_order",
+    )
     # visual_prescription = models.ForeignKey(
     #     "visualprescriptions.VisualPrescription",
     #     on_delete=models.DO_NOTHING,
@@ -287,18 +287,18 @@ class EncounterParticipantActorReference(BaseReference):
         related_name="encounter_participant_actor_patient",
         null=True,
     )
-    # group = models.ForeignKey(
-    #     "Group",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="encounter_participant_actor_group",
-    #     null=True,
-    # )
-    # related_person = models.ForeignKey(
-    #     "patients.RelatedPerson",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="encounter_participant_actor_related_person",
-    #     null=True,
-    # )
+    group = models.ForeignKey(
+        "groups.Group",
+        on_delete=models.DO_NOTHING,
+        related_name="encounter_participant_actor_group",
+        null=True,
+    )
+    related_person = models.ForeignKey(
+        "relatedpersons.RelatedPerson",
+        on_delete=models.DO_NOTHING,
+        related_name="encounter_participant_actor_related_person",
+        null=True,
+    )
     practitioner = models.ForeignKey(
         "practitioners.Practitioner",
         on_delete=models.DO_NOTHING,
@@ -311,13 +311,12 @@ class EncounterParticipantActorReference(BaseReference):
         related_name="encounter_participant_actor_practitioner_role",
         null=True,
     )
-    # TODO: uncomment after adding refs
-    # device = models.ForeignKey(
-    #     "devices.Device",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="encounter_participant_actor_device",
-    #     null=True,
-    # )
+    device = models.ForeignKey(
+        "devices.Device",
+        on_delete=models.DO_NOTHING,
+        related_name="encounter_participant_actor_device",
+        null=True,
+    )
     healthcareservice = models.ForeignKey(
         "healthcareservices.HealthcareService",
         on_delete=models.DO_NOTHING,
@@ -382,11 +381,17 @@ class Encounter(TimeStampedModel):
         null=True,
         related_name="encounter_subject_status",
     )
-    # episode_of_care = models.ManyToManyField("episodeofcare.EpisodeOfCare", related_name="encounter_episode_of_care", blank=True)
+    episode_of_care = models.ManyToManyField(
+        "episodeofcare.EpisodeOfCare",
+        related_name="encounter_episode_of_care",
+        blank=True,
+    )
     based_on = models.ManyToManyField(
         EncounterBasedOnReference, related_name="encounter_based_on", blank=True
     )
-    # care_team = models.ManyToManyField("careteam.CareTeam", related_name="encounter_care_team", blank=True)
+    care_team = models.ManyToManyField(
+        "careteams.CareTeam", related_name="encounter_care_team", blank=True
+    )
     part_of = models.ManyToManyField(
         EncounterReference, related_name="encounter_part_of", blank=True
     )
@@ -428,7 +433,9 @@ class Encounter(TimeStampedModel):
     diagnosis = models.ManyToManyField(
         EncounterDiagnosis, related_name="encounter_diagnosis", blank=True
     )
-    # account = models.ManyToManyField("account.Account", related_name="encounter_account", blank=True)
+    account = models.ManyToManyField(
+        "accounts.Account", related_name="encounter_account", blank=True
+    )
     diet_preference = models.ManyToManyField(
         CodeableConcept, related_name="encounter_diet_preference", blank=True
     )

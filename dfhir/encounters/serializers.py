@@ -16,6 +16,7 @@ from dfhir.base.serializers import (
 from dfhir.base.serializers import (
     QuantitySerializer as DurationSerializer,
 )
+from dfhir.careteams.serializers import CareTeamReferenceSerializer
 from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
 from dfhir.locations.serializers import (
     LocationOrganizationReferenceSerializer,
@@ -218,6 +219,19 @@ class SpecialArrangementSerializer(serializers.ModelSerializer):
 class EncounterSerializer(BaseWritableNestedModelSerializer):
     """Encounter Serializer."""
 
+    def get_fields(self):
+        """Get fields."""
+        from dfhir.accounts.serializers import AccountReferenceSerializer
+        from dfhir.episodeofcare.serializers import EpisodeOfCareReferenceSerializer
+
+        fields = super().get_fields()
+
+        fields["account"] = AccountReferenceSerializer(required=False, many=True)
+        fields["episode_of_care"] = EpisodeOfCareReferenceSerializer(
+            required=False, many=True
+        )
+        return fields
+
     identifier = IdentifierSerializer(required=False, many=True)
     klass = CodeableConceptSerializer(required=False, many=True)
     priority = CodeableConceptSerializer(required=False)
@@ -226,6 +240,7 @@ class EncounterSerializer(BaseWritableNestedModelSerializer):
     subject = PatientGroupReferenceSerializer(required=False)
     subject_status = CodeableConceptSerializer(required=False)
     based_on = EncounterBasedOnReferenceSerializer(required=False, many=True)
+    care_team = CareTeamReferenceSerializer(required=False, many=True)
     part_of = EncounterReferenceSerializer(required=False, many=True)
     service_provider = OrganizationReferenceSerializer(required=False)
     participant = EncounterParticipantSerializer(required=False, many=True)

@@ -17,6 +17,7 @@ from dfhir.patients.serializers import PatientGroupReferenceSerializer
 from dfhir.practitioners.serializers import (
     PractitionerPractitionerRoleReferenceSerializer,
 )
+from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
 
 from .models import (
     EpisodeOfCare,
@@ -122,7 +123,7 @@ class EpisodeOfCareSerializer(BaseWritableNestedModelSerializer):
         many=False, required=False
     )
     care_team = CareTeamReferenceSerializer(many=True, required=False)
-    # referral_request = ServiceRequestReferenceSerializer(many=True, required=False)
+    referral_request = ServiceRequestReferenceSerializer(many=True, required=False)
     account = AccountReferenceSerializer(many=True, required=False)
 
     class Meta:

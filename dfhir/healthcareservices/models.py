@@ -162,9 +162,9 @@ class HealthcareService(TimeStampedModel):
         null=True,
         related_name="healthcareservice_availability",
     )
-    # endpoint = models.ManyToManyField(
-    #     "endpoints.Endpoint", related_name="healthcareservice_endpoint", blank=True
-    # )
+    endpoint = models.ManyToManyField(
+        "endpoints.Endpoint", related_name="healthcareservice_endpoint", blank=True
+    )
     eligibility = models.ManyToManyField(
         HealthcareServiceEligibility,
         related_name="healthcareservice_eligibility",

@@ -19,6 +19,7 @@ from dfhir.base.serializers import (
     SimpleQuantitySerializer,
 )
 from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
+from dfhir.claimresponses.serializers import ClaimResponseReferenceSerializer
 from dfhir.claims.serializers import ClaimReferenceSerializer
 from dfhir.conditions.serializers import ConditionReferenceSerializer
 from dfhir.coverages.serializers import CoverageReferenceSerializer
@@ -577,6 +578,7 @@ class ExplanationOfBenefitSerializer(BaseWritableNestedModelSerializer):
     referral = ServiceRequestReferenceSerializer(many=False, required=False)
     facility = LocationOrganizationReferenceSerializer(many=False, required=False)
     claim = ClaimReferenceSerializer(many=False, required=False)
+    claim_response = ClaimResponseReferenceSerializer(required=False)
     decision = CodeableConceptSerializer(many=False, required=False)
     pre_auth_period = PeriodSerializer(many=False, required=False)
     diagnosis_related_group = CodeableConceptSerializer(many=False, required=False)

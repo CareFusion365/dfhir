@@ -106,12 +106,12 @@ class FamilyMemberHistoryReasonReference(BaseReference):
         related_name="family_member_history_reason_reference_observation",
         null=True,
     )
-    # allergy_intolerance = models.ForeignKey(
-    #     "allergyintolerances.AllergyIntolerance",
-    #     on_delete=models.CASCADE,
-    #     related_name="family_member_history_reason_reference_allergy_intolerance",
-    #     null=True,
-    # )
+    allergy_intolerance = models.ForeignKey(
+        "allergyintolerances.AllergyIntolerance",
+        on_delete=models.CASCADE,
+        related_name="family_member_history_reason_reference_allergy_intolerance",
+        null=True,
+    )
     # questionnaire_response = models.ForeignKey(
     #     "questionnaireresponses.QuestionnaireResponse",
     #     on_delete=models.CASCADE,
@@ -124,12 +124,12 @@ class FamilyMemberHistoryReasonReference(BaseReference):
         related_name="family_member_history_reason_reference_diagnostic_report",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="family_member_history_reason_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.CASCADE,
+        related_name="family_member_history_reason_reference_document_reference",
+        null=True,
+    )
 
 
 class FamilyMemberHistoryReasonCodeableReference(TimeStampedModel):
