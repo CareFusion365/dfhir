@@ -121,7 +121,7 @@ class DetectedIssueAuthorReference(BaseReference):
         related_name="detected_issue_author_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="detected_issue_author_reference_practitioner_role",

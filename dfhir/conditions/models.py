@@ -111,7 +111,7 @@ class ConditionRecorderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="condition_recorder_reference_practitioner_role",
         null=True,
@@ -146,7 +146,7 @@ class ConditionAsserterReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="condition_asserter_reference_practitioner_role",
         null=True,

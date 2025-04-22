@@ -104,7 +104,7 @@ class DeviceRequestRequesterReference(BaseReference):
         related_name="device_request_requester_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="device_request_requester_reference_practitioner_role",
@@ -208,7 +208,7 @@ class DeviceRequestPerformerReference(BaseReference):
         related_name="device_request_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="device_request_performer_reference_practitioner_role",

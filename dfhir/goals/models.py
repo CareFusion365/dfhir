@@ -74,7 +74,7 @@ class GoalAcceptanceParticipantReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="goal_acceptance_participant_reference_practitioner_role",
         null=True,
@@ -180,7 +180,7 @@ class GoalSourceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="goal_source_reference_practitioner_role",
         null=True,

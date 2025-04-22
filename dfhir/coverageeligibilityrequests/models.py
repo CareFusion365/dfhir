@@ -173,7 +173,7 @@ class CoverageEligibilityRequestProviderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="coverage_eligibility_request_provider_reference_practitioner_role",
         null=True,

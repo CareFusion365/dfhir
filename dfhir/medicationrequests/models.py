@@ -28,7 +28,6 @@ from dfhir.patients.models import PatientGroupReference as SubjectReference
 from dfhir.practitioners.models import (
     Practitioner,
     PractitionerPractitionerRoleReference,
-    PractitionerRole,
 )
 from dfhir.provenances.models import ProvenanceReference
 
@@ -170,7 +169,7 @@ class medicationRequestInformationSourceReference(BaseReference):
         related_name="medication_request_information_source_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        PractitionerRole,
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="medication_request_information_source_reference_practitioner_role",
@@ -202,7 +201,7 @@ class MedicationRequestRequesterReference(BaseReference):
         related_name="medication_request_requester_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        PractitionerRole,
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="medication_request_requester_reference_practitioner_role",
@@ -244,7 +243,7 @@ class MedicationRequestPerformerReference(BaseReference):
         related_name="medication_request_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        PractitionerRole,
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.SET_NULL,
         related_name="medication_request_performer_reference_practitioner_role",

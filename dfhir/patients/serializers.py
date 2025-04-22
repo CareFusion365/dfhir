@@ -15,6 +15,9 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
+from dfhir.practitioners.serializers import (
+    PractitionerOrganizationPractitionerRoleReferenceSerializer,
+)
 
 from .models import (
     Patient,
@@ -101,6 +104,9 @@ class PatientSerializer(WritableNestedModelSerializer):
     photo = AttachmentSerializer(many=True, required=False)
     communication = CommunicationSerializer(many=True, required=False)
     contact = PatientContactSerializer(many=True, required=False)
+    general_practitioner = PractitionerOrganizationPractitionerRoleReferenceSerializer(
+        required=False
+    )
     address = AddressSerializer(many=True, required=False)
     managing_organization = OrganizationReferenceSerializer(required=False)
 

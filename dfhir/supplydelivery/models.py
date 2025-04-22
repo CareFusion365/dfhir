@@ -116,7 +116,7 @@ class SupplyDeliverySupplierReference(BaseReference):
         related_name="supply_delivery_supplier_references_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="supply_delivery_supplier_references_practitioner_role",
@@ -145,7 +145,7 @@ class SupplyDeliveryDestinationReference(BaseReference):
         related_name="supply_delivery_destination_references_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="supply_delivery_destination_references_practitioner_role",
@@ -174,7 +174,7 @@ class SupplyDeliveryReceiverReference(BaseReference):
         related_name="supply_delivery_receiver_references_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="supply_delivery_receiver_references_practitioner_role",

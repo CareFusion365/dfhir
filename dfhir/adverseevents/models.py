@@ -71,7 +71,7 @@ class AdverseEventRecorderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="adverse_event_recorder_reference_practitioner_role",
         null=True,
@@ -474,7 +474,7 @@ class AdverseEventSuspectEntityAuthorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="adverse_event_suspect_entity_author_reference_practitioner_role",
         null=True,
@@ -549,7 +549,7 @@ class AdverseEventParticipantActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="adverse_event_participant_actor_reference_practitioner_role",
         null=True,

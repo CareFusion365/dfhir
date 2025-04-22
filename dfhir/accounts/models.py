@@ -43,7 +43,7 @@ class AccountSubjectReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         related_name="account_subject_reference_practitioner_role",
         on_delete=models.CASCADE,
         null=True,

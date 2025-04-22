@@ -157,7 +157,7 @@ class ImagingStudySeriesPerformerActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="imaging_study_series_performer_reference",
         null=True,

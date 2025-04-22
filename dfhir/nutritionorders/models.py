@@ -312,7 +312,7 @@ class NutritionOrderPerformerReference(BaseReference):
         related_name="nutrition_order_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="nutrition_order_performer_reference_practitioner_role",

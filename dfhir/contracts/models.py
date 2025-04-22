@@ -46,7 +46,7 @@ class ContractAuthorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_author_reference_practitioner_role",
         null=True,
@@ -92,7 +92,7 @@ class ContractContentDefinitionPublisherReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_content_definition_publisher_reference_practitioner_role",
         null=True,
@@ -181,7 +181,7 @@ class ContractTermOfferPartyReferenceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_term_offer_party_reference_practitioner_role",
         null=True,
@@ -351,7 +351,7 @@ class ContractTermAssetValuedItemResponsibleReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         related_name="contract_tem_asset_valued_item_responsible_practitioner_role",
         on_delete=models.CASCADE,
         null=True,
@@ -392,7 +392,7 @@ class ContractTermAssetValuedItemRecipientReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         related_name="contract_tem_asset_valued_item_recipient_practitioner_role",
         on_delete=models.CASCADE,
         null=True,
@@ -560,7 +560,7 @@ class ContractTermActionSubjectReferenceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_term_action_subject_reference_reference_practitioner_role",
         null=True,
@@ -630,7 +630,7 @@ class ContractTermActionRequesterReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_term_action_requester_reference_practitioner_role",
         null=True,
@@ -683,7 +683,7 @@ class ContractTermActionPerformerReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_term_action_performer_reference_practitioner_role",
         null=True,
@@ -967,7 +967,7 @@ class ContractSignerPartyReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.CASCADE,
         related_name="contract_signer_party_reference_practitioner_role",
         null=True,

@@ -98,7 +98,7 @@ class DeviceUsageInformationSourceReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="device_usage_information_source_reference_practitioner_role",
         null=True,

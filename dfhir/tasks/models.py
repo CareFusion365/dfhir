@@ -69,7 +69,7 @@ class TaskRequesterReference(BaseReference):
         related_name="task_requester_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.DO_NOTHING,
         related_name="task_requester_reference_practitioner_role",
@@ -98,7 +98,7 @@ class TaskRequestedPerformerReference(BaseReference):
         related_name="task_requested_performer_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.DO_NOTHING,
         related_name="task_requested_performer_reference_practitioner_role",
@@ -174,7 +174,7 @@ class TaskOwnerReference(BaseReference):
         related_name="task_owner_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.DO_NOTHING,
         related_name="task_owner_reference_practitioner_role",
@@ -234,7 +234,7 @@ class TaskPerformerActorReference(BaseReference):
         related_name="task_performer_actor_reference_organization",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.DO_NOTHING,
         related_name="task_performer_actor_reference_practitioner_role",
@@ -276,7 +276,7 @@ class TaskRestrictionRecipientReference(BaseReference):
         related_name="task_restriction_recipient_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         null=True,
         on_delete=models.DO_NOTHING,
         related_name="task_restriction_recipient_reference_practitioner_role",

@@ -57,7 +57,7 @@ class MedicationAdministrationPerformerActorReference(BaseReference):
         related_name="medication_administration_performer_actor_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.SET_NULL,
         null=True,
         related_name="medication_administration_performer_actor_practitioner_role",

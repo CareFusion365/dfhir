@@ -187,7 +187,7 @@ class ProcedureFocusReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="procedure_focus_reference_practitioner_role",
         null=True,
@@ -229,7 +229,7 @@ class ProcedureRecorderReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="procedure_recorder_reference_practitioner_role",
         null=True,
@@ -252,7 +252,7 @@ class ProcedurePerformerActorReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="procedure_performer_actor_reference_practitioner_role",
         null=True,
@@ -433,7 +433,7 @@ class ProcedureReportedReference(BaseReference):
         null=True,
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         related_name="procedure_reported_reference_practitioner_role",
         null=True,

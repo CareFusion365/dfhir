@@ -97,7 +97,7 @@ class GenomicStudyAnalysisPerformerActorReference(BaseReference):
         related_name="genomic_study_analysis_performer_actor_reference_practitioner",
     )
     practitioner_role = models.ForeignKey(
-        "practitioners.PractitionerRole",
+        "practitionerroles.PractitionerRole",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="genomic_study_analysis_performer_actor_reference_practitioner_role",
