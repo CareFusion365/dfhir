@@ -399,7 +399,7 @@ class AnnotationSerializer(WritableNestedModelSerializer):
 
 
 class CommunicationSerializer(WritableNestedModelSerializer):
-    """Patient communication serializer."""
+    """Communication serializer."""
 
     language = CodeableConceptSerializer(required=False)
 

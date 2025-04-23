@@ -25,13 +25,13 @@ from dfhir.slots.serializers import SlotSerializer
 from .models import (
     Appointment,
     AppointmentBasedOnReference,
+    AppointmentEncounterReason,
     AppointmentParticipant,
     AppointmentParticipantActor,
     AppointmentReasonCodeableReference,
     AppointmentReasonReference,
     AppointmentReference,
     DocumentReferenceBinaryCommunicationReference,
-    EncounterReason,
     MonthlyTemplate,
     RecurrenceTemplate,
     WeeklyTemplate,
@@ -183,7 +183,7 @@ class EncounterReasonSerializer(serializers.ModelSerializer):
     class Meta:
         """Meta class."""
 
-        model = EncounterReason
+        model = AppointmentEncounterReason
         exclude = ["created_at", "updated_at"]
 
 
