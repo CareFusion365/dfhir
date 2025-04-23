@@ -163,7 +163,7 @@ class ChargeItemServiceReference(BaseReference):
         related_name="charge_item_service_reference_diagnostic_report",
     )
     imaging_study = models.ForeignKey(
-        "imagingstudy.ImagingStudy",
+        "imagingstudies.ImagingStudy",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="charge_item_service_reference_imaging_study",
@@ -211,7 +211,7 @@ class ChargeItemServiceReference(BaseReference):
         related_name="charge_item_service_reference_service_request",
     )
     supply_delivery = models.ForeignKey(
-        "supplydelivery.SupplyDelivery",
+        "supplydeliveries.SupplyDelivery",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="charge_item_service_reference_supply_delivery",

@@ -9,56 +9,90 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('base', '0003_initial'),
-        ('encounters', '0001_initial'),
-        ('episodeofcare', '0001_initial'),
-        ('healthcareservices', '0001_initial'),
+        ("base", "0003_initial"),
+        ("encounters", "0001_initial"),
+        ("episodeofcare", "0001_initial"),
+        ("healthcareservices", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='encounter',
-            name='episode_of_care',
-            field=models.ManyToManyField(blank=True, related_name='encounter_episode_of_care', to='episodeofcare.episodeofcare'),
+            model_name="encounter",
+            name="episode_of_care",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="encounter_episode_of_care",
+                to="episodeofcares.episodeofcare",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='identifier',
-            field=models.ManyToManyField(blank=True, related_name='encounter_identifier', to='base.identifier'),
+            model_name="encounter",
+            name="identifier",
+            field=models.ManyToManyField(
+                blank=True, related_name="encounter_identifier", to="base.identifier"
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='klass',
-            field=models.ManyToManyField(blank=True, related_name='encounter_class', to='base.codeableconcept'),
+            model_name="encounter",
+            name="klass",
+            field=models.ManyToManyField(
+                blank=True, related_name="encounter_class", to="base.codeableconcept"
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='length',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='encounter_length', to='base.quantity'),
+            model_name="encounter",
+            name="length",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="encounter_length",
+                to="base.quantity",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='priority',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='encounter_priority', to='base.codeableconcept'),
+            model_name="encounter",
+            name="priority",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="encounter_priority",
+                to="base.codeableconcept",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='service_provider',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.DO_NOTHING, related_name='encounter_service_provider', to='base.organizationreference'),
+            model_name="encounter",
+            name="service_provider",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.DO_NOTHING,
+                related_name="encounter_service_provider",
+                to="base.organizationreference",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='service_type',
-            field=models.ManyToManyField(related_name='encounter_service_type', to='healthcareservices.healthcareservicecodeablereference'),
+            model_name="encounter",
+            name="service_type",
+            field=models.ManyToManyField(
+                related_name="encounter_service_type",
+                to="healthcareservices.healthcareservicecodeablereference",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='special_arrangement',
-            field=models.ManyToManyField(blank=True, related_name='encounter_special_arrangement', to='base.codeableconcept'),
+            model_name="encounter",
+            name="special_arrangement",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="encounter_special_arrangement",
+                to="base.codeableconcept",
+            ),
         ),
         migrations.AddField(
-            model_name='encounter',
-            name='special_courtesy',
-            field=models.ManyToManyField(blank=True, related_name='encounter_special_courtesy', to='base.codeableconcept'),
+            model_name="encounter",
+            name="special_courtesy",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="encounter_special_courtesy",
+                to="base.codeableconcept",
+            ),
         ),
     ]
