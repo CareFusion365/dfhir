@@ -31,6 +31,7 @@ class GenomicStudyReference(BaseReference):
     genomic_study = models.ForeignKey(
         "GenomicStudy",
         on_delete=models.DO_NOTHING,
+        null=True,
         related_name="genomic_study_reference_genomic_study",
     )
 
@@ -163,6 +164,7 @@ class GenomicStudyAnalysisProtocolPerformedReference(BaseReference):
         "procedures.Procedure",
         on_delete=models.DO_NOTHING,
         related_name="procedure_task_reference_procedure",
+        null=True,
     )
     task = models.ForeignKey(
         "tasks.Task",

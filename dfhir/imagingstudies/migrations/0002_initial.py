@@ -109,7 +109,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_based_on",
-                to="imagingstudy.imagingstudybasedonreference",
+                to="imagingstudies.imagingstudybasedonreference",
             ),
         ),
         migrations.AddField(
@@ -128,7 +128,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_procedure",
-                to="imagingstudy.imagingstudyprocedurereference",
+                to="imagingstudies.imagingstudyprocedurereference",
             ),
         ),
         migrations.AddField(
@@ -187,7 +187,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_reason",
-                to="imagingstudy.imagingstudyreasonreference",
+                to="imagingstudies.imagingstudyreasonreference",
             ),
         ),
         migrations.AddField(
@@ -207,7 +207,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.DO_NOTHING,
                 related_name="imaging_study_reference_imaging_study",
-                to="imagingstudy.imagingstudy",
+                to="imagingstudies.imagingstudy",
             ),
         ),
         migrations.AddField(
@@ -263,7 +263,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_series",
-                to="imagingstudy.imagingstudyseries",
+                to="imagingstudies.imagingstudyseries",
             ),
         ),
         migrations.AddField(
@@ -272,7 +272,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_series_instance",
-                to="imagingstudy.imagingstudyseriesinstance",
+                to="imagingstudies.imagingstudyseriesinstance",
             ),
         ),
         migrations.AddField(
@@ -291,7 +291,7 @@ class Migration(migrations.Migration):
             field=models.ManyToManyField(
                 blank=True,
                 related_name="imaging_study_series_performer",
-                to="imagingstudy.imagingstudyseriesperformer",
+                to="imagingstudies.imagingstudyseriesperformer",
             ),
         ),
         migrations.AddField(
@@ -391,7 +391,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.DO_NOTHING,
                 related_name="imaging_study_series_performer_reference",
-                to="imagingstudy.imagingstudyseriesperformeractorreference",
+                to="imagingstudies.imagingstudyseriesperformeractorreference",
             ),
         ),
         migrations.AddField(
@@ -441,7 +441,7 @@ class Migration(migrations.Migration):
                 null=True,
                 on_delete=django.db.models.deletion.DO_NOTHING,
                 related_name="imaging_study_subject",
-                to="imagingstudy.imagingstudysubjectreference",
+                to="imagingstudies.imagingstudysubjectreference",
             ),
         ),
     ]
