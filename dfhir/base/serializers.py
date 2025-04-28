@@ -199,13 +199,6 @@ class IdentifierSerializer(WritableNestedModelSerializer):
     period = PeriodSerializer(many=False, required=False)
     assigner = OrganizationReferenceSerializer(many=False, required=False)
 
-    def get_fields(self) -> dict[str, serializers.Field]:
-        """Get fields."""
-        print(f"GEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTT!!!!!!!!!!!!!!!!")
-        fields = super().get_fields()
-
-        return fields
-
     class Meta:
         """Meta class."""
 
