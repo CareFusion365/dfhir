@@ -1,6 +1,7 @@
 """Base serializers."""
 
 from typing import Any, TypeVar
+import inspect
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
@@ -138,6 +139,13 @@ class OrganizationReferenceSerializer(BaseReferenceModelSerializer):
     def get_fields(self):
         """Get fields."""
         fields = super().get_fields()
+        frames = inspect.stack()
+
+        for frame in frames:
+            if "drf_spectacular" in frame.filename:
+                # when generating docs using drf_spectacular, skip the identifier field
+                # to avoid a recursive loop.
+                return fields
 
         fields["identifier"] = IdentifierSerializer(required=False, many=False)
         return fields
@@ -190,6 +198,13 @@ class IdentifierSerializer(WritableNestedModelSerializer):
     type = CodeableConceptSerializer(many=False, required=False)
     period = PeriodSerializer(many=False, required=False)
     assigner = OrganizationReferenceSerializer(many=False, required=False)
+
+    def get_fields(self) -> dict[str, serializers.Field]:
+        """Get fields."""
+        print(f"GEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTTTTTT!!!!!!!!!!!!!!!!")
+        fields = super().get_fields()
+
+        return fields
 
     class Meta:
         """Meta class."""
