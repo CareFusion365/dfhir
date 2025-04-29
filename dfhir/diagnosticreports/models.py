@@ -202,7 +202,7 @@ class SupportingInfoReference(BaseReference):
         related_name="supporting_info_reference_identifier",
     )
     imaging_study = models.ForeignKey(
-        "imagingstudy.ImagingStudy",
+        "imagingstudies.ImagingStudy",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="supporting_info_imaging_study",

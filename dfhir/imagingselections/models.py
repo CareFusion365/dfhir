@@ -259,7 +259,7 @@ class ImagingSelection(TimeStampedModel):
         related_name="image_selection_based_on",
     )
     derived_from = models.ForeignKey(
-        "imagingstudy.ImagingStudyReference",
+        "imagingstudies.ImagingStudyReference",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="image_selection_derived_from",

@@ -222,7 +222,7 @@ class EncounterSerializer(BaseWritableNestedModelSerializer):
     def get_fields(self):
         """Get fields."""
         from dfhir.accounts.serializers import AccountReferenceSerializer
-        from dfhir.episodeofcare.serializers import EpisodeOfCareReferenceSerializer
+        from dfhir.episodeofcares.serializers import EpisodeOfCareReferenceSerializer
 
         fields = super().get_fields()
 

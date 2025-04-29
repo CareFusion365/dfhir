@@ -382,7 +382,7 @@ class Encounter(TimeStampedModel):
         related_name="encounter_subject_status",
     )
     episode_of_care = models.ManyToManyField(
-        "episodeofcare.EpisodeOfCare",
+        "episodeofcares.EpisodeOfCare",
         related_name="encounter_episode_of_care",
         blank=True,
     )
@@ -466,7 +466,7 @@ class EncounterEpisodeOfCareReference(BaseReference):
         null=True,
     )
     episode_of_care = models.ForeignKey(
-        "episodeofcare.EpisodeOfCare",
+        "episodeofcares.EpisodeOfCare",
         on_delete=models.DO_NOTHING,
         related_name="encounter_episode_of_care_reference_episode_of_care",
         null=True,

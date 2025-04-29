@@ -317,7 +317,7 @@ class DocumentReferenceContextReference(TimeStampedModel):
         related_name="document_reference_context_reference_encounter",
     )
     episode_of_care = models.ForeignKey(
-        "episodeofcare.EpisodeOfCare",
+        "episodeofcares.EpisodeOfCare",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="document_reference_context_reference_episode_of_care",
