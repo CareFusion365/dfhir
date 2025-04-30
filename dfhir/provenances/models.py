@@ -38,7 +38,7 @@ class ProvenanceAgentWhoReference(BaseReference):
         related_name="provenance_agent_who_reference_practitioner_role",
     )
     organization = models.ForeignKey(
-        "organizations.OrganizationReference",
+        "base.OrganizationReference",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="provenance_agent_who_reference_organization",
@@ -97,7 +97,7 @@ class ProvenanceAgentOnBehalfOf(BaseReference):
         related_name="provenance_agent_on_behalf_of_practitioner_role",
     )
     organization = models.ForeignKey(
-        "organizations.OrganizationReference",
+        "base.OrganizationReference",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="provenance_agent_on_behalf_of_organization",
