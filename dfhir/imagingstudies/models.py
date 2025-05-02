@@ -73,12 +73,12 @@ class ImagingStudyBasedOnReference(BaseReference):
         related_name="imaging_study_based_on_reference",
         null=True,
     )
-    # TODO: task = models.ForeignKey(
-    #     "tasks.Task",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="imaging_study_based_on_reference",
-    #     null=True,
-    # )
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        related_name="imaging_study_based_on_reference",
+        null=True,
+    )
 
 
 class ImagingStudyProcedureReference(BaseReference):

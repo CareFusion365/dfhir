@@ -24,6 +24,7 @@ from dfhir.immunizations.models import (
     ImmunizationReaction,
     ImmunizationReasonCodeableReference,
     ImmunizationReasonReference,
+    ImmunizationReference,
 )
 from dfhir.locations.serializers import LocationReferenceSerializer
 from dfhir.medications.serializers import (
@@ -34,6 +35,18 @@ from dfhir.observations.serializers import (
 )
 from dfhir.organizations.serializers import OrganizationCodeableReferenceSerializer
 from dfhir.patients.serializers import PatientReferenceSerializer
+
+
+class ImmunizationReferenceSerializer(BaseReferenceModelSerializer):
+    """immunization reference serializer."""
+
+    identifier = IdentifierSerializer(required=False)
+
+    class Meta:
+        """Meta options."""
+
+        model = ImmunizationReference
+        exclude = ["created_at", "updated_at"]
 
 
 class ImmunizationBasedOnReferenceSerializer(BaseReferenceModelSerializer):

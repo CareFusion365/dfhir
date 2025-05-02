@@ -28,7 +28,7 @@ from dfhir.chargeitems.models import (
     ChargeItemReasonReference,
     ChargeItemServiceCodealbeReference,
     ChargeItemServiceReference,
-    CharItemReference,
+    ChargeItemReference,
 )
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.patients.serializers import PatientGroupReferenceSerializer
@@ -42,7 +42,7 @@ class ChargeItemReferenceSerializer(BaseReferenceModelSerializer):
     class Meta:
         """meta options."""
 
-        model = CharItemReference
+        model = ChargeItemReference
         exclude = ["created_at", "updated_at"]
 
 

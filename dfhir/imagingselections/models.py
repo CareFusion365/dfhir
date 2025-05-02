@@ -122,12 +122,12 @@ class ImagingSelectionBasedOnReference(BaseReference):
         null=True,
         related_name="image_selection_based_on_reference_appointment",
     )
-    # TODO: task = models.ForeignKey(
-    #     "tasks.Task",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="image_selection_based_on_reference_task",
-    # )
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="image_selection_based_on_reference_task",
+    )
 
 
 class ImagingSelectionInstanceImagingRegion2D(TimeStampedModel):

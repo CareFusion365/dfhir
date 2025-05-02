@@ -57,7 +57,12 @@ class MedicationSubstanceReference(BaseReference):
         null=True,
         related_name="medication_substance_reference",
     )
-    # TODO: substance = models.ForeignKey("Substance", on_delete=models.DO_NOTHING, null=True, related_name="medication_substance_reference_substance")
+    substance = models.ForeignKey(
+        "substances.Substance",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="medication_substance_reference_substance",
+    )
 
 
 class MedicationSubstanceCodeableReference(TimeStampedModel):
@@ -154,7 +159,12 @@ class Medication(TimeStampedModel):
         null=True,
         related_name="medication_batch",
     )
-    # TODO: definition = models.ForeignKey(MedicationKnowledgeReference, on_delete=models.DO_NOTHING, null=True)
+    definition = models.ForeignKey(
+        "medicationknowledges.MedicationKnowledgeReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="medication_definition",
+    )
 
 
 class MedicationReference(BaseReference):

@@ -7,6 +7,7 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
 )
 from dfhir.immunizationevaluations.models import ImmunizationEvaluation
+from dfhir.immunizations.serializers import ImmunizationReferenceSerializer
 from dfhir.patients.serializers import PatientReferenceSerializer
 
 
@@ -17,6 +18,7 @@ class ImmunizationEvaluationSerializer(BaseWritableNestedModelSerializer):
     patient = PatientReferenceSerializer(many=False, required=False)
     authority = OrganizationReferenceSerializer(many=False, required=False)
     target_disease = CodeableConceptSerializer(many=False, required=False)
+    immunization_event = ImmunizationReferenceSerializer(required=False)
     dose_status = CodeableConceptSerializer(many=False, required=False)
     dose_status_reason = CodeableConceptSerializer(many=True, required=False)
 

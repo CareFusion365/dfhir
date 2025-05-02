@@ -129,7 +129,12 @@ class MedicationDispense(TimeStampedModel):
         max_length=255, null=True, choices=MedicationDispenseStatus.choices
     )
 
-    # TODO: not_performed_reasnon = models.ForeignKey("DetectedIssueCodeableReference", on_delete=models.DO_NOTHING, null=True)
+    not_performed_reason = models.ForeignKey(
+        "detectedissues.DetectedIssueCodeableReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="medication_dispense_not_performed_reason",
+    )
     status_changed = models.DateTimeField(null=True)
     category = models.ManyToManyField(
         CodeableConcept, blank=True, related_name="medication_dispense_category"

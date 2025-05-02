@@ -23,6 +23,7 @@ from .models import (
     InvoiceParticipantActorReference,
     InvoiceRecipientReference,
 )
+from ..chargeitems.serializers import ChargeItemReferenceSerializer
 
 
 class InvoiceRecipientReferenceSerializer(BaseReferenceModelSerializer):
@@ -66,6 +67,7 @@ class InvoiceLineItemSerializer(WritableNestedModelSerializer):
     """Invoice line item serializer."""
 
     service_period = PeriodSerializer(many=False, required=False)
+    charge_item_reference = ChargeItemReferenceSerializer(many=False, required=False)
     charge_item_codeable_concept = CodeableConceptSerializer(many=False, required=False)
     price_component = MonetaryComponentSerializer(many=True, required=False)
 

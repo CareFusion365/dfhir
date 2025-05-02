@@ -35,8 +35,18 @@ class ImmunizationRecommendationSupportingImmunizationReference(BaseReference):
         related_name="immunization_recommendation_supporting_immunization_reference_identifier",
     )
 
-    # TODO: immunization = models.ForeignKey("immunizations.Immunization", null=True)
-    # TODO: immunization_evolution = models.ForeignKey("ImmunizationEvolution", null=True)
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        null=True,
+        on_delete=models.DO_NOTHING,
+        related_name="immunization_recommendation_supporting_immunization_reference_immunization",
+    )
+    immunization_evolution = models.ForeignKey(
+        "immunizationevaluations.ImmunizationEvaluation",
+        null=True,
+        on_delete=models.DO_NOTHING,
+        related_name="immunization_recommendation_supporting_immunization_reference_immunization_evolution",
+    )
 
 
 class ImmunizationRecommendationRecommendation(TimeStampedModel):

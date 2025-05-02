@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     ReferenceSerializer,
 )
 from dfhir.careplans.serializers import CarePlanReferenceSerializer
+from dfhir.detectedissues.serializers import DetectedIssueCodeableReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.locations.serializers import LocationReferenceSerializer
 from dfhir.medicationdispenses.models import (
@@ -25,6 +26,7 @@ from dfhir.medicationdispenses.models import (
 from dfhir.medicationrequests.serializers import MedicationRequestReferenceSerializer
 from dfhir.medications.serializers import MedicationCodeableReferenceSerializer
 from dfhir.patients.serializers import PatientGroupReferenceSerializer
+from dfhir.procedures.serializers import ProcedureReferenceSerializer
 from dfhir.provenances.serializers import ProvenanceSerializer
 
 
@@ -104,6 +106,10 @@ class MedicationDispenseSerializer(BaseWritableNestedModelSerializer):
 
     identifier = IdentifierSerializer(many=True, required=False)
     based_on = CarePlanReferenceSerializer(many=True, required=False)
+    part_of = ProcedureReferenceSerializer(many=True, required=False)
+    not_performed_reason = DetectedIssueCodeableReferenceSerializer(
+        many=False, required=False
+    )
     category = CodeableConceptSerializer(many=True, required=False)
     medication = MedicationCodeableReferenceSerializer(many=False, required=False)
     subject = PatientGroupReferenceSerializer(many=False, required=False)

@@ -121,12 +121,12 @@ class InvoiceLineItem(TimeStampedModel):
         related_name="invoice_line_item_service_period",
         null=True,
     )
-    # charge_item_reference = models.ForeignKey(
-    #     "chargeitems.ChargeItemReference",
-    #     on_delete=models.CASCADE,
-    #     related_name="invoice_line_item_charge_item_reference",
-    #     null=True,
-    # )
+    charge_item_reference = models.ForeignKey(
+        "chargeitems.ChargeItemReference",
+        on_delete=models.CASCADE,
+        related_name="invoice_line_item_charge_item_reference",
+        null=True,
+    )
     charge_item_codeable_concept = models.ForeignKey(
         CodeableConcept,
         on_delete=models.CASCADE,

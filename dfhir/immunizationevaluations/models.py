@@ -34,12 +34,12 @@ class ImmunizationEvaluation(TimeStampedModel):
         null=True,
         related_name="immunization_evaluation_target_disease",
     )
-    # TODO: immunization_event = models.ForeignKey(
-    #     "immunizations.ImmunizationReference",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="immunization_evaluation_immunization_event",
-    #     null=True,
-    # )
+    immunization_event = models.ForeignKey(
+        "immunizations.ImmunizationReference",
+        on_delete=models.DO_NOTHING,
+        related_name="immunization_evaluation_immunization_event",
+        null=True,
+    )
     dose_status = models.ForeignKey(
         "base.CodeableConcept",
         on_delete=models.DO_NOTHING,

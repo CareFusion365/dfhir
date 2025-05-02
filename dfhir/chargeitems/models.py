@@ -13,7 +13,7 @@ from dfhir.base.models import (
 from dfhir.chargeitems.choices import ChargeItemStatusChoice
 
 
-class CharItemReference(BaseReference):
+class ChargeItemReference(BaseReference):
     """Charge item reference."""
 
     identifier = models.ForeignKey(
@@ -351,7 +351,7 @@ class ChargeItem(TimeStampedModel):
         max_length=255, null=True, choices=ChargeItemStatusChoice.choices
     )
     part_of = models.ManyToManyField(
-        CharItemReference,
+        ChargeItemReference,
         blank=True,
         related_name="charge_item_reference_part_of",
     )
