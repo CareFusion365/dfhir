@@ -1,7 +1,7 @@
 """Base serializers."""
 
-from typing import Any, TypeVar
 import inspect
+from typing import Any, TypeVar
 
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers

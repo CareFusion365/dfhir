@@ -26,9 +26,9 @@ from dfhir.chargeitems.models import (
     ChargeItemProductReference,
     ChargeItemReasonCodeableReference,
     ChargeItemReasonReference,
+    ChargeItemReference,
     ChargeItemServiceCodealbeReference,
     ChargeItemServiceReference,
-    ChargeItemReference,
 )
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.patients.serializers import PatientGroupReferenceSerializer

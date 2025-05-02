@@ -16,6 +16,7 @@ from dfhir.base.serializers import (
 )
 from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
+from ..chargeitems.serializers import ChargeItemReferenceSerializer
 from .models import (
     Invoice,
     InvoiceLineItem,
@@ -23,7 +24,6 @@ from .models import (
     InvoiceParticipantActorReference,
     InvoiceRecipientReference,
 )
-from ..chargeitems.serializers import ChargeItemReferenceSerializer
 
 
 class InvoiceRecipientReferenceSerializer(BaseReferenceModelSerializer):
