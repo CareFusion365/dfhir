@@ -24,6 +24,18 @@ from .models import (
 )
 
 
+
+class AllergyIntoleranceReferenceSerializer(BaseReferenceModelSerializer):
+    """Allergy Intolerance Reference serializer."""
+
+    identifier = IdentifierSerializer(required=False)
+
+    class Meta:
+        """Meta options."""
+
+        model = AllergyIntolerance
+        exclude = ["created_at", "updated_at"]
+
 class AllergyIntoleranceRecorderReferenceSerializer(BaseReferenceModelSerializer):
     """Allergy Intolerance Recorder Reference serializer."""
 
