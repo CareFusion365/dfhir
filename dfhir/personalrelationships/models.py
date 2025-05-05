@@ -21,7 +21,6 @@ class PersonalRelationshipSourceReference(BaseReference):
         on_delete=models.CASCADE,
         null=True,
     )
-
     patient = models.ForeignKey(
         "patients.Patient",
         related_name="personal_relationship_source_reference_patient",

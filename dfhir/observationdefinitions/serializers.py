@@ -20,6 +20,7 @@ from dfhir.observationdefinitions.models import (
     ObservationDefinitionQuestionnaireReference,
     ObservationDefinitionReference,
 )
+from dfhir.specimendefinitions.serializers import SpecimenDefinitionReferenceSerializer
 
 
 class ObservationDefinitionQualifiedValueSerializer(WritableNestedModelSerializer):
@@ -84,6 +85,7 @@ class ObservationDefinitionSerializer(BaseWritableNestedModelSerializer):
     code = CodeableConceptSerializer(many=False, required=False)
     body_site = CodeableConceptSerializer(many=True, required=False)
     method = CodeableConceptSerializer(many=False, required=False)
+    specimen = SpecimenDefinitionReferenceSerializer(required=False)
     permitted_unit = CodingSerializer(many=True, required=False)
     qualified_value = ObservationDefinitionQualifiedValueSerializer(
         many=True, required=False

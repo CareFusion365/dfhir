@@ -18,6 +18,8 @@ from dfhir.base.serializers import (
 )
 from dfhir.base.validators import validate_date_time_fields
 from dfhir.bodystructures.serializers import BodyStructureReferenceSerializer
+from dfhir.coverages.serializers import CoverageClaimResponseReferenceSerializer
+from dfhir.documentreferences.serializers import DocumentReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.locations.serializers import LocationCodeableReferenceSerializer
 from dfhir.provenances.serializers import ProvenanceReferenceSerializer
@@ -150,8 +152,10 @@ class ServiceRequestOrderDetailSerializer(WritableNestedModelSerializer):
         exclude = ["created_at", "updated_at"]
 
 
-class ServiceRequestPatientInstructionSerializer(serializers.ModelSerializer):
+class ServiceRequestPatientInstructionSerializer(WritableNestedModelSerializer):
     """service request patient instruction serializer."""
+
+    instruction_reference = DocumentReferenceSerializer(required=False)
 
     class Meta:
         """meta options."""
@@ -236,11 +240,21 @@ class ServiceRequestReferenceSerializer(BaseReferenceModelSerializer):
 class ServiceRequestSerializer(WritableNestedModelSerializer):
     """service request serializer."""
 
+    def get_fields(self):
+        """Get fields."""
+        from dfhir.specimens.serializers import SpecimenReferenceSerializer
+
+        fields = super(ServiceRequestSerializer, self).get_fields()
+        fields["specimen"] = SpecimenReferenceSerializer(many=True, required=False)
+
+        return fields
+
     identifier = IdentifierSerializer(many=True, required=False)
     based_on = ServiceRequestBasedOnReferenceSerializer(many=True, required=False)
     replace = ServiceRequestReferenceSerializer(many=True, required=False)
     requisition = IdentifierSerializer(many=False, required=False)
     category = CodeableConceptSerializer(many=True, required=False)
+    code = ServiceRequestPlanDefinitionReferenceSerializer(many=False, required=False)
     order_detail = ServiceRequestOrderDetailSerializer(many=True, required=False)
     quantity_quantity = QuantitySerializer(many=False, required=False)
     quantity_ratio = RatioSerializer(many=False, required=False)
@@ -259,6 +273,7 @@ class ServiceRequestSerializer(WritableNestedModelSerializer):
     performer = ServiceRequestPerformerReferenceSerializer(many=True, required=False)
     location = LocationCodeableReferenceSerializer(many=True, required=False)
     reason = ServiceRequestReasonCodeableReferenceSerializer(many=True, required=False)
+    insurance = CoverageClaimResponseReferenceSerializer(required=False, many=True)
     supporting_info = CodeableReferenceSerializer(many=True, required=False)
     body_site = CodeableConceptSerializer(many=True, required=False)
     body_structure = BodyStructureReferenceSerializer(many=False, required=False)

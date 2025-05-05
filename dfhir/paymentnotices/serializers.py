@@ -9,6 +9,9 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
 )
 
+from ..paymentreconciliations.serializers import (
+    PaymentReconciliationReferenceSerializer,
+)
 from .models import (
     PaymentNotice,
     PaymentNoticePayeeReference,
@@ -73,7 +76,7 @@ class PaymentNoticeSerializer(BaseWritableNestedModelSerializer):
     request = PaymentNoticeRequestReferenceSerializer(many=False, required=False)
     response = PaymentNoticeResponseReferenceSerializer(many=False, required=False)
     reporter = PaymentNoticeReporterReferenceSerializer(many=False, required=False)
-    # payment = PaymentReconciliationReferenceSerializer(many=False, required=False)
+    payment = PaymentReconciliationReferenceSerializer(many=False, required=False)
     payee = PaymentNoticePayeeReferenceSerializer(many=False, required=False)
     recipient = OrganizationReferenceSerializer(many=False, required=False)
     amount = MoneySerializer(many=False, required=False)

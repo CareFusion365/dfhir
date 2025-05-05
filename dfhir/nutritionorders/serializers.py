@@ -224,7 +224,9 @@ class NutritionOrderSerializer(BaseWritableNestedModelSerializer):
     supporting_information = ReferenceSerializer(required=False, many=True)
     orderer = PractitionerPractitionerRoleReferenceSerializer(required=False)
     performer = NutritionOrderPerformerReferenceSerializer(required=False, many=True)
-    allergy_intolerance = AllergyIntoleranceReferenceSerializer(required=False, many=True)
+    allergy_intolerance = AllergyIntoleranceReferenceSerializer(
+        required=False, many=True
+    )
     food_preference_modifier = CodeableConceptSerializer(required=False, many=True)
     exclude_food_modifier = CodeableConceptSerializer(required=False, many=True)
     oral_diet = NutritionOrderOralDietSerializer(required=False)

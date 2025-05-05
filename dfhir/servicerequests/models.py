@@ -88,14 +88,19 @@ class ServiceRequestBasedOnReference(BaseReference):
         null=True,
         related_name="service_request_based_on_service_request",
     )
-    medicatoin_request = models.ForeignKey(
+    medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.SET_NULL,
         null=True,
         related_name="service_request_based_on_medication_request",
     )
     # TODO: request_orchestration = models.ForeignKey("RequestOrchestration", on_delete=models.SET_NULL, null=True)
-    # TODO: nutrition_order = models.ForeignKey("NutritionOrder", on_delete=models.SET_NULL, null=True)
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="service_request_based_on_nutrition_order",
+    )
 
 
 class OrderDetailParameterFocusReference(BaseReference):
@@ -119,8 +124,18 @@ class OrderDetailParameterFocusReference(BaseReference):
         null=True,
         related_name="order_detail_parameter_focus_device_definition",
     )
-    # TODO: device_request = models.ForeignKey("devicerequests.DeviceRequest", on_delete=models.SET_NULL, null=True)
-    # TODO: supply_request = models.ForeignKey("supplyrequest.SupplyRequest", on_delete=models.SET_NULL, null=True)
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="order_detail_parameter_focus_device_request",
+    )
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="order_detail_parameter_focus_supply_request",
+    )
     medication = models.ForeignKey(
         "medications.Medication",
         on_delete=models.SET_NULL,
@@ -133,13 +148,18 @@ class OrderDetailParameterFocusReference(BaseReference):
         null=True,
         related_name="order_detail_parameter_focus_medication_request",
     )
-    # TODO: biological_derived_product = models.ForeignKey("BiologicalDerivedProduct", on_delete=models.SET_NULL, null=True)
-    # TODO: substance = models.ForeignKey(
-    #     "substances.Substance",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="order_detail_parameter_focus_substance",
-    # )
+    biological_derived_product = models.ForeignKey(
+        "biologicallyderivedproducts.BiologicallyDerivedProduct",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="order_detail_parameter_focus_reference_biological_derived_product",
+    )
+    substance = models.ForeignKey(
+        "substances.Substance",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="order_detail_parameter_focus_substance",
+    )
 
 
 class OrderDetailParameterFocusCodeableReference(TimeStampedModel):
@@ -222,12 +242,12 @@ class ServiceRequestPatientInstruction(TimeStampedModel):
     """patient instruction model."""
 
     instruction_markdown = models.TextField(null=True)
-    # TODO: instruction_reference = models.ForeignKey(
-    #     "DocumentReference",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="patient_instruction_document_reference",
-    # )
+    instruction_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="patient_instruction_document_reference",
+    )
 
 
 class ServiceRequestSubjectReference(BaseReference):
@@ -398,18 +418,18 @@ class ServiceRequestReasonReference(BaseReference):
         null=True,
         related_name="service_request_reason_diagnostic_report",
     )
-    # TODO: document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="service_request_reason_document_reference",
-    # )
-    # TODO: detected_issue = models.ForeignKey(
-    #     "detectedissues.DetectedIssue",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="service_request_reason_detected_issue",
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="service_request_reason_document_reference",
+    )
+    detected_issue = models.ForeignKey(
+        "detectedissues.DetectedIssue",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="service_request_reason_detected_issue",
+    )
     procedure = models.ForeignKey(
         "procedures.Procedure",
         on_delete=models.SET_NULL,
@@ -499,7 +519,12 @@ class ServiceRequest(TimeStampedModel):
         default=ServiceRequestPriority.ROUTINE,
     )
     do_not_perform = models.BooleanField(default=False)
-    # TODO: code = models.ForeignKey("ActivityPlanDefinitionRefrence", related_name="service_request_code", on_delete=models.SET_NULL, null=True)
+    code = models.ForeignKey(
+        "activitydefinitions.ActivityPlanDefinitionReference",
+        related_name="service_request_code",
+        on_delete=models.SET_NULL,
+        null=True,
+    )
     order_detail = models.ManyToManyField(
         ServiceRequestOrderDetail,
         blank=True,
@@ -586,21 +611,21 @@ class ServiceRequest(TimeStampedModel):
         blank=True,
         related_name="service_request_reason",
     )
-    # TODO: insurance = models.ManyToManyField(
-    #     "coverages.CoverageClaimResponseReference",
-    #     blank=True,
-    #     related_name="service_request_insurance",
-    # )
+    insurance = models.ManyToManyField(
+        "coverages.CoverageClaimResponseReference",
+        blank=True,
+        related_name="service_request_insurance",
+    )
     supporting_info = models.ManyToManyField(
         "base.CodeableReference",
         related_name="service_request_supporting_info",
         blank=True,
     )
-    # TODO: specimen = models.ManyToManyField(
-    #     "specimens.Specimen",
-    #     related_name="service_request_specimen",
-    #     blank=True,
-    # )
+    specimen = models.ManyToManyField(
+        "specimens.SpecimenReference",
+        related_name="service_request_specimen",
+        blank=True,
+    )
     body_site = models.ManyToManyField(
         CodeableConcept, related_name="service_request_body_site", blank=True
     )
@@ -634,13 +659,12 @@ class ServiceRequestPlanDefinitionReference(BaseReference):
         null=True,
         related_name="service_request_plan_definition_identifier",
     )
-    # TODO: fix
-    # plan_definition = models.ForeignKey(
-    #     "plandefinitions.PlanDefinition",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="service_request_plan_definition_plan_definition",
-    # )
+    plan_definition = models.ForeignKey(
+        "plandefinitions.PlanDefinition",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="service_request_plan_definition_plan_definition",
+    )
     service_request = models.ForeignKey(
         ServiceRequest,
         on_delete=models.SET_NULL,

@@ -23,6 +23,7 @@ from dfhir.paymentreconciliations.models import (
     PaymentReconciliationReference,
 )
 from dfhir.practitionerroles.serializers import PractitionerRoleReferenceSerializer
+from dfhir.tasks.serializers import TaskReferenceSerializer
 
 
 class OrganizationPractitionerPractitionerRoleReferenceSerializer(
@@ -119,6 +120,7 @@ class PaymentReconciliationSerializer(WritableNestedModelSerializer):
     payment_issuer = PaymentReconciliationPaymentIssuerReferenceSerializer(
         many=False, required=False
     )
+    request = TaskReferenceSerializer(required=False)
     requestor = OrganizationPractitionerPractitionerRoleReferenceSerializer(  # codespell:ignore requestor
         required=False
     )

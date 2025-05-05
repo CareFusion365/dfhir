@@ -81,12 +81,12 @@ class PaymentNoticeRequestReference(BaseReference):
         related_name="payment_notice_request_reference",
         null=True,
     )
-    # claim = models.ForeignKey(
-    #     "claims.Claim",
-    #     on_delete=models.CASCADE,
-    #     related_name="payment_notice_request_reference",
-    #     null=True,
-    # )
+    claim = models.ForeignKey(
+        "claims.Claim",
+        on_delete=models.CASCADE,
+        related_name="payment_notice_request_reference",
+        null=True,
+    )
 
 
 class PaymentNoticeResponseReference(BaseReference):
@@ -98,12 +98,12 @@ class PaymentNoticeResponseReference(BaseReference):
         related_name="payment_notice_response_reference",
         null=True,
     )
-    # claim_response = models.ForeignKey(
-    #     "claimresponses.ClaimResponse",
-    #     on_delete=models.CASCADE,
-    #     related_name="payment_notice_response_reference",
-    #     null=True,
-    # )
+    claim_response = models.ForeignKey(
+        "claimresponses.ClaimResponse",
+        on_delete=models.CASCADE,
+        related_name="payment_notice_response_reference",
+        null=True,
+    )
 
 
 class PaymentNotice(TimeStampedModel):
@@ -138,12 +138,12 @@ class PaymentNotice(TimeStampedModel):
         related_name="payment_notice",
         null=True,
     )
-    # payment = models.ForeignKey(
-    #     "paymentreconciliations.PaymentReconciliation",
-    #     on_delete=models.CASCADE,
-    #     related_name="payment_notice",
-    #     null=True,
-    # )
+    payment = models.ForeignKey(
+        "paymentreconciliations.PaymentReconciliation",
+        on_delete=models.CASCADE,
+        related_name="payment_notice",
+        null=True,
+    )
     payment_date = models.DateTimeField(null=True)
     payee = models.ForeignKey(
         PaymentNoticePayeeReference,

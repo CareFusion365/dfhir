@@ -482,3 +482,26 @@ class ActivityDefinitionReference(BaseReference):
         related_name="activity_definition_reference",
         null=True,
     )
+
+
+class ActivityPlanDefinitionReference(BaseReference):
+    """activity plan definition reference model."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="activity_plan_definition_reference_identifier",
+    )
+    activity_definition = models.ForeignKey(
+        ActivityDefinition,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="activity_plan_definition_reference_activity_definition",
+    )
+    plan_definition = models.ForeignKey(
+        "plandefinitions.PlanDefinition",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="activity_plan_definition_reference_plan_definition",
+    )

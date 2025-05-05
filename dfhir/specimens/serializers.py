@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     PeriodSerializer,
     SimpleQuantitySerializer,
 )
+from dfhir.bodystructures.serializers import BodyStructureCodeableReferenceSerializer
 from dfhir.devices.serializers import DeviceReferenceSerializer
 from dfhir.procedures.serializers import ProcedureReferenceSerializer
 from dfhir.servicerequests.serializers import ServiceRequestReferenceSerializer
@@ -75,6 +76,7 @@ class SpecimenCollectionSerializer(WritableNestedModelSerializer):
     method = CodeableConceptSerializer(many=False, required=False)
     device = DeviceReferenceSerializer(many=False, required=False)
     procedure = ProcedureReferenceSerializer(many=False, required=False)
+    body_site = BodyStructureCodeableReferenceSerializer(many=False, required=False)
     fasting_status_codeable_concept = CodeableConceptSerializer(
         many=False, required=False
     )

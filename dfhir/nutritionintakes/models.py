@@ -297,7 +297,7 @@ class NutritionIntakeReasonReference(BaseReference):
         related_name="nutrition_intake_reason_reference_diagnostic_report",
     )
     document_reference = models.ForeignKey(
-        "documents.DocumentReference",
+        "documentreferences.DocumentReference",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="nutrition_intake_reason_reference_document_reference",

@@ -132,11 +132,12 @@ class SpecimenCollection(TimeStampedModel):
         null=True,
         related_name="specimen_collections_procedure",
     )
-    # TODO: body_site = models.ForeignKey(
-    #     BodyStructureCodeableReference,
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="specimen_collections_body_site",
-    # )
+    body_site = models.ForeignKey(
+        "bodystructures.BodyStructureCodeableReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="specimen_collections_body_site",
+    )
     fasting_status_codeable_concept = models.ForeignKey(
         CodeableConcept,
         on_delete=models.DO_NOTHING,

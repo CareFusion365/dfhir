@@ -21,8 +21,8 @@ from .models import (
     AllergyIntoleranceAsserterReference,
     AllergyIntoleranceReaction,
     AllergyIntoleranceRecorderReference,
+    AllergyIntoleranceReference,
 )
-
 
 
 class AllergyIntoleranceReferenceSerializer(BaseReferenceModelSerializer):
@@ -33,8 +33,9 @@ class AllergyIntoleranceReferenceSerializer(BaseReferenceModelSerializer):
     class Meta:
         """Meta options."""
 
-        model = AllergyIntolerance
+        model = AllergyIntoleranceReference
         exclude = ["created_at", "updated_at"]
+
 
 class AllergyIntoleranceRecorderReferenceSerializer(BaseReferenceModelSerializer):
     """Allergy Intolerance Recorder Reference serializer."""

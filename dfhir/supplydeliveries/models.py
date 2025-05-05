@@ -222,11 +222,11 @@ class SupplyDelivery(TimeStampedModel):
     identifier = models.ManyToManyField(
         Identifier, blank=True, related_name="supply_delivery_identifier"
     )
-    # TODO: based_on = models.ManyToManyField(
-    #     "supplyrequests.SupplyRequestReference",
-    #     blank=True,
-    #     related_name="supply_delivery_based_on",
-    # )
+    based_on = models.ManyToManyField(
+        "supplyrequests.SupplyRequestReference",
+        blank=True,
+        related_name="supply_delivery_based_on",
+    )
     part_of = models.ManyToManyField(
         SupplyDeliveryContractReference,
         blank=True,

@@ -224,6 +224,7 @@ class AllergyIntolerance(TimeStampedModel):
         blank=True,
     )
 
+
 class AllergyIntoleranceReference(BaseReference):
     """allergy intolerance reference model."""
 

@@ -208,12 +208,12 @@ class ObservationDefinition(TimeStampedModel):
         null=True,
         related_name="observation_definition_method",
     )
-    # TODO: specimen = models.ForeignKey(
-    #     "specimendefinitions.SpecimenDefinition",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="observation_definition_specimen",
-    # )
+    specimen = models.ForeignKey(
+        "specimendefinitions.SpecimenDefinition",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_definition_specimen",
+    )
     device = models.ForeignKey(
         "devicedefinitions.DeviceDefinition",
         on_delete=models.SET_NULL,

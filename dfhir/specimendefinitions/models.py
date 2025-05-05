@@ -4,6 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 from dfhir.base.models import (
+    BaseReference,
     CodeableConcept,
     Coding,
     ContactDetail,
@@ -225,4 +226,21 @@ class SpecimenDefinition(TimeStampedModel):
         SpecimenDefinitionTypeTested,
         related_name="specimen_definition_type_tested",
         blank=True,
+    )
+
+
+class SpecimenDefinitionReference(BaseReference):
+    """Specimen Definition Reference."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.CASCADE,
+        null=True,
+        related_name="specimen_definition_reference_identifier",
+    )
+    specimen_definition = models.ForeignKey(
+        SpecimenDefinition,
+        on_delete=models.CASCADE,
+        null=True,
+        related_name="specimen_definition_reference_specimen_definition",
     )
