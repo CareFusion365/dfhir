@@ -4,6 +4,7 @@ from django.db import models
 
 from dfhir.activitydefinitions.choices import (
     ActivityDefinitionIntentChoices,
+    ActivityDefinitionKindChoices,
     ActivityDefinitionParticipantTypeChoices,
     ActivityDefinitionPriorityChoices,
     ActivityDefinitionStatus,
@@ -340,11 +341,8 @@ class ActivityDefinition(TimeStampedModel):
     # TODO: library = models.ManyToManyField(
     #     "CanonicalLibrary", related_name="activity_definition_library", blank=True
     # )
-    kind = models.ForeignKey(
-        "base.Coding",
-        on_delete=models.DO_NOTHING,
-        null=True,
-        related_name="activity_definition_kind",
+    kind = models.CharField(
+        max_length=255, null=True, choices=ActivityDefinitionKindChoices.choices
     )
     # TODO: profile = models.ForeignKey(
     #     "StructuredDefinitionCanonical",
