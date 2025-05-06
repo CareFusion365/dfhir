@@ -72,7 +72,7 @@ class AccountCoverage(TimeStampedModel):
     """Account coverage model."""
 
     coverage = models.ForeignKey(
-        "coverages.Coverage",
+        "coverages.CoverageReference",
         related_name="account_coverage_coverage",
         on_delete=models.CASCADE,
         null=True,

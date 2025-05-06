@@ -15,7 +15,7 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
     VirtualServiceDetailsSerializer,
 )
-from dfhir.endpoints.serializers import EndpointSerializer
+from dfhir.endpoints.serializers import EndpointReferenceSerializer
 
 from .models import (
     Location,
@@ -74,7 +74,7 @@ class LocationSerializer(BaseWritableNestedModelSerializer):
     managing_organization = OrganizationReferenceSerializer(many=False, required=False)
     characteristic = CodeableConceptSerializer(many=True, required=False)
     virtual_service = VirtualServiceDetailsSerializer(many=True, required=False)
-    endpoint = EndpointSerializer(many=True, required=False)
+    endpoint = EndpointReferenceSerializer(many=True, required=False)
     part_of = LocationReferenceSerializer(many=False, required=False)
 
     class Meta:
