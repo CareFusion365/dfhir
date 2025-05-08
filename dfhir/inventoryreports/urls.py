@@ -13,7 +13,7 @@ urlpatterns = [
         name="inventoryreport-list",
     ),
     path(
-        "api/inventoryreports/<int:pk>/",
+        "inventoryreports/<int:pk>/",
         views.InventoryReportDetailView.as_view(),
         name="inventoryreport-list",
     ),
