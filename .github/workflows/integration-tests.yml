@@ -57,7 +57,7 @@ jobs:
 
       - name: Run DB Migrations
         working-directory: .
-        run: poetry run python manage.py migrate
+        run: poetry run python manage.py migrate_all
 
       - name: Load DB Fixtures
         working-directory: .
