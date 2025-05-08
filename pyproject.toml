@@ -37,6 +37,7 @@ dev = [
 [tool.poetry.dependencies]
 python = "^3.11"
 django = "^5.0"
+django-environ ="^0.11"
 djangorestframework = ">=3.14.0"
 django-filter = ">=23.1"
 drf-writable-nested = "0.7.0"
@@ -47,6 +48,7 @@ twine = ">=4.0.0,<7.0"
 psycopg = "^3.2.6"
 drf-spectacular = "^0.28.0"
 djangorestframework-recursive = "^0.1.2"
+environ = "^1.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -60,18 +62,9 @@ ruff = "0.8.2"
 requires = ["poetry-core>=1.5.1"]
 build-backend = "poetry.core.masonry.api"
 
-# ==== pytest ====
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "--ds=config.settings.test --reuse-db --import-mode=importlib"
-python_files = [
-    "tests.py",
-    "test_*.py",
-]
-
 # ==== Coverage ====
 [tool.coverage.run]
-include = ["nebula/**"]
+include = ["dfhir/**"]
 omit = ["*/migrations/*", "*/tests/*"]
 plugins = ["django_coverage_plugin"]
 
