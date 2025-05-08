@@ -55,9 +55,9 @@ jobs:
       - name: Install Dependencies
         run: poetry install
 
-#      - name: Run DB Migrations
-#        working-directory: .
-#        run: poetry run python manage.py migrate
+      - name: Run DB Migrations
+        working-directory: .
+        run: poetry run python manage.py migrate
 
       - name: Load DB Fixtures
         working-directory: .
