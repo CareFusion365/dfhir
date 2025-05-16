@@ -7,9 +7,10 @@ from dfhir.base.serializers import (
     IdentifierSerializer,
     PeriodSerializer,
 )
-from dfhir.healthcareservices.serializers import HealthCareServiceCodeableReferenceSerializer
+from dfhir.healthcareservices.serializers import (
+    HealthCareServiceCodeableReferenceSerializer,
+)
 from dfhir.schedules.models import Schedule, ScheduleReference, SchedulesActorReference
-
 
 
 class ActorSerializer(BaseReferenceModelSerializer):
