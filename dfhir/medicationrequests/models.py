@@ -110,21 +110,24 @@ class MedicationRequestBasedOnReference(BaseReference):
         related_name="medication_request_based_on_reference",
         null=True,
     )
-    # TODO: care_plan = models.ForeignKey(
-    #     "CarePlan",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="medication_request_based_on_care_plan",
-    # )
+    care_plan = models.ForeignKey(
+        "careplans.CarePlan",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="medication_request_based_on_care_plan",
+    )
     service_request = models.ForeignKey(
         "servicerequests.ServiceRequest",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="medication_request_based_on_service_request",
     )
-    # TODO: immunization_recommendation = models.ForeignKey(
-    #     "ImmunizationRecommendation", on_delete=models.DO_NOTHING, null=True
-    # )
+    immunization_recommendation = models.ForeignKey(
+        "immunizationrecommendations.ImmunizationRecommendation",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="medication_request_based_on_immunization_recommendation",
+    )
     # TODO: request_orchestration = models.ForeignKey(
     #     "RequestOrchestration", on_delete=models.DO_NOTHING, null=True
     # )
@@ -260,7 +263,12 @@ class MedicationRequestPerformerReference(BaseReference):
         null=True,
         related_name="medication_request_performer_reference_patient",
     )
-    # TODO: device_definition = models.ForeignKey("DeviceDefinition", null=True, on_delete=models.SET_NULL)
+    device_definition = models.ForeignKey(
+        "devicedefinitions.DeviceDefinition",
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="medication_request_performer_reference_device_definition",
+    )
     related_person = models.ForeignKey(
         "relatedpersons.RelatedPerson", null=True, on_delete=models.SET_NULL
     )
@@ -299,7 +307,12 @@ class MedicationRequestReasonReference(BaseReference):
         on_delete=models.SET_NULL,
         related_name="medication_request_reason_reference_diagnostic_report",
     )
-    # TODO: procedure = models.ForeignKey("Procedure", null=True, on_delete=models.SET_NULL)
+    procedure = models.ForeignKey(
+        "procedures.Procedure",
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="medication_request_reason_reference_procedure",
+    )
 
 
 class MedicatonRequestReasonCodealbleReference(TimeStampedModel):
@@ -411,8 +424,18 @@ class MedicationRequestInsuranceReference(BaseReference):
         null=True,
         related_name="medication_request_insurance_reference_identifier",
     )
-    # TODO: coverage = models.ForeignKey("Coverages", on_delete=models.SET_NULL, null=True)
-    # TODO: claim_response = models.ForeignKey("ClaimResponse", on_delete=models.SET_NULL, null=True)
+    coverage = models.ForeignKey(
+        "coverages.Coverage",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="medication_request_insurance_reference_coverage",
+    )
+    claim_response = models.ForeignKey(
+        "claimresponses.ClaimResponse",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="medication_request_insurance_reference_claim_response",
+    )
 
 
 class MedicationRequestProvinanceReference(BaseReference):
@@ -424,7 +447,12 @@ class MedicationRequestProvinanceReference(BaseReference):
         null=True,
         related_name="medication_request_provinance_reference_identifier",
     )
-    # TODO: provenance = models.ForeignKey("Proviance", on_delete=models.SET_NULL, null=True)
+    provenance = models.ForeignKey(
+        "provenances.Provenance",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="medication_request_provinance_reference_provenance",
+    )
 
 
 class MedicationRequest(TimeStampedModel):

@@ -361,3 +361,20 @@ class Immunization(TimeStampedModel):
         blank=True,
         related_name="immunization_protocol_applied",
     )
+
+
+class ImmunizationReference(BaseReference):
+    """immunization reference model."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="immunization_reference_identifier",
+    )
+    immunization = models.ForeignKey(
+        Immunization,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="immunization_reference_immunization",
+    )

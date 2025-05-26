@@ -79,6 +79,20 @@ class MedicationIngredientSerializer(WritableNestedModelSerializer):
 class MedicationSerializer(BaseWritableNestedModelSerializer):
     """medication serializer."""
 
+    def get_fields(self):
+        """Get fields."""
+        from dfhir.medicationknowledges.serializers import (
+            MedicationKnowledgeReferenceSerializer,
+        )
+
+        fields = super().get_fields()
+
+        fields["definition"] = MedicationKnowledgeReferenceSerializer(
+            required=False, many=False
+        )
+
+        return fields
+
     code = CodeableConceptSerializer(required=False, many=False)
     dose_form = CodeableConceptSerializer(required=False, many=False)
     batch = MedicationBatchSerializer(required=False, many=False)

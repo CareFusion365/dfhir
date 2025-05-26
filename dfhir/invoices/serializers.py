@@ -16,6 +16,7 @@ from dfhir.base.serializers import (
 )
 from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
+from ..chargeitems.serializers import ChargeItemReferenceSerializer
 from .models import (
     Invoice,
     InvoiceLineItem,
@@ -66,6 +67,7 @@ class InvoiceLineItemSerializer(WritableNestedModelSerializer):
     """Invoice line item serializer."""
 
     service_period = PeriodSerializer(many=False, required=False)
+    charge_item_reference = ChargeItemReferenceSerializer(many=False, required=False)
     charge_item_codeable_concept = CodeableConceptSerializer(many=False, required=False)
     price_component = MonetaryComponentSerializer(many=True, required=False)
 
