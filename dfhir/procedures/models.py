@@ -192,13 +192,12 @@ class ProcedureFocusReference(BaseReference):
         related_name="procedure_focus_reference_practitioner_role",
         null=True,
     )
-    # TODO: fix.
-    # specimen = models.ForeignKey(
-    #     "specimens.Specimen",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="procedure_focus_reference_specimen",
-    #     null=True,
-    # )
+    specimen = models.ForeignKey(
+        "specimens.Specimen",
+        on_delete=models.DO_NOTHING,
+        related_name="procedure_focus_reference_specimen",
+        null=True,
+    )
 
 
 class ProcedureRecorderReference(BaseReference):
@@ -328,12 +327,12 @@ class ProcedureReasonReference(BaseReference):
         related_name="procedure_reason_reference_diagnostic_report",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="procedure_reason_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        related_name="procedure_reason_reference_document_reference",
+        null=True,
+    )
 
 
 class ProcedureReasonCodeableReference(TimeStampedModel):
@@ -507,12 +506,12 @@ class ProcedureReportReference(BaseReference):
         related_name="procedure_reported_reference_diagnostic_report",
         null=True,
     )
-    # document_reference = models.ForeignKey(
-    #     "documentreferences.DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     related_name="procedure_reported_reference_document_reference",
-    #     null=True,
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        related_name="procedure_reported_reference_document_reference",
+        null=True,
+    )
     # composition = models.ForeignKey(
     #     "compositions.Composition",
     #     on_delete=models.DO_NOTHING,

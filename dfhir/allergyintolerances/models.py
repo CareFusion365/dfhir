@@ -223,3 +223,20 @@ class AllergyIntolerance(TimeStampedModel):
         related_name="allergy_intolerance_reaction",
         blank=True,
     )
+
+
+class AllergyIntoleranceReference(BaseReference):
+    """allergy intolerance reference model."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="allergy_intolerance_reference_identifier",
+    )
+    allergy_intolerance = models.ForeignKey(
+        AllergyIntolerance,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="allergy_intolerance_reference_allergy_intolerance",
+    )

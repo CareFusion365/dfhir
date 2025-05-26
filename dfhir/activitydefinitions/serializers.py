@@ -10,6 +10,7 @@ from dfhir.activitydefinitions.models import (
     ActivityDefinitionProductProductReference,
     ActivityDefinitionReference,
     ActivityDefinitionSubjectReference,
+    ActivityPlanDefinitionReference,
 )
 from dfhir.base.serializers import (
     AgeSerializer,
@@ -29,6 +30,18 @@ from dfhir.base.serializers import (
     UsageContextSerializer,
 )
 from dfhir.locations.serializers import LocationReferenceSerializer
+
+
+class ActiviyPlanDefinitionReferenceSerializer(BaseReferenceModelSerializer):
+    """activity plan definition reference serializer."""
+
+    identifier = IdentifierSerializer(required=False)
+
+    class Meta:
+        """meta options."""
+
+        model = ActivityPlanDefinitionReference
+        exclude = ["created_at", "updated_at"]
 
 
 class ActivityDefinitionProductProductReferenceSerializer(BaseReferenceModelSerializer):

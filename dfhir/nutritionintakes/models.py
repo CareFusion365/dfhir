@@ -296,12 +296,12 @@ class NutritionIntakeReasonReference(BaseReference):
         null=True,
         related_name="nutrition_intake_reason_reference_diagnostic_report",
     )
-    # TODO: document_reference = models.ForeignKey(
-    #     "documents.DocumentReference",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="nutrition_intake_reason_reference_document_reference",
-    # )
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="nutrition_intake_reason_reference_document_reference",
+    )
 
 
 class NutritionIntakeReasonCodeableReference(TimeStampedModel):

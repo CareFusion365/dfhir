@@ -120,7 +120,12 @@ class RiskAssessmentReasonReference(BaseReference):
         null=True,
         related_name="risk_assessment_reason_references_diagnostic_report",
     )
-    # TODO: document_reference = models.ForeignKey("DocumentReference")
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="risk_assessment_reason_references_document_reference",
+    )
 
 
 class RiskAssessmentReasonCodeableConcept(TimeStampedModel):

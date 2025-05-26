@@ -399,9 +399,9 @@ class NutritionOrder(TimeStampedModel):
         blank=True,
         related_name="nutrition_order_performer",
     )
-    # TODO: allergy_intolerance = models.ManyToManyField(
-    #     AllergyInteolleranceReference, blank=True
-    # )
+    allergy_intolerance = models.ManyToManyField(
+        "allergyintolerances.AllergyIntoleranceReference", blank=True
+    )
     food_preference_modifier = models.ManyToManyField(
         CodeableConcept,
         related_name="nutrition_order_food_preference_modifier",

@@ -77,7 +77,12 @@ class ObservationBasedOnReference(BaseReference):
         null=True,
         related_name="observation_based_on_reference_medication_request",
     )
-    # TODO: nutrition_order = models.ForeignKey("NutritionOrder", on_delete=models.SET_NULL, null=True)
+    nutrition_order = models.ForeignKey(
+        "nutritionorders.NutritionOrder",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_based_on_reference_nutrition_order",
+    )
     service_request = models.ForeignKey(
         "servicerequests.ServiceRequest",
         on_delete=models.SET_NULL,
@@ -95,18 +100,48 @@ class ObservationPartOfReference(BaseReference):
         null=True,
         related_name="observation_part_of_reference_identifier",
     )
-    # TODO: medication_administration = models.ForeignKey("MedcationAdministration", on_delete=models.SET_NULL, null=True)
-    # TODO: medication_dispense = models.ForeignKey(
-    #     "medicationdispenses.MedicationDispense",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     related_name="observation_part_of_reference_medication_dispense",
-    # )
-    # TODO: medication_statement = models.ForeignKey("medicationstatements.MedicationStatement", on_delete=models.SET_NULL, null=True)
-    # TODO: procedure = models.ForeignKey("procedures.Procedure", on_delete=models.SET_NULL, null=True)
-    # TODO: immunization = models.ForeignKey("immunizations.Immunization", on_delete=models.SET_NULL, null=True)
-    # TODO: imaging_study = models.ForeignKey("imagingstudies.ImagingStudy", on_delete=models.SET_NULL, null=True)
-    # TODO: genomic_study = models.ForeignKey("genomicstudies.GenomicStudy", on_delete=models.SET_NULL, null=True)
+    medication_administration = models.ForeignKey(
+        "medicationadministrations.MedicationAdministration",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_medication_administration",
+    )
+    medication_dispense = models.ForeignKey(
+        "medicationdispenses.MedicationDispense",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_medication_dispense",
+    )
+    medication_statement = models.ForeignKey(
+        "medicationstatements.MedicationStatement",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_medication_statement",
+    )
+    procedure = models.ForeignKey(
+        "procedures.Procedure",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_procedure",
+    )
+    immunization = models.ForeignKey(
+        "immunizations.Immunization",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_immunization",
+    )
+    imaging_study = models.ForeignKey(
+        "imagingstudies.ImagingStudy",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_imaging_study",
+    )
+    genomic_study = models.ForeignKey(
+        "genomicstudies.GenomicStudy",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_part_of_reference_genomic_study",
+    )
 
 
 class ObservationSubjectReference(BaseReference):
@@ -132,9 +167,12 @@ class ObservationSubjectReference(BaseReference):
     organization = models.ForeignKey(
         "organizations.Organization", on_delete=models.SET_NULL, null=True
     )
-    # TODO: procedure = models.ForeignKey(
-    #     "procedures.Procedure", on_delete=models.SET_NULL, null=True
-    # )
+    procedure = models.ForeignKey(
+        "procedures.Procedure",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_subject_reference_procedure",
+    )
     practitioner = models.ForeignKey(
         "practitioners.Practitioner", on_delete=models.SET_NULL, null=True
     )
@@ -144,10 +182,18 @@ class ObservationSubjectReference(BaseReference):
     # TODO: substance = models.ForeignKey(
     #     "substances.Substance", on_delete=models.SET_NULL, null=True
     # )
-    # TODO: biologically_derived_product = models.ForeignKey(
-    #     "BiologicallyDerivedProduct", on_delete=models.SET_NULL, null=True
-    # )
-    # TODO: nutrition_product = models.ForeignKey("NutritionProduct", on_delete=models.SET_NULL, null=True)
+    biologically_derived_product = models.ForeignKey(
+        "biologicallyderivedproducts.BiologicallyDerivedProduct",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_subject_reference_biologically_derived_product",
+    )
+    nutrition_product = models.ForeignKey(
+        "nutritionproducts.NutritionProduct",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_subject_reference_nutrition_product",
+    )
 
 
 class ObservationTriggeredBy(TimeStampedModel):
@@ -178,7 +224,12 @@ class ObservationHasMemberReference(BaseReference):
         related_name="observation_has_member_reference_observation",
     )
     # TODO: questionnaire_response = models.ForeignKey("QuestionnaireResponse", on_delete=models.SET_NULL, null=True)
-    # TODO: molecular_sequence = models.ForeignKey("MolecularSequence", on_delete=models.SET_NULL, null=True)
+    molecular_sequence = models.ForeignKey(
+        "molecularsequences.MolecularSequence",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_has_member_reference_molecular_sequence",
+    )
 
 
 class ObservationDerivedFromReference(BaseReference):
@@ -190,9 +241,18 @@ class ObservationDerivedFromReference(BaseReference):
         null=True,
         related_name="observation_derived_from_reference_identifier",
     )
-    # TODO: document_reference = models.ForeignKey("DocumentReference", on_delete=models.SET_NULL, null=True)
-    # TODO: imaging_study = models.ForeignKey("imagingstudies.ImagingStudy", on_delete=models.SET_NULL, null=True)
-    # TODO: imaging_selection = models.ForeignKey("imagingselections.ImagingSelection", on_delete=models.SET_NULL, null=True)
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_derived_from_reference_document_reference",
+    )
+    imaging_study = models.ForeignKey(
+        "imagingstudies.ImagingStudy", on_delete=models.SET_NULL, null=True
+    )
+    imaging_selection = models.ForeignKey(
+        "imagingselections.ImagingSelection", on_delete=models.SET_NULL, null=True
+    )
     # TODO: questionnaire_response = models.ForeignKey("QuestionnaireResponse", on_delete=models.SET_NULL, null=True)
     observation = models.ForeignKey(
         "observations.Observation",
@@ -200,8 +260,13 @@ class ObservationDerivedFromReference(BaseReference):
         null=True,
         related_name="observation_derived_from_reference_observation",
     )
-    # TODO: molecular_sequence = models.ForeignKey("MolecularSequence", on_delete=models.SET_NULL, null=True)
-    # TODO: geometric_study= models.ForeignKey("geometricstudies.GeometricStudy", on_delete=models.SET_NULL, null=True)
+    molecular_sequence = models.ForeignKey(
+        "molecularsequences.MolecularSequence",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="observation_derived_from_reference_molecular_sequence",
+    )
+    # geometric_study= models.ForeignKey("geometricstudies.GeometricStudy", on_delete=models.SET_NULL, null=True)
 
 
 class SampledDataIntervalUnitCodes(TimeStampedModel):
@@ -584,4 +649,9 @@ class DocumentReferenceObservationReference(BaseReference):
         null=True,
         related_name="document_reference_observation_reference_observation",
     )
-    # TODO: document_reference = models.ForeignKey("documentreferences.DocumentReference", on_delete=models.SET_NULL, null=True, related_name="document_reference_observation_reference_document_reference")
+    document_reference = models.ForeignKey(
+        "documentreferences.DocumentReference",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="document_reference_observation_reference_document_reference",
+    )

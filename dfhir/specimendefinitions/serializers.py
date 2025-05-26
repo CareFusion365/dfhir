@@ -3,6 +3,7 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 
 from dfhir.base.serializers import (
+    BaseReferenceModelSerializer,
     BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     CodingSerializer,
@@ -17,11 +18,24 @@ from dfhir.groups.serializers import GroupReferenceSerializer
 
 from .models import (
     SpecimenDefinition,
+    SpecimenDefinitionReference,
     SpecimenDefinitionTypeTested,
     SpecimenDefinitionTypeTestedContainer,
     SpecimenDefinitionTypeTestedContainerAdditive,
     SpecimenDefinitionTypeTestedHandling,
 )
+
+
+class SpecimenDefinitionReferenceSerializer(BaseReferenceModelSerializer):
+    """Serializer for specimen definition reference."""
+
+    identifier = IdentifierSerializer(many=False, required=False)
+
+    class Meta:
+        """meta options."""
+
+        model = SpecimenDefinitionReference
+        fields = ["created_at", "updated_at"]
 
 
 class SpecimenDefinitionTypeTestedContainerAdditiveSerializer(

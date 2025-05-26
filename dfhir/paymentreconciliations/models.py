@@ -54,42 +54,42 @@ class PaymentReconciliationAllocationTargetReference(BaseReference):
         null=True,
         related_name="payment_reconciliation_allocation_target_reference_identifier",
     )
-    # TODO: claim = models.ForeignKey(
-    #     "claims.Claim",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_allocation_target_reference_claim",
-    # )
+    claim = models.ForeignKey(
+        "claims.Claim",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_allocation_target_reference_claim",
+    )
     account = models.ForeignKey(
         "accounts.Account",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="payment_reconciliation_allocation_target_reference_account",
     )
-    # TODO: invoice = models.ForeignKey(
-    #     "invoices.Invoice",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_allocation_target_reference_invoice",
-    # )
-    # TODO: charge_item = models.ForeignKey(
-    #     "chargeitems.ChargeItem",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_allocation_target_reference_charge_item",
-    # )
+    invoice = models.ForeignKey(
+        "invoices.Invoice",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_allocation_target_reference_invoice",
+    )
+    charge_item = models.ForeignKey(
+        "chargeitems.ChargeItem",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_allocation_target_reference_charge_item",
+    )
     encounter = models.ForeignKey(
         "encounters.Encounter",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="payment_reconciliation_allocation_target_reference_encounter",
     )
-    # TODO: contract = models.ForeignKey(
-    #     "contracts.Contract",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_allocation_target_reference_contract",
-    # )
+    contract = models.ForeignKey(
+        "contracts.Contract",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_allocation_target_reference_contract",
+    )
 
 
 class PaymentReconciliationPaymentIssuerReference(BaseReference):
@@ -258,13 +258,12 @@ class PaymentReconciliation(TimeStampedModel):
         null=True,
         related_name="payment_reconciliation_payment_issuer",
     )
-
-    # TODO: request = models.ForeignKey(
-    #     "tasks.TaskRefrence",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="payment_reconciliation_request",
-    # )
+    request = models.ForeignKey(
+        "tasks.TaskReference",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="payment_reconciliation_request",
+    )
     requestor = models.ForeignKey(  # codespell:ignore requestor
         OrganizationPractitionerPractitionerRoleReference,
         on_delete=models.DO_NOTHING,

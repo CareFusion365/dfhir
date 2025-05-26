@@ -22,6 +22,7 @@ from dfhir.supplydeliveries.models import (
     SupplyDeliverySuppliedItemItemReference,
     SupplyDeliverySupplierReference,
 )
+from dfhir.supplyrequests.serializers import SupplyRequestReferenceSerilizer
 
 
 class SupplyDeliveryContractReferenceSerializer(BaseReferenceModelSerializer):
@@ -115,7 +116,7 @@ class SupplyDeliverySerializer(BaseWritableNestedModelSerializer):
     """supply delivery serializer."""
 
     identifier = IdentifierSerializer(required=False, many=True)
-    # based_on = SupplyRequestReferenceSerializer(required=False, many=True)
+    based_on = SupplyRequestReferenceSerilizer(required=False, many=True)
     part_of = SupplyDeliveryContractReferenceSerializer(required=False, many=True)
     patient = PatientReferenceSerializer(required=False)
     type = CodeableConceptSerializer(required=False)

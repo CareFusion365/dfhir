@@ -23,7 +23,7 @@ class TransportReference(BaseReference):
     )
 
 
-class TransportBasedOnReference(TimeStampedModel):
+class TransportBasedOnReference(BaseReference):
     """TransportBasedOn model."""
 
     identifier = models.ForeignKey(
@@ -32,24 +32,24 @@ class TransportBasedOnReference(TimeStampedModel):
         null=True,
         related_name="transport_based_on_identifier",
     )
-    # TODO: task = models.ForeignKey(
-    #     "tasks.Task",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="transport_based_on_task",
-    # )
+    task = models.ForeignKey(
+        "tasks.Task",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="transport_based_on_task",
+    )
     service_request = models.ForeignKey(
         "servicerequests.ServiceRequest",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="transport_based_on_service_request",
     )
-    # TODO: device_request = models.ForeignKey(
-    #     "devicerequests.DeviceRequest",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="transport_based_on_device_request",
-    # )
+    device_request = models.ForeignKey(
+        "devicerequests.DeviceRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="transport_based_on_device_request",
+    )
     medication_request = models.ForeignKey(
         "medicationrequests.MedicationRequest",
         on_delete=models.DO_NOTHING,
@@ -62,12 +62,12 @@ class TransportBasedOnReference(TimeStampedModel):
     #     null=True,
     #     related_name="transport_based_on_requested_orchestration",
     # )
-    # TODO: supply_request = models.ForeignKey(
-    #     "supplyrequests.SupplyRequest",
-    #     on_delete=models.DO_NOTHING,
-    #     null=True,
-    #     related_name="transport_based_on_supply_request",
-    # )
+    supply_request = models.ForeignKey(
+        "supplyrequests.SupplyRequest",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="transport_based_on_supply_request",
+    )
     vision_prescription = models.ForeignKey(
         "visionprescriptions.VisionPrescription",
         on_delete=models.DO_NOTHING,
@@ -356,9 +356,11 @@ class Transport(TimeStampedModel):
         null=True,
         related_name="transport_location",
     )
-    # TODO: insurance = models.ManyToManyField(
-    #     CoverageClaimResponseReference, null=True, related_name="transport_insurance"
-    # )
+    insurance = models.ManyToManyField(
+        "coverages.CoverageClaimResponseReference",
+        blank=True,
+        related_name="transport_insurance",
+    )
     note = models.ManyToManyField(
         "base.Annotation", related_name="transport_note", blank=True
     )

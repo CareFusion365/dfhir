@@ -51,13 +51,13 @@ class TaskRequesterReference(BaseReference):
         related_name="task_requester_reference_device",
     )
     organization = models.ForeignKey(
-        "organizations.ORganization",
+        "organizations.Organization",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_requester_reference_organization",
     )
     patient = models.ForeignKey(
-        "patients.PAtient",
+        "patients.Patient",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_requester_reference_patient",
@@ -104,7 +104,7 @@ class TaskRequestedPerformerReference(BaseReference):
         related_name="task_requested_performer_reference_practitioner_role",
     )
     organization = models.ForeignKey(
-        "organizations.ORganization",
+        "organizations.Organization",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_requested_performer_reference_organization",
@@ -122,7 +122,7 @@ class TaskRequestedPerformerReference(BaseReference):
         related_name="task_requested_practitioner_healthcare_service",
     )
     patient = models.ForeignKey(
-        "patients.PAtient",
+        "patients.Patient",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_requested_performer_reference_patient",
@@ -180,7 +180,7 @@ class TaskOwnerReference(BaseReference):
         related_name="task_owner_reference_practitioner_role",
     )
     organization = models.ForeignKey(
-        "organizations.ORganization",
+        "organizations.Organization",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_owner_reference_organization",
@@ -192,7 +192,7 @@ class TaskOwnerReference(BaseReference):
         null=True,
     )
     patient = models.ForeignKey(
-        "patients.PAtient",
+        "patients.Patient",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_owner_reference_patient",
@@ -228,7 +228,7 @@ class TaskPerformerActorReference(BaseReference):
     )
 
     organization = models.ForeignKey(
-        "organizations.ORganization",
+        "organizations.Organization",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_performer_actor_reference_organization",
@@ -246,7 +246,7 @@ class TaskPerformerActorReference(BaseReference):
         null=True,
     )
     patient = models.ForeignKey(
-        "patients.PAtient",
+        "patients.Patient",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_performer_actor_reference_patient",
@@ -282,7 +282,7 @@ class TaskRestrictionRecipientReference(BaseReference):
         related_name="task_restriction_recipient_reference_practitioner_role",
     )
     organization = models.ForeignKey(
-        "organizations.ORganization",
+        "organizations.Organization",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_restriction_recipient_reference_organization",
@@ -294,7 +294,7 @@ class TaskRestrictionRecipientReference(BaseReference):
         null=True,
     )
     patient = models.ForeignKey(
-        "patients.PAtient",
+        "patients.Patient",
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="task_restriction_recipient_reference_patient",

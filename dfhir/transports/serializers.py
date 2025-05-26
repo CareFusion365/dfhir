@@ -11,6 +11,7 @@ from dfhir.base.serializers import (
     PeriodSerializer,
     ReferenceSerializer,
 )
+from dfhir.coverages.serializers import CoverageClaimResponseReferenceSerializer
 from dfhir.encounters.serializers import EncounterReferenceSerializer
 from dfhir.locations.serializers import LocationReferenceSerializer
 from dfhir.provenances.serializers import ProvenanceReferenceSerializer
@@ -142,6 +143,7 @@ class TransportSerializer(BaseWritableNestedModelSerializer):
     performer_type = CodeableConceptSerializer(required=False, many=True)
     owner = TransportOwnerReferenceSerializer(required=False)
     location = LocationReferenceSerializer(required=False)
+    insurance = CoverageClaimResponseReferenceSerializer(many=True, required=False)
     note = AnnotationSerializer(many=True, required=False)
     relevant_history = ProvenanceReferenceSerializer(many=True, required=False)
     restriction = TransportRestrictionSerializer(required=False)
