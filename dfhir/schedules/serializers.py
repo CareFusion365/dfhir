@@ -7,9 +7,10 @@ from dfhir.base.serializers import (
     IdentifierSerializer,
     PeriodSerializer,
 )
+from dfhir.healthcareservices.serializers import (
+    HealthCareServiceCodeableReferenceSerializer,
+)
 from dfhir.schedules.models import Schedule, ScheduleReference, SchedulesActorReference
-
-# from dfhir.healthcareservices.serializers import HealthCareServiceCodeableReferenceSerializer
 
 
 class ActorSerializer(BaseReferenceModelSerializer):
@@ -28,9 +29,9 @@ class ScheduleSerializer(BaseWritableNestedModelSerializer):
     identifier = IdentifierSerializer(many=True, required=False)
     actor = ActorSerializer(many=True, required=True)
     planning_horizon = PeriodSerializer(many=False, required=False)
-    # service_type = HealthCareServiceCodeableReferenceSerializer(
-    #     many=True, required=False
-    # )
+    service_type = HealthCareServiceCodeableReferenceSerializer(
+        many=True, required=False
+    )
     specialty = CodeableConceptSerializer(many=True, required=False)
     service_category = CodeableConceptSerializer(many=True, required=False)
 
