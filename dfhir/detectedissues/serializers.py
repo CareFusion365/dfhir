@@ -49,6 +49,7 @@ class DetectedIssueCodeableReferenceSerializer(WritableNestedModelSerializer):
         """meta options."""
 
         model = DetectedIssueCodeableReference
+        exclude = ["created_at", "updated_at"]
 
 
 class DetectedIssueSubjectReferenceSerializer(BaseReferenceModelSerializer):
