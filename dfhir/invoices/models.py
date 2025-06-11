@@ -226,3 +226,20 @@ class Invoice(TimeStampedModel):
         related_name="invoice_note",
         blank=True,
     )
+
+
+class InvoiceReference(BaseReference):
+    """Invoice reference model."""
+
+    identifier = models.ForeignKey(
+        Identifier,
+        on_delete=models.CASCADE,
+        related_name="invoice_reference_identifier",
+        null=True,
+    )
+    invoice = models.ForeignKey(
+        Invoice,
+        on_delete=models.CASCADE,
+        related_name="invoice_reference_invoice",
+        null=True,
+    )
