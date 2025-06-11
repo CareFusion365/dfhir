@@ -14,16 +14,16 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
 )
-from dfhir.patients.serializers import PatientGroupReferenceSerializer
-
-from ..chargeitems.serializers import ChargeItemReferenceSerializer
-from .models import (
+from dfhir.chargeitems.serializers import ChargeItemReferenceSerializer
+from dfhir.invoices.models import (
     Invoice,
     InvoiceLineItem,
     InvoiceParticipant,
     InvoiceParticipantActorReference,
     InvoiceRecipientReference,
+    InvoiceReference,
 )
+from dfhir.patients.serializers import PatientGroupReferenceSerializer
 
 
 class InvoiceRecipientReferenceSerializer(BaseReferenceModelSerializer):
@@ -99,4 +99,16 @@ class InvoiceSerializer(BaseWritableNestedModelSerializer):
         """Meta class."""
 
         model = Invoice
+        exclude = ["created_at", "updated_at"]
+
+
+class InvoiceReferenceSerializer(BaseReferenceModelSerializer):
+    """Invoice reference serializer."""
+
+    identifier = IdentifierSerializer(many=False, required=False)
+
+    class Meta:
+        """Meta class."""
+
+        model = InvoiceReference
         exclude = ["created_at", "updated_at"]
