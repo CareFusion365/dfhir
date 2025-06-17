@@ -434,7 +434,7 @@ class Encounter(TimeStampedModel):
         EncounterDiagnosis, related_name="encounter_diagnosis", blank=True
     )
     account = models.ManyToManyField(
-        "accounts.Account", related_name="encounter_account", blank=True
+        "accounts.AccountReference", related_name="encounter_account", blank=True
     )
     diet_preference = models.ManyToManyField(
         CodeableConcept, related_name="encounter_diet_preference", blank=True
