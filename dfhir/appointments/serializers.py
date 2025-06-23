@@ -20,7 +20,7 @@ from dfhir.healthcareservices.serializers import (
 from dfhir.patients.serializers import (
     PatientGroupReferenceSerializer,
 )
-from dfhir.slots.serializers import SlotSerializer
+from dfhir.slots.serializers import SlotReferenceSerializer
 
 from .models import (
     Appointment,
@@ -215,7 +215,7 @@ class AppointmentSerializer(BaseWritableNestedModelSerializer):
     previous_appointment = AppointmentReferenceSerializer(required=False)
     originating_appointment = AppointmentReferenceSerializer(required=False)
     requested_period = PeriodSerializer(many=True, required=False)
-    slot = SlotSerializer(many=True, required=False)
+    slot = SlotReferenceSerializer(many=True, required=False)
     note = AnnotationSerializer(many=True, required=False)
     patient_instruction = DocumentReferenceBinaryCommunicationReferenceSerializer(
         many=True, required=False
