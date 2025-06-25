@@ -44,14 +44,14 @@ class GenderChoices(models.TextChoices):
 class ParticipantType(models.TextChoices):
     """Participant types."""
 
-    ADMITTER = "admitter", _("Admitter")
-    ATTENDER = "attender", _("Attender")
-    CALLBACK_CONTACT = "callback_contact", _("Callback Contact")
-    CONSULTANT = "consultant", _("Consultant")
-    DISCHARGER = "discharger", _("Discharger")
-    EMERGENCY_CONTACT = "emergency_contact", _("Emergency Contact")
-    ESCORT = "escort", _("Escort")
-    REFERRER = "referrer", _("Referrer")
+    ADM = "ADM", _("Admitter")
+    ATTD = "ATND", _("Attender")
+    CALLBCK = "CALLBCK", _("Callback Contact")  # # codespell:ignore
+    CON = "CON", _("Consultant")
+    DIS = "DIS", _("Discharger")
+    EMERGENCY = "emergency", _("Emergency")
+    ESCORT = "ESC", _("escort")
+    REF = "REF", _("Referrer")
     TRANSLATOR = "translator", _("Translator")
 
 
