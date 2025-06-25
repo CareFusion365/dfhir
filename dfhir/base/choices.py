@@ -46,7 +46,7 @@ class ParticipantType(models.TextChoices):
 
     ADM = "ADM", _("Admitter")
     ATTD = "ATND", _("Attender")
-    CALLBCK = "CALLBCK", _("Callback Contact")
+    CALLBCK = "CALLBCK", _("Callback Contact")  # # codespell:ignore
     CON = "CON", _("Consultant")
     DIS = "DIS", _("Discharger")
     EMERGENCY = "emergency", _("Emergency")
