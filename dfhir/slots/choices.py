@@ -19,6 +19,6 @@ class SlotStatus(models.TextChoices):
 
     FREE = "free", _("Free")
     BUSY = "busy", _("Busy")
-    BUSY_UNAVAILABLE = "busy_unavailable", _("Busy Unavailable")
-    BUSY_TENTATIVE = "busy_tentative", _("Busy Tentative")
-    ENTER_IN_ERROR = "enter_in_error", _("Enter in Error")
+    BUSY_UNAVAILABLE = "busy-unavailable", _("Busy Unavailable")
+    BUSY_TENTATIVE = "busy-tentative", _("Busy Tentative")
+    ENTERED_IN_ERROR = "entered-in-error", _("Entered in Error")
