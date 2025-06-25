@@ -49,7 +49,7 @@ class ParticipantType(models.TextChoices):
     CALLBCK = "CALLBCK", _("Callback Contact")
     CON = "CON", _("Consultant")
     DIS = "DIS", _("Discharger")
-    EMERGENCY = "EMERGENCY", _("Emergency Contact")
+    EMERGENCY = "emergency", _("Emergency")
     ESCORT = "ESC", _("escort")
     REF = "REF", _("Referrer")
     TRANSLATOR = "translator", _("Translator")
