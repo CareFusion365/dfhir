@@ -18,6 +18,9 @@ from dfhir.base.serializers import (
 )
 from dfhir.careteams.serializers import CareTeamReferenceSerializer
 from dfhir.conditions.serializers import ConditionCodeableReferenceSerializer
+from dfhir.healthcareservices.serializers import (
+    HealthCareServiceCodeableReferenceSerializer,
+)
 from dfhir.locations.serializers import (
     LocationOrganizationReferenceSerializer,
     LocationReferenceSerializer,
@@ -236,7 +239,9 @@ class EncounterSerializer(BaseWritableNestedModelSerializer):
     klass = CodeableConceptSerializer(required=False, many=True)
     priority = CodeableConceptSerializer(required=False)
     type = CodeableConceptSerializer(required=False, many=True)
-    service_type = CodeableConceptSerializer(required=False, many=True)
+    service_type = HealthCareServiceCodeableReferenceSerializer(
+        required=False, many=True
+    )
     subject = PatientGroupReferenceSerializer(required=False)
     subject_status = CodeableConceptSerializer(required=False)
     based_on = EncounterBasedOnReferenceSerializer(required=False, many=True)

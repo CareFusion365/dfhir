@@ -3,6 +3,9 @@
 from drf_writable_nested.serializers import WritableNestedModelSerializer
 from rest_framework import serializers
 
+from dfhir.activitydefinitions.serializers import (
+    ActiviyPlanDefinitionReferenceSerializer,
+)
 from dfhir.base.serializers import (
     AnnotationSerializer,
     BaseReferenceModelSerializer,
@@ -254,7 +257,7 @@ class ServiceRequestSerializer(WritableNestedModelSerializer):
     replace = ServiceRequestReferenceSerializer(many=True, required=False)
     requisition = IdentifierSerializer(many=False, required=False)
     category = CodeableConceptSerializer(many=True, required=False)
-    code = ServiceRequestPlanDefinitionReferenceSerializer(many=False, required=False)
+    code = ActiviyPlanDefinitionReferenceSerializer(many=False, required=False)
     order_detail = ServiceRequestOrderDetailSerializer(many=True, required=False)
     quantity_quantity = QuantitySerializer(many=False, required=False)
     quantity_ratio = RatioSerializer(many=False, required=False)
