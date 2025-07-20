@@ -390,7 +390,7 @@ class Encounter(TimeStampedModel):
         EncounterBasedOnReference, related_name="encounter_based_on", blank=True
     )
     care_team = models.ManyToManyField(
-        "careteams.CareTeam", related_name="encounter_care_team", blank=True
+        "careteams.CareTeamReference", related_name="encounter_care_team", blank=True
     )
     part_of = models.ManyToManyField(
         EncounterReference, related_name="encounter_part_of", blank=True
