@@ -12,6 +12,7 @@ from dfhir.base.serializers import (
     OrganizationReferenceSerializer,
     PeriodSerializer,
     QuantitySerializer,
+    ReferenceSerializer,
 )
 from dfhir.base.serializers import QuantitySerializer as DurationSerializer
 from dfhir.devices.serializers import DeviceCodeableReferenceSerializer
@@ -222,9 +223,7 @@ class MedicationRequestSerializer(BaseWritableNestedModelSerializer):
         many=True, required=False
     )
     encounter = EncounterReferenceSerializer(many=False, required=False)
-    supporting_information = MedicationRequestReferenceSerializer(
-        many=True, required=False
-    )
+    supporting_information = ReferenceSerializer(many=True, required=False)
     requester = MedicationRequestRequesterReferenceSerializer(
         many=False, required=False
     )
