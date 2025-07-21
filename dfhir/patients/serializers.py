@@ -7,6 +7,7 @@ from dfhir.base.serializers import (
     AddressSerializer,
     AttachmentSerializer,
     BaseReferenceModelSerializer,
+    BaseWritableNestedModelSerializer,
     CodeableConceptSerializer,
     CommunicationSerializer,
     ContactPointSerializer,
@@ -94,7 +95,7 @@ class PatientContactSerializer(WritableNestedModelSerializer):
         exclude = ["created_at", "updated_at"]
 
 
-class PatientSerializer(WritableNestedModelSerializer):
+class PatientSerializer(BaseWritableNestedModelSerializer):
     """Patient serializer."""
 
     identifier = IdentifierSerializer(many=True, required=False)
