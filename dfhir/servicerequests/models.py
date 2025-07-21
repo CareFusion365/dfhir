@@ -520,7 +520,7 @@ class ServiceRequest(TimeStampedModel):
     )
     do_not_perform = models.BooleanField(default=False)
     code = models.ForeignKey(
-        "activitydefinitions.ActivityPlanDefinitionReference",
+        "activitydefinitions.ActivityDefinitionPlanDefinitionReference",
         related_name="service_request_code",
         on_delete=models.SET_NULL,
         null=True,
