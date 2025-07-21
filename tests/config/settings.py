@@ -160,11 +160,7 @@ WSGI_APPLICATION = "demo1.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db(
-        "DATABASE_URL", default="postgres://postgres:admin@localhost:5432/dfhir"
-    )
-}
+DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 
