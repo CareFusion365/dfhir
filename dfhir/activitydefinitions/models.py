@@ -482,7 +482,7 @@ class ActivityDefinitionReference(BaseReference):
     )
 
 
-class ActivityPlanDefinitionReference(BaseReference):
+class ActivityDefinitionPlanDefinitionReference(BaseReference):
     """activity plan definition reference model."""
 
     identifier = models.ForeignKey(
