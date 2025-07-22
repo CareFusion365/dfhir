@@ -35,7 +35,7 @@ class SpecimenDefinitionReferenceSerializer(BaseReferenceModelSerializer):
         """meta options."""
 
         model = SpecimenDefinitionReference
-        fields = ["created_at", "updated_at"]
+        exclude = ["created_at", "updated_at"]
 
 
 class SpecimenDefinitionTypeTestedContainerAdditiveSerializer(
