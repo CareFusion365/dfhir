@@ -7,6 +7,7 @@ from dfhir.activitydefinitions.models import (
     ActivityDefinitionDynamicValue,
     ActivityDefinitionParticipant,
     ActivityDefinitionParticipantTypeReference,
+    ActivityDefinitionPlanDefinitionCodeableReference,
     ActivityDefinitionPlanDefinitionReference,
     ActivityDefinitionProductProductReference,
     ActivityDefinitionReference,
@@ -32,7 +33,7 @@ from dfhir.base.serializers import (
 from dfhir.locations.serializers import LocationReferenceSerializer
 
 
-class ActiviyDefinitionPlanDefinitionReferenceSerializer(BaseReferenceModelSerializer):
+class ActivityDefinitionPlanDefinitionReferenceSerializer(BaseReferenceModelSerializer):
     """activity plan definition reference serializer."""
 
     identifier = IdentifierSerializer(required=False)
@@ -171,4 +172,19 @@ class ActivityDefinitionSerializer(BaseWritableNestedModelSerializer):
         """meta options."""
 
         model = ActivityDefinition
+        exclude = ["created_at", "updated_at"]
+
+
+class ActivityDefinitionPlanDefinitionCodeableReferenceSerializer(
+    WritableNestedModelSerializer
+):
+    """activity plan definition codeable reference serializer."""
+
+    concept = CodeableConceptSerializer(required=False)
+    reference = ActivityDefinitionPlanDefinitionReferenceSerializer(required=False)
+
+    class Meta:
+        """meta options."""
+
+        model = ActivityDefinitionPlanDefinitionCodeableReference
         exclude = ["created_at", "updated_at"]
