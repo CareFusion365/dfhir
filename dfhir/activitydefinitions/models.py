@@ -9,7 +9,12 @@ from dfhir.activitydefinitions.choices import (
     ActivityDefinitionPriorityChoices,
     ActivityDefinitionStatus,
 )
-from dfhir.base.models import BaseReference, Identifier, TimeStampedModel
+from dfhir.base.models import (
+    BaseReference,
+    CodeableConcept,
+    Identifier,
+    TimeStampedModel,
+)
 
 
 class ActivityDefinitionParticipantTypeReference(BaseReference):
@@ -502,4 +507,21 @@ class ActivityDefinitionPlanDefinitionReference(BaseReference):
         on_delete=models.DO_NOTHING,
         null=True,
         related_name="activity_plan_definition_reference_plan_definition",
+    )
+
+
+class ActivityDefinitionPlanDefinitionCodeableReference(TimeStampedModel):
+    """activity definition plan definition codeable reference model."""
+
+    concept = models.ForeignKey(
+        CodeableConcept,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="activity_definition_plan_definition_codeable_reference_concept",
+    )
+    reference = models.ForeignKey(
+        ActivityDefinitionPlanDefinitionReference,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        related_name="activity_definition_plan_definition_codeable_reference_reference",
     )
