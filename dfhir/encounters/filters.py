@@ -19,12 +19,12 @@ class EncounterFilter(filters.FilterSet):
     patient = filters.CharFilter(
         field_name="subject__actor__display", lookup_expr="icontains"
     )
-    practitioner = filters.CharFilter(
-        field_name="encounter_participant__practitioner__id", lookup_expr="iexact"
+    participant = filters.CharFilter(
+        field_name="encounter_participant__actor__display", lookup_expr="iexact"
     )
 
     class Meta:
         """Meta class."""
 
         model = Encounter
-        fields = ["id", "start_date_time", "end_date_time", "patient", "practitioner"]
+        fields = ["id", "start_date_time", "end_date_time", "subject", "participant"]
