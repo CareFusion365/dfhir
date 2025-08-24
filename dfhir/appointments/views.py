@@ -7,9 +7,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from .filters import AppointmentFilter
 from .models import Appointment
 from .serializers import AppointmentSerializer
-from .filters import AppointmentFilter
 
 
 class AppointmentListView(APIView):
