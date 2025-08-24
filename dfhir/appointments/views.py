@@ -9,6 +9,7 @@ from rest_framework.views import APIView
 
 from .models import Appointment
 from .serializers import AppointmentSerializer
+from .filters import AppointmentFilter
 
 
 class AppointmentListView(APIView):
@@ -20,7 +21,8 @@ class AppointmentListView(APIView):
     def get(self, request):
         """Get all appointments."""
         appointments = Appointment.objects.all()
-        serializer = AppointmentSerializer(appointments, many=True)
+        appointment_filter = AppointmentFilter(request.GET, queryset=appointments)
+        serializer = AppointmentSerializer(appointment_filter.qs, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     @extend_schema(
