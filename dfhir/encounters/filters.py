@@ -17,10 +17,10 @@ class EncounterFilter(filters.FilterSet):
         field_name="end_date_time", lookup_expr="lte"
     )
     patient = filters.CharFilter(
-        field_name="subject__actor__display", lookup_expr="icontains"
+        field_name="subject__actor__practitioner__id", lookup_expr="icontains"
     )
     participant = filters.CharFilter(
-        field_name="encounter_participant__actor__display", lookup_expr="iexact"
+        field_name="encounter_participant__actor__patient__id", lookup_expr="iexact"
     )
 
     class Meta:
