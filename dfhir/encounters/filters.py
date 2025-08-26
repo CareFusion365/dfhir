@@ -16,7 +16,7 @@ class EncounterFilter(filters.FilterSet):
     end_date_time = DateTimeFromToRangeFilter(
         field_name="end_date_time", lookup_expr="lte"
     )
-    patient = filters.CharFilter(
+    subject = filters.CharFilter(
         field_name="subject__actor__practitioner__id", lookup_expr="icontains"
     )
     participant = filters.CharFilter(
