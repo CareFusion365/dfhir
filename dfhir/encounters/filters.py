@@ -22,15 +22,13 @@ class EncounterFilter(filters.FilterSet):
     def practitioner_filter(self, querryset, name, value):
         """Filter participant by practitioner ID."""
         if value:
-            return querryset.filter(
-                encounter_participant__actor__practitioner__id=value
-            )
+            return querryset.filter(participant__actor__practitioner=value)
         return querryset
 
     def patient_filter(self, querryset, name, value):
         """Filter participant by patient ID."""
         if value:
-            return querryset.filter(subject__patient__id=value)
+            return querryset.filter(subject__patient=value)
         return querryset
 
     class Meta:

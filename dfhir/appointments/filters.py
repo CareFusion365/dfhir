@@ -19,13 +19,13 @@ class AppointmentFilter(filters.FilterSet):
     def patient_filter(self, querryset, name, value):
         """Filter subject using patient ID."""
         if value:
-            return querryset.filter(subject__patient__id=value)
+            return querryset.filter(subject__patient=value)
         return querryset
 
     def practitioner_filter(self, querryset, name, value):
         """Filter participant using practitioner ID."""
         if value:
-            return querryset.filter(participant__actor__practitioner__id=value)
+            return querryset.filter(participant__actor__practitioner=value)
         return querryset
 
     class Meta:
