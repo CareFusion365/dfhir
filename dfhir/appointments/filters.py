@@ -13,12 +13,20 @@ class AppointmentFilter(filters.FilterSet):
     status = filters.CharFilter(field_name="status", lookup_expr="icontains")
     start = DateFromToRangeFilter(field_name="start", lookup_expr="gte")
     end = DateFromToRangeFilter(field_name="end", lookup_expr="lte")
-    subject = filters.CharFilter(
-        field_name="subject__patient__id", lookup_expr="iexact"
-    )
-    participant = filters.CharFilter(
-        field_name="participant__actor__practitioner__id", lookup_expr="icontains"
-    )
+    subject = filters.CharFilter(method="patient_filter")
+    participant = filters.CharFilter(method="practitioner_filter")
+
+    def patient_filter(self, querryset, name, value):
+        """Filter subject using patient ID."""
+        if value:
+            return querryset.filter(subject__patient__id=value)
+        return querryset
+
+    def practitioner_filter(self, querryset, name, value):
+        """Filter participant using practitioner ID."""
+        if value:
+            return querryset.filter(participant__actor__practitioner__id=value)
+        return querryset
 
     class Meta:
         """meta options."""

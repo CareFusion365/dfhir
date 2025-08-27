@@ -16,12 +16,22 @@ class EncounterFilter(filters.FilterSet):
     end_date_time = DateTimeFromToRangeFilter(
         field_name="end_date_time", lookup_expr="lte"
     )
-    subject = filters.CharFilter(
-        field_name="subject__actor__practitioner__id", lookup_expr="icontains"
-    )
-    participant = filters.CharFilter(
-        field_name="encounter_participant__actor__patient__id", lookup_expr="iexact"
-    )
+    subject = filters.CharFilter(method="patient_filter", lookup_expr="icontains")
+    participant = filters.CharFilter(method="practitioner_filter", lookup_expr="iexact")
+
+    def practitioner_filter(self, querryset, name, value):
+        """Filter participant by practitioner ID."""
+        if value:
+            return querryset.filter(
+                encounter_participant__actor__practitioner__id=value
+            )
+        return querryset
+
+    def patient_filter(self, querryset, name, value):
+        """Filter participant by patient ID."""
+        if value:
+            return querryset.filter(subject__patient__id=value)
+        return querryset
 
     class Meta:
         """Meta class."""
