@@ -2,10 +2,6 @@
 
 from unittest import TestCase
 
-from django.contrib.auth import get_user_model
-
-from dfhir.organizations.choices import OrganizationStatus
-from dfhir.organizations.models import Organization
 from dfhir.organizations.serializers import OrganizationSerializer
 
 
