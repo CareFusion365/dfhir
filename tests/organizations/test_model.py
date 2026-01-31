@@ -1,29 +1,23 @@
 """organization tests."""
 
-from django.test import TestCase
+import pytest
 
 from dfhir.organizations.models import Organization
 
 
-class TestOrganization(TestCase):
-    """Test organization model."""
-
-    def setUp(self):
-        """Organization test setup."""
-        self.organization = Organization.objects.create(
-            name="Burgers University Medical Center",
-            alias=["Burgers University Medical Center"],
-            email="bumc@gmail.com",
-            website="www.bumc.com",
-            active=True,
-        )
-
-    def test_organization_fields(self):
-        """Test organization name."""
-        self.assertEqual(self.organization.name, "Burgers University Medical " "Center")
-        self.assertEqual(
-            self.organization.alias, ["Burgers University " "Medical Center"]
-        )
-        self.assertEqual(self.organization.email, "bumc@gmail.com")
-        self.assertEqual(self.organization.website, "www.bumc.com")
-        self.assertEqual(self.organization.active, True)
+@pytest.mark.django_db
+def test_organization_create():
+    """Fixture for organization model."""
+    organization = Organization.objects.create(
+        name="Burgers University Medical Center",
+        alias=["Burgers University Medical Center"],
+        email="bumc@gmail.com",
+        website="www.bumc.com",
+        active=True,
+    )
+    assert organization.name == "Burgers University Medical " "Center"
+    assert organization.alias == ["Burgers University " "Medical Center"]
+    assert organization.email == "bumc@gmail.com"
+    assert organization.website == "www.bumc.com"
+    assert organization.active
+    assert Organization.objects.count() == 1
