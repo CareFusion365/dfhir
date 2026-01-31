@@ -206,3 +206,9 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Skip migrations during tests
+MIGRATION_MODULES = {
+    app.split(".")[-1]: None for app in INSTALLED_APPS if app.startswith("dfhir.")
+}
