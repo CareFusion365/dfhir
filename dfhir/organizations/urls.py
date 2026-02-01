@@ -7,6 +7,10 @@ from . import views
 app_name = "organizations"
 
 urlpatterns = [
-    path("organizations/", views.OrganizationListView.as_view()),
-    path("organizations/<int:pk>/", views.OrganizationDetailView.as_view()),
+    path("organizations/", views.OrganizationListView.as_view(), name="list_view"),
+    path(
+        "organizations/<int:pk>/",
+        views.OrganizationDetailView.as_view(),
+        name="detail_view",
+    ),
 ]

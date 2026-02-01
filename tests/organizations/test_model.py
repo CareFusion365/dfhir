@@ -1,30 +1,32 @@
-"""Test Organization model."""
-#
-# from django.contrib.auth import get_user_model
-# from django.test import TestCase
-#
-# from dfhir.organizations.models import Organization
-#
-#
-# class TestOrganizationModel(TestCase):
-#     """Test Organization model."""
-#
-#     def test_create(self):
-#         """Test create organization."""
-#         organization = Organization.objects.create(
-#             name="Test Organization",
-#             website="http://test.com",
-#             email="example@mail.com",
-#             phone_number="+1234567890",
-#         )
-#         organization.admin = get_user_model().objects.create(
-#             email="admin@mail.com", username="admin", password="asdf"
-#         )
-#         organization.save()
-#
-#         assert Organization.objects.count() == 1
-#         assert Organization.objects.get().name == "Test Organization"
-#         assert Organization.objects.get().website == "http://test.com"
-#         assert Organization.objects.get().admin.email == "admin@mail.com"
-#         assert Organization.objects.get().admin.username == "admin"
-#         assert type(Organization.objects.get().pk) is int
+"""test organization models."""
+
+from django.test import TestCase
+
+from dfhir.base.models import Identifier
+from dfhir.organizations.choices import OrganizationStatus
+from dfhir.organizations.models import Organization
+
+
+class TestOrganizationModel(TestCase):
+    """Test Organization model."""
+
+    def setUp(self):
+        """Set up test data."""
+        self.identifier = Identifier.objects.create(
+            system="http://example.com", value="12345"
+        )
+        self.organization = Organization.objects.create(
+            name="Test Organization",
+            email="test@example.com",
+            website="https://www.testorg.com",
+            status=OrganizationStatus.PENDING,
+        )
+        self.organization.identifier.add(self.identifier)
+
+    def test_organization_creation(self):
+        """Test organization creation."""
+        self.assertEqual(self.organization.name, "Test Organization")
+        self.assertEqual(self.organization.email, "test@example.com")
+        self.assertEqual(self.organization.website, "https://www.testorg.com")
+        self.assertEqual(self.organization.status, OrganizationStatus.PENDING)
+        assert self.identifier in self.organization.identifier.all()

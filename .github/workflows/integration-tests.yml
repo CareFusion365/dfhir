@@ -67,6 +67,6 @@ jobs:
             poetry run python manage.py loaddata "$fixture"
           done
 
-#      - name: Run Django Tests
-#        working-directory: .
-#        run: poetry run pytest tests
+      - name: Run Django Tests
+        working-directory: .
+        run: poetry run pytest tests
