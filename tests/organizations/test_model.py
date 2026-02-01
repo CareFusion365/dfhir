@@ -1,23 +1,32 @@
-"""organization tests."""
+"""test organization models."""
 
-import pytest
+from django.test import TestCase
 
+from dfhir.base.models import Identifier
+from dfhir.organizations.choices import OrganizationStatus
 from dfhir.organizations.models import Organization
 
 
-@pytest.mark.django_db
-def test_organization_create():
-    """Fixture for organization model."""
-    organization = Organization.objects.create(
-        name="Burgers University Medical Center",
-        alias=["Burgers University Medical Center"],
-        email="bumc@gmail.com",
-        website="www.bumc.com",
-        active=True,
-    )
-    assert organization.name == "Burgers University Medical " "Center"
-    assert organization.alias == ["Burgers University " "Medical Center"]
-    assert organization.email == "bumc@gmail.com"
-    assert organization.website == "www.bumc.com"
-    assert organization.active
-    assert Organization.objects.count() == 1
+class TestOrganizationModel(TestCase):
+    """Test Organization model."""
+
+    def setUp(self):
+        """Set up test data."""
+        self.identifier = Identifier.objects.create(
+            system="http://example.com", value="12345"
+        )
+        self.organization = Organization.objects.create(
+            name="Test Organization",
+            email="test@example.com",
+            website="https://www.testorg.com",
+            status=OrganizationStatus.PENDING,
+        )
+        self.organization.identifier.add(self.identifier)
+
+    def test_organization_creation(self):
+        """Test organization creation."""
+        self.assertEqual(self.organization.name, "Test Organization")
+        self.assertEqual(self.organization.email, "test@example.com")
+        self.assertEqual(self.organization.website, "https://www.testorg.com")
+        self.assertEqual(self.organization.status, OrganizationStatus.PENDING)
+        assert self.identifier in self.organization.identifier.all()

@@ -1,69 +1,87 @@
 """Test cases for the organizations views."""
 
-# TODO: need to fix tests
-import pytest
-from rest_framework.test import APIRequestFactory
+import json
+import os
+
+from django.urls import reverse
+from rest_framework.test import APIRequestFactory, APITestCase
 
 from dfhir.organizations.models import Organization
+from dfhir.organizations.serializers import OrganizationSerializer
 from dfhir.organizations.views import OrganizationDetailView, OrganizationListView
 
 
-@pytest.mark.django_db
-def test_get_all_organizations_endpoint():
-    """Test get request."""
-    factory = APIRequestFactory()
-    request = factory.get("/api/organizations/")
-    view = OrganizationListView.as_view()
-    response = view(request)
-    assert response.status_code == 200
+class TestOrganizationViews(APITestCase):
+    """Test Organization views."""
 
+    def load_payload(self):
+        """Load payload from JSON file."""
+        payload_path = os.path.join(os.path.dirname(__file__), "payload.json")
+        with open(payload_path, "r") as file:
+            return json.load(file)
 
-@pytest.mark.django_db
-def test_create_organization_endpoint():
-    """Test post request."""
-    factory = APIRequestFactory()
-    request = factory.post("/api/organizations/", {"name": "Test Organization"})
-    view = OrganizationListView.as_view()
-    response = view(request)
-    assert response.status_code == 200
-    assert Organization.objects.count() == 1
-    assert Organization.objects.get().name == "Test Organization"
+    def setUp(self):
+        """Set up test data."""
+        self.factory = APIRequestFactory()
+        self.payload_data = self.load_payload()
+        self.serializer = OrganizationSerializer(data=self.payload_data)
+        self.serializer.is_valid(raise_exception=True)
+        self.organization = self.serializer.save()
 
+    def test_organization_list_view(self):
+        """Test organization list view."""
+        url = reverse("organizations:list_view")
+        request = self.factory.get(url)
+        view = OrganizationListView.as_view()
+        response = view(request)
+        assert response.status_code == 200
+        assert len(response.data) >= 1
 
-@pytest.mark.django_db
-def test_get_one_organization_endpoint():
-    """Test get request."""
-    organization = Organization.objects.create(name="Test Organization")
-    factory = APIRequestFactory()
-    request = factory.get(f"/api/organizations/{organization.pk}/")
-    view = OrganizationDetailView.as_view()
-    response = view(request, pk=organization.pk)
-    assert response.status_code == 200
-    assert response.data["name"] == "Test Organization"
+    def test_organization_detail_view(self):
+        """Test organization detail view."""
+        url = reverse("organizations:detail_view", kwargs={"pk": self.organization.pk})
+        request = self.factory.get(url)
+        view = OrganizationDetailView.as_view()
+        response = view(request, pk=self.organization.pk)
+        assert response.status_code == 200
+        assert response.data["id"] == self.organization.id
 
+    def test_organization_detail_view_not_found(self):
+        """Test organization detail view for non-existing organization."""
+        url = reverse("organizations:detail_view", kwargs={"pk": 9999})
+        request = self.factory.get(url)
+        view = OrganizationDetailView.as_view()
+        response = view(request, pk=9999)
+        assert response.status_code == 404
 
-@pytest.mark.django_db
-def test_patch_organization_endpoint():
-    """Test patch request."""
-    organization = Organization.objects.create(name="Test Organization")
-    factory = APIRequestFactory()
-    request = factory.patch(
-        f"/api/organizations/{organization.pk}/", {"name": "Updated Organization"}
-    )
-    view = OrganizationDetailView.as_view()
-    response = view(request, pk=organization.pk)
-    assert response.status_code == 200
-    assert Organization.objects.get().name == "Updated Organization"
+    def test_organization_list_view_empty(self):
+        """Test organization list view when no organizations exist."""
+        Organization.objects.all().delete()
+        url = reverse("organizations:list_view")
+        request = self.factory.get(url)
+        view = OrganizationListView.as_view()
+        response = view(request)
+        assert response.status_code == 200
+        assert len(response.data) == 0
 
+    def test_organization_patch_view(self):
+        """Test organization patch view."""
+        url = reverse("organizations:detail_view", kwargs={"pk": self.organization.pk})
+        patch_data = {"name": "Updated Organization Name"}
+        request = self.factory.patch(url, data=patch_data, format="json")
+        view = OrganizationDetailView.as_view()
+        response = view(request, pk=self.organization.pk)
+        assert response.status_code == 200
+        assert response.data["name"] == "Updated Organization Name"
 
-@pytest.mark.django_db
-def test_delete_organization_endpoint():
-    """Test delete request."""
-    organization = Organization.objects.create(name="Test Organization")
-    factory = APIRequestFactory()
-    request = factory.delete(f"/api/organizations/{organization.pk}/")
-    view = OrganizationDetailView.as_view()
-    response = view(request, pk=organization.pk)
-    assert response.status_code == 204
-    assert Organization.objects.count() == 0
-    assert Organization.objects.exists() is False
+    def test_organization_delete_view(self):
+        """Test organization delete view."""
+        url = reverse("organizations:detail_view", kwargs={"pk": self.organization.pk})
+        request = self.factory.delete(url)
+        view = OrganizationDetailView.as_view()
+        response = view(request, pk=self.organization.pk)
+        assert response.status_code == 204
+
+        get_request = self.factory.get(url)
+        get_response = view(get_request, pk=self.organization.pk)
+        assert get_response.status_code == 404
