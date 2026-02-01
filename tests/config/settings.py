@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import sys
 
 import environ
 
@@ -207,8 +208,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-# Skip migrations during tests
-MIGRATION_MODULES = {
-    app.split(".")[-1]: None for app in INSTALLED_APPS if app.startswith("dfhir.")
-}
+if "pytest" in sys.modules or "test" in sys.argv:
+    MIGRATION_MODULES = {
+        app.split(".")[-1]: None for app in INSTALLED_APPS if app.startswith("dfhir.")
+    }
