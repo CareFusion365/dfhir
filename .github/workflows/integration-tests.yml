@@ -53,7 +53,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
-        run: poetry install
+        run: poetry install --with dev
 
       - name: Run DB Migrations
         working-directory: .
