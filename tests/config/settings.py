@@ -9,6 +9,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import sys
 from pathlib import Path
 
 import environ
@@ -206,3 +207,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+if "pytest" in sys.modules or "test" in sys.argv:
+    MIGRATION_MODULES = {
+        app.split(".")[-1]: None for app in INSTALLED_APPS if app.startswith("dfhir.")
+    }

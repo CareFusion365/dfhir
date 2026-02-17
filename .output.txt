@@ -1,0 +1,1009 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.3, pytest-8.3.5, pluggy-1.5.0
+django: version: 5.2.1, settings: tests.config.settings (from ini)
+rootdir: /Users/ezi/workspace/dfhir
+configfile: pytest.ini
+plugins: anyio-4.12.1, django-4.11.1, cov-6.1.1
+collected 125 items
+tests/base/test_models.py ..........................FFF................. [ 36%]
+....FFF..........................................FFF.................... [ 94%]
+.FFF...                                                                  [100%]
+=================================== FAILURES ===================================
+________ TestExtendedContactDetail.test_extended_contact_detail_create _________
+self = <test_models.TestExtendedContactDetail testMethod=test_extended_contact_detail_create>
+    def setUp(self):
+        """Extended contact detail test setup."""
+>       self.extended_contact_detail = ExtendedContactDetail.objects.create(
+            purpose=CodeableConcept.objects.create(text="Purpose"),
+            name=HumanName.objects.create(text="Name"),
+            address=Address.objects.create(text="Address"),
+        )
+tests/base/test_models.py:396:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b16e390>
+instance = <ExtendedContactDetail: ExtendedContactDetail object (None)>
+value = <HumanName: HumanName object (4)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use name.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+________ TestExtendedContactDetail.test_extended_contact_detail_delete _________
+self = <test_models.TestExtendedContactDetail testMethod=test_extended_contact_detail_delete>
+    def setUp(self):
+        """Extended contact detail test setup."""
+>       self.extended_contact_detail = ExtendedContactDetail.objects.create(
+            purpose=CodeableConcept.objects.create(text="Purpose"),
+            name=HumanName.objects.create(text="Name"),
+            address=Address.objects.create(text="Address"),
+        )
+tests/base/test_models.py:396:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b16e390>
+instance = <ExtendedContactDetail: ExtendedContactDetail object (None)>
+value = <HumanName: HumanName object (5)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use name.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+________ TestExtendedContactDetail.test_extended_contact_detail_update _________
+self = <test_models.TestExtendedContactDetail testMethod=test_extended_contact_detail_update>
+    def setUp(self):
+        """Extended contact detail test setup."""
+>       self.extended_contact_detail = ExtendedContactDetail.objects.create(
+            purpose=CodeableConcept.objects.create(text="Purpose"),
+            name=HumanName.objects.create(text="Name"),
+            address=Address.objects.create(text="Address"),
+        )
+tests/base/test_models.py:396:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b16e390>
+instance = <ExtendedContactDetail: ExtendedContactDetail object (None)>
+value = <HumanName: HumanName object (6)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use name.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+_______________________ TestPayload.test_payload_create ________________________
+self = <test_models.TestPayload testMethod=test_payload_create>
+    def setUp(self):
+        """Payload test setup."""
+>       self.payload = Payload.objects.create(
+            content_type="application/json",
+            content_string="{}",
+        )
+tests/base/test_models.py:621:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <Payload: Payload object (None)>, args = ()
+kwargs = {'content_string': '{}', 'content_type': 'application/json'}
+cls = <class 'dfhir.base.models.Payload'>, opts = <Options for Payload>
+_setattr = <built-in function setattr>, _DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x1104c9d80>, val = None
+field = <django.contrib.postgres.fields.array.ArrayField: profile_canonical>
+is_related_object = False, property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: Payload() got unexpected keyword arguments: 'content_type', 'content_string'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+_______________________ TestPayload.test_payload_delete ________________________
+self = <test_models.TestPayload testMethod=test_payload_delete>
+    def setUp(self):
+        """Payload test setup."""
+>       self.payload = Payload.objects.create(
+            content_type="application/json",
+            content_string="{}",
+        )
+tests/base/test_models.py:621:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <Payload: Payload object (None)>, args = ()
+kwargs = {'content_string': '{}', 'content_type': 'application/json'}
+cls = <class 'dfhir.base.models.Payload'>, opts = <Options for Payload>
+_setattr = <built-in function setattr>, _DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x1104c9c30>, val = None
+field = <django.contrib.postgres.fields.array.ArrayField: profile_canonical>
+is_related_object = False, property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: Payload() got unexpected keyword arguments: 'content_type', 'content_string'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+_______________________ TestPayload.test_payload_update ________________________
+self = <test_models.TestPayload testMethod=test_payload_update>
+    def setUp(self):
+        """Payload test setup."""
+>       self.payload = Payload.objects.create(
+            content_type="application/json",
+            content_string="{}",
+        )
+tests/base/test_models.py:621:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <Payload: Payload object (None)>, args = ()
+kwargs = {'content_string': '{}', 'content_type': 'application/json'}
+cls = <class 'dfhir.base.models.Payload'>, opts = <Options for Payload>
+_setattr = <built-in function setattr>, _DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x1104ca260>, val = None
+field = <django.contrib.postgres.fields.array.ArrayField: profile_canonical>
+is_related_object = False, property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: Payload() got unexpected keyword arguments: 'content_type', 'content_string'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+__________________ TestRelativeTime.test_relative_time_create __________________
+self = <test_models.TestRelativeTime testMethod=test_relative_time_create>
+    def setUp(self):
+        """Relative time test setup."""
+>       self.relative_time = RelativeTime.objects.create(
+            context=CodeableConcept.objects.create(text="Context"),
+            offset_duration=Duration.objects.create(value=1.0),
+        )
+tests/base/test_models.py:1036:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <RelativeTime: RelativeTime object (None)>, args = ()
+kwargs = {'context': <CodeableConcept: CodeableConcept object (25)>}
+cls = <class 'dfhir.base.models.RelativeTime'>
+opts = <Options for RelativeTime>, _setattr = <built-in function setattr>
+_DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x110249840>, val = None
+field = <django.db.models.fields.TextField: text>, is_related_object = False
+rel_obj = <Duration: Duration object (19)>
+property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+__________________ TestRelativeTime.test_relative_time_delete __________________
+self = <test_models.TestRelativeTime testMethod=test_relative_time_delete>
+    def setUp(self):
+        """Relative time test setup."""
+>       self.relative_time = RelativeTime.objects.create(
+            context=CodeableConcept.objects.create(text="Context"),
+            offset_duration=Duration.objects.create(value=1.0),
+        )
+tests/base/test_models.py:1036:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <RelativeTime: RelativeTime object (None)>, args = ()
+kwargs = {'context': <CodeableConcept: CodeableConcept object (26)>}
+cls = <class 'dfhir.base.models.RelativeTime'>
+opts = <Options for RelativeTime>, _setattr = <built-in function setattr>
+_DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x11024b070>, val = None
+field = <django.db.models.fields.TextField: text>, is_related_object = False
+rel_obj = <Duration: Duration object (20)>
+property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+__________________ TestRelativeTime.test_relative_time_update __________________
+self = <test_models.TestRelativeTime testMethod=test_relative_time_update>
+    def setUp(self):
+        """Relative time test setup."""
+>       self.relative_time = RelativeTime.objects.create(
+            context=CodeableConcept.objects.create(text="Context"),
+            offset_duration=Duration.objects.create(value=1.0),
+        )
+tests/base/test_models.py:1036:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <RelativeTime: RelativeTime object (None)>, args = ()
+kwargs = {'context': <CodeableConcept: CodeableConcept object (27)>}
+cls = <class 'dfhir.base.models.RelativeTime'>
+opts = <Options for RelativeTime>, _setattr = <built-in function setattr>
+_DEFERRED = <Deferred field>
+fields_iter = <tuple_iterator object at 0x11024b4c0>, val = None
+field = <django.db.models.fields.TextField: text>, is_related_object = False
+rel_obj = <Duration: Duration object (21)>
+property_names = frozenset({'pk', 'resource_type'})
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+        opts = self._meta
+        _setattr = setattr
+        _DEFERRED = DEFERRED
+        if opts.abstract:
+            raise TypeError("Abstract models cannot be instantiated.")
+
+        pre_init.send(sender=cls, args=args, kwargs=kwargs)
+
+        # Set up the storage for instance state
+        self._state = ModelState()
+
+        # There is a rather weird disparity here; if kwargs, it's set, then args
+        # overrides it. It should be one or the other; don't duplicate the work
+        # The reason for the kwargs check is that standard iterator passes in by
+        # args, and instantiation for iteration is 33% faster.
+        if len(args) > len(opts.concrete_fields):
+            # Daft, but matches old exception sans the err msg.
+            raise IndexError("Number of args exceeds number of fields")
+
+        if not kwargs:
+            fields_iter = iter(opts.concrete_fields)
+            # The ordering of the zip calls matter - zip throws StopIteration
+            # when an iter throws it. So if the first iter throws it, the second
+            # is *not* consumed. We rely on this, so don't change the order
+            # without changing the logic.
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+        else:
+            # Slower, kwargs-ready version.
+            fields_iter = iter(opts.fields)
+            for val, field in zip(args, fields_iter):
+                if val is _DEFERRED:
+                    continue
+                _setattr(self, field.attname, val)
+                if kwargs.pop(field.name, NOT_PROVIDED) is not NOT_PROVIDED:
+                    raise TypeError(
+                        f"{cls.__qualname__}() got both positional and "
+                        f"keyword arguments for field '{field.name}'."
+                    )
+
+        # Now we're left with the unprocessed fields that *must* come from
+        # keywords, or default.
+
+        for field in fields_iter:
+            is_related_object = False
+            # Virtual field
+            if field.column is None or field.generated:
+                continue
+            if kwargs:
+                if isinstance(field.remote_field, ForeignObjectRel):
+                    try:
+                        # Assume object instance was passed in.
+                        rel_obj = kwargs.pop(field.name)
+                        is_related_object = True
+                    except KeyError:
+                        try:
+                            # Object instance wasn't passed in -- must be an ID.
+                            val = kwargs.pop(field.attname)
+                        except KeyError:
+                            val = field.get_default()
+                else:
+                    try:
+                        val = kwargs.pop(field.attname)
+                    except KeyError:
+                        # This is done with an exception rather than the
+                        # default argument on pop because we don't want
+                        # get_default() to be evaluated, and then not used.
+                        # Refs #12057.
+                        val = field.get_default()
+            else:
+                val = field.get_default()
+
+            if is_related_object:
+                # If we are passed a related instance, set it using the
+                # field.name instead of field.attname (e.g. "user" instead of
+                # "user_id") so that the object gets properly cached (and type
+                # checked) by the RelatedObjectDescriptor.
+                if rel_obj is not _DEFERRED:
+                    _setattr(self, field.name, rel_obj)
+            else:
+                if val is not _DEFERRED:
+                    _setattr(self, field.attname, val)
+
+        if kwargs:
+            property_names = opts._property_names
+            unexpected = ()
+            for prop, value in kwargs.items():
+                # Any remaining kwargs must correspond to properties or virtual
+                # fields.
+                if prop in property_names:
+                    if value is not _DEFERRED:
+                        _setattr(self, prop, value)
+                else:
+                    try:
+                        opts.get_field(prop)
+                    except FieldDoesNotExist:
+                        unexpected += (prop,)
+                    else:
+                        if value is not _DEFERRED:
+                            _setattr(self, prop, value)
+            if unexpected:
+                unexpected_names = ", ".join(repr(n) for n in unexpected)
+>               raise TypeError(
+                    f"{cls.__name__}() got unexpected keyword arguments: "
+                    f"{unexpected_names}"
+                )
+E               TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+.venv/lib/python3.14/site-packages/django/db/models/base.py:569: TypeError
+_____________________ TestSignature.test_signature_create ______________________
+self = <test_models.TestSignature testMethod=test_signature_create>
+    def setUp(self):
+        """Signature test setup."""
+>       self.signature = Signature.objects.create(
+            type=Coding.objects.create(display="Signature Type"),
+            when=timezone.now(),
+            who=SignatureWhoReference.objects.create(display="Who"),
+        )
+tests/base/test_models.py:1236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b82f3b0>
+instance = <Signature: Signature object (None)>
+value = <Coding: Coding object (13)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use type.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+_____________________ TestSignature.test_signature_delete ______________________
+self = <test_models.TestSignature testMethod=test_signature_delete>
+    def setUp(self):
+        """Signature test setup."""
+>       self.signature = Signature.objects.create(
+            type=Coding.objects.create(display="Signature Type"),
+            when=timezone.now(),
+            who=SignatureWhoReference.objects.create(display="Who"),
+        )
+tests/base/test_models.py:1236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b82f3b0>
+instance = <Signature: Signature object (None)>
+value = <Coding: Coding object (14)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use type.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+_____________________ TestSignature.test_signature_update ______________________
+self = <test_models.TestSignature testMethod=test_signature_update>
+    def setUp(self):
+        """Signature test setup."""
+>       self.signature = Signature.objects.create(
+            type=Coding.objects.create(display="Signature Type"),
+            when=timezone.now(),
+            who=SignatureWhoReference.objects.create(display="Who"),
+        )
+tests/base/test_models.py:1236:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv/lib/python3.14/site-packages/django/db/models/manager.py:87: in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/query.py:661: in create
+    obj = self.model(**kwargs)
+.venv/lib/python3.14/site-packages/django/db/models/base.py:566: in __init__
+    _setattr(self, prop, value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+self = <django.db.models.fields.related_descriptors.ManyToManyDescriptor object at 0x10b82f3b0>
+instance = <Signature: Signature object (None)>
+value = <Coding: Coding object (15)>
+    def __set__(self, instance, value):
+>       raise TypeError(
+            "Direct assignment to the %s is prohibited. Use %s.set() instead."
+            % self._get_set_deprecation_msg_params(),
+        )
+E       TypeError: Direct assignment to the forward side of a many-to-many set is prohibited. Use type.set() instead.
+.venv/lib/python3.14/site-packages/django/db/models/fields/related_descriptors.py:665: TypeError
+=========================== short test summary info ============================
+FAILED tests/base/test_models.py::TestExtendedContactDetail::test_extended_contact_detail_create - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+FAILED tests/base/test_models.py::TestExtendedContactDetail::test_extended_contact_detail_delete - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+FAILED tests/base/test_models.py::TestExtendedContactDetail::test_extended_contact_detail_update - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+FAILED tests/base/test_models.py::TestPayload::test_payload_create - TypeError: Payload() got unexpected keyword arguments: 'content_type', 'con...
+FAILED tests/base/test_models.py::TestPayload::test_payload_delete - TypeError: Payload() got unexpected keyword arguments: 'content_type', 'con...
+FAILED tests/base/test_models.py::TestPayload::test_payload_update - TypeError: Payload() got unexpected keyword arguments: 'content_type', 'con...
+FAILED tests/base/test_models.py::TestRelativeTime::test_relative_time_create - TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+FAILED tests/base/test_models.py::TestRelativeTime::test_relative_time_delete - TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+FAILED tests/base/test_models.py::TestRelativeTime::test_relative_time_update - TypeError: RelativeTime() got unexpected keyword arguments: 'context'
+FAILED tests/base/test_models.py::TestSignature::test_signature_create - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+FAILED tests/base/test_models.py::TestSignature::test_signature_delete - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+FAILED tests/base/test_models.py::TestSignature::test_signature_update - TypeError: Direct assignment to the forward side of a many-to-many set is p...
+======================== 12 failed, 113 passed in 6.34s ========================
