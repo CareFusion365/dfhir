@@ -1,0 +1,12 @@
+{
+  "days_of_week": [
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri"
+  ],
+  "all_day": false,
+  "available_start_time": "09:00:00",
+  "available_end_time": "17:00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "use": "home",
+  "type": "both",
+  "text": "534 Erewhon St, Peasantville, Rainbow, Vic  3999",
+  "line": [
+    "534 Erewhon St"
+  ],
+  "city": "Pleasantville",
+  "district": "Rainbow",
+  "state": "Vic",
+  "postal_code": "3999",
+  "country": "AU",
+  "period": {
+    "start": "1974-12-25T00:00:00Z"
+  }
+}

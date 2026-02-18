@@ -1,0 +1,17 @@
+{
+  "identifier": [
+    {
+      "value": "12345"
+    }
+  ],
+  "code": {
+    "text": "Doctor of Medicine"
+  },
+  "period": {
+    "start": "2005-01-01T00:00:00Z"
+  },
+  "issuer": {
+    "reference": "Organization/1",
+    "display": "University of Medicine"
+  }
+}

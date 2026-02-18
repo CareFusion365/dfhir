@@ -1,0 +1,8 @@
+{
+  "content_type": "application/pdf",
+  "language": "en",
+  "url": "http://example.org/docs/test.pdf",
+  "size": 1024,
+  "title": "Test Document",
+  "creation": "2014-12-24T00:00:00Z"
+}

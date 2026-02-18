@@ -1,0 +1,13 @@
+{
+  "type": [
+    {
+      "text": "Patient Record"
+    }
+  ],
+  "profile_uri": [
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+  ],
+  "profile_canonical": [
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1"
+  ]
+}

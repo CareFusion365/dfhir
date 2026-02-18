@@ -1,0 +1,7 @@
+{
+  "description": "Closed for inventory",
+  "during": {
+    "start": "2024-12-31T09:00:00Z",
+    "end": "2024-12-31T17:00:00Z"
+  }
+}

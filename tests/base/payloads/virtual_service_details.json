@@ -1,0 +1,11 @@
+{
+  "channel_type": {
+    "system": "http://terminology.hl7.org/CodeSystem/virtual-service-type",
+    "code": "zoom",
+    "display": "Zoom"
+  },
+  "address": {
+    "address_url": "https://zoom.us/j/123456789"
+  },
+  "max_participants": 10
+}

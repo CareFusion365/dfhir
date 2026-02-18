@@ -1,0 +1,16 @@
+{
+  "type": {
+    "text": "Shelf life after opening"
+  },
+  "period_duration": {
+    "value": 6,
+    "unit": "months",
+    "system": "http://unitsofmeasure.org",
+    "code": "mo"
+  },
+  "special_precautions_for_storage": [
+    {
+      "text": "Keep refrigerated"
+    }
+  ]
+}

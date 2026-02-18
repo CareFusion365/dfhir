@@ -1,0 +1,11 @@
+{
+  "event": "2023-06-01T08:00:00Z",
+  "repeat": {
+    "frequency": 1,
+    "period": 1,
+    "period_unit": "d"
+  },
+  "code": {
+    "text": "QD"
+  }
+}
