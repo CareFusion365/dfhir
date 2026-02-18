@@ -1,0 +1,22 @@
+{
+  "available_time": [
+    {
+      "days_of_week": [
+        "mon",
+        "tue",
+        "wed"
+      ],
+      "available_start_time": "09:00:00",
+      "available_end_time": "17:00:00"
+    }
+  ],
+  "not_available_time": [
+    {
+      "description": "Public Holiday",
+      "during": {
+        "start": "2024-12-25T00:00:00Z",
+        "end": "2024-12-26T23:59:59Z"
+      }
+    }
+  ]
+}

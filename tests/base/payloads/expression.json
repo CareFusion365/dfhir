@@ -1,0 +1,6 @@
+{
+  "description": "Check if patient is over 18",
+  "name": "isAdult",
+  "language": "text/cql",
+  "expression": "AgeInYears() >= 18"
+}

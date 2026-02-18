@@ -1,0 +1,11 @@
+{
+  "type": "citation",
+  "classifier": {
+    "text": "Journal Article"
+  },
+  "label": "Lancet 2023",
+  "display": "Study on FHIR adoption",
+  "resource_reference": {
+    "reference": "DocumentReference/1"
+  }
+}

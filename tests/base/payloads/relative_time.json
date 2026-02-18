@@ -1,0 +1,13 @@
+{
+  "context_reference": {
+    "reference": "Appointment/1"
+  },
+  "context_path": "start",
+  "offset_duration": {
+    "value": 15,
+    "unit": "min",
+    "system": "http://unitsofmeasure.org",
+    "code": "min"
+  },
+  "text": "15 minutes before the appointment starts"
+}

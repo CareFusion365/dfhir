@@ -1,0 +1,21 @@
+{
+  "use": "official",
+  "type": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code": "MR",
+        "display": "Medical record number"
+      }
+    ]
+  },
+  "system": "http://hospital.org/ids",
+  "value": "12345",
+  "period": {
+    "start": "2001-01-01T00:00:00Z"
+  },
+  "assigner": {
+    "reference": "Organization/1",
+    "display": "Good Health Hospital"
+  }
+}

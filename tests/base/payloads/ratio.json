@@ -1,0 +1,10 @@
+{
+  "numerator": {
+    "value": 1,
+    "unit": "mg"
+  },
+  "denominator": {
+    "value": 1,
+    "unit": "mL"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "concept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "38341003",
+        "display": "Hypertension"
+      }
+    ]
+  },
+  "reference": {
+    "reference": "Condition/1"
+  }
+}

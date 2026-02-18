@@ -1,0 +1,11 @@
+{
+  "type": "base",
+  "code": {
+    "text": "Base price"
+  },
+  "factor": 1.0,
+  "amount": {
+    "value": 100.0,
+    "currency": "USD"
+  }
+}

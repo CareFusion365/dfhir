@@ -1,0 +1,18 @@
+{
+  "use": "official",
+  "text": "John Doe",
+  "family": "Doe",
+  "given": [
+    "John",
+    "Jacob"
+  ],
+  "prefix": [
+    "Mr."
+  ],
+  "suffix": [
+    "III"
+  ],
+  "period": {
+    "start": "2010-01-01T00:00:00Z"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": [
+    {
+      "system": "urn:iso-astm:E1762-95:2013",
+      "code": "1.2.840.10065.1.12.1.1",
+      "display": "Author's signature"
+    }
+  ],
+  "when": "2023-01-01T12:00:00Z",
+  "who": {
+    "reference": "Practitioner/1",
+    "display": "Dr. Smith"
+  },
+  "sig_format": "image/png",
+  "data": "base64encodeddata"
+}

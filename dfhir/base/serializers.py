@@ -266,6 +266,20 @@ class ExtendedContactDetailSerializer(WritableNestedModelSerializer):
     telecom = ContactPointSerializer(many=True, required=False)
     purpose = CodeableConceptSerializer(many=False, required=False)
 
+    def to_internal_value(self, data):
+        """Allow FHIR-style reference dict for organization.
+
+        Accepts {"reference": "Organization/1"} and converts it to integer 1
+        expected by the FK to organizations.Organization.
+        """
+        org = data.get("organization")
+        if isinstance(org, dict) and isinstance(org.get("reference"), str):
+            ref = org.get("reference")
+            parts = ref.split("/")
+            if len(parts) == 2 and parts[1].isdigit():
+                data = {**data, "organization": int(parts[1])}
+        return super().to_internal_value(data)
+
     class Meta:
         """Meta class."""
 
@@ -493,7 +507,7 @@ class ProductShelfLifeSerializer(WritableNestedModelSerializer):
     type = CodeableConceptSerializer(many=False, required=False)
     period_duration = QuantitySerializer(many=False, required=False)
     special_precautions_for_storage = CodeableConceptSerializer(
-        many=False, required=False
+        many=True, required=False
     )
 
     class Meta:

@@ -1,0 +1,37 @@
+{
+  "purpose": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+        "code": "BILL",
+        "display": "Billing"
+      }
+    ]
+  },
+  "name": [
+    {
+      "use": "official",
+      "family": "Smith",
+      "given": [
+        "John"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+1-800-123-4567"
+    }
+  ],
+  "address": {
+    "line": [
+      "123 Business Rd"
+    ],
+    "city": "Metropolis",
+    "state": "NY",
+    "postal_code": "10001"
+  },
+  "organization": {
+    "reference": "Organization/1"
+  }
+}
